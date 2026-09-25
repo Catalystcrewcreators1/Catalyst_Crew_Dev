@@ -10,7 +10,7 @@ interface ProjectCardProps {
 
 export function ProjectCard({ project }: ProjectCardProps) {
   return (
-    <div className="group flex flex-col justify-between overflow-hidden rounded-card border border-brand-light bg-brand-white p-5 sm:p-6 transition-all duration-300 hover:-translate-y-1 hover:border-brand-ink/40 hover:shadow-card-hover">
+    <div className="group flex flex-col justify-between overflow-hidden rounded-2xl border border-brand-light/80 bg-brand-white p-5 sm:p-6 transition-colors hover:border-brand-ink/60 hover:bg-brand-cream/20">
       <div className="space-y-4">
         {/* Header Image or Preview */}
         <Link href={`/showcase/${project.slug}`} className="block relative h-44 w-full overflow-hidden rounded-lg bg-brand-soft">

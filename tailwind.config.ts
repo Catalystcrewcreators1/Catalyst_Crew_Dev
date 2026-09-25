@@ -22,8 +22,8 @@ const config: Config = {
         },
       },
       fontFamily: {
-        display: ["var(--font-space-grotesk)", "sans-serif"],
-        sans: ["var(--font-inter)", "sans-serif"],
+        display: ["var(--font-bricolage)", "sans-serif"],
+        sans: ["var(--font-dm-sans)", "sans-serif"],
       },
       borderRadius: {
         card: "12px",

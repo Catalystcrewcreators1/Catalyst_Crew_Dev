@@ -20,7 +20,7 @@ export function EventCard({ event, featured = false }: EventCardProps) {
       : "ended";
 
   return (
-    <div className="group relative flex flex-col overflow-hidden rounded-card border border-brand-light bg-brand-white transition-all duration-300 hover:-translate-y-1 hover:border-brand-ink/40 hover:shadow-card-hover">
+    <div className="group relative flex flex-col overflow-hidden rounded-2xl border border-brand-light/80 bg-brand-white transition-colors hover:border-brand-ink/60 hover:bg-brand-cream/20">
       {/* Event Header Image */}
       <div className="relative aspect-[1024/385] w-full overflow-hidden bg-black">
         <Image
