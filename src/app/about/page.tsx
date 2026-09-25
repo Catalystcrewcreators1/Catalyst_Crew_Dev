@@ -185,7 +185,7 @@ export default function AboutPage() {
           </p>
           <div className="mt-6 flex justify-center gap-3">
             <Button
-              href="https://chat.whatsapp.com/catalyst-crew-placeholder"
+              href="https://chat.whatsapp.com/JMueST1O52NEmwY7Xji92l"
               isExternal
               variant="primary"
               size="md"

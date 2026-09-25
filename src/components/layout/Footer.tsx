@@ -1,5 +1,6 @@
 import React from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { Container } from "@/components/ui/Container";
 import { Terminal, ArrowUpRight, Github, Twitter, Linkedin, MessageSquare } from "lucide-react";
 
@@ -11,17 +12,18 @@ export function Footer() {
         <div className="grid grid-cols-1 gap-12 lg:grid-cols-5">
           {/* Brand Manifesto Column */}
           <div className="lg:col-span-2 space-y-5">
-            <Link href="/" className="flex items-center gap-3 group">
-              <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-brand-red text-white shadow-sm">
-                <Terminal className="h-5 w-5" />
-              </div>
-              <div className="flex flex-col">
-                <span className="font-display text-lg font-bold tracking-tight text-white leading-none">
-                  CATALYST<span className="text-brand-red">CREW</span>
-                </span>
-                <span className="text-[10px] tracking-widest text-brand-light/60 uppercase font-mono mt-0.5">
-                  DEV COMMUNITY • INDIA
-                </span>
+            <Link
+              href="/"
+              className="inline-block group transition-transform duration-200 hover:scale-[1.02] focus:outline-none"
+              aria-label="Catalyst Crew Dev Community Home"
+            >
+              <div className="relative h-12 w-48">
+                <Image
+                  src="/catalyst-crew-logo.png"
+                  alt="Catalyst Crew Dev Community"
+                  fill
+                  className="object-contain object-left"
+                />
               </div>
             </Link>
 
@@ -70,7 +72,7 @@ export function Footer() {
                 <Linkedin className="h-4 w-4" />
               </a>
               <a
-                href="https://chat.whatsapp.com/catalyst-crew-placeholder"
+                href="https://chat.whatsapp.com/JMueST1O52NEmwY7Xji92l"
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="WhatsApp Community"

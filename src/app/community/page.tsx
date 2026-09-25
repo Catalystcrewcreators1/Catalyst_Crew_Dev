@@ -195,7 +195,7 @@ export default function CommunityPage() {
           </p>
           <div className="mt-8 flex justify-center">
             <Button
-              href="https://chat.whatsapp.com/catalyst-crew-placeholder"
+              href="https://chat.whatsapp.com/JMueST1O52NEmwY7Xji92l"
               isExternal
               variant="primary"
               size="lg"

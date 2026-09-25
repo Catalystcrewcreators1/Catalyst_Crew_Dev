@@ -2,6 +2,7 @@
 
 import React, { useState, useEffect } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { usePathname } from "next/navigation";
 import { cn } from "@/lib/utils";
 import { Container } from "@/components/ui/Container";
@@ -19,6 +20,7 @@ import {
   Mail,
   Flame,
   ArrowRight,
+  Handshake,
 } from "lucide-react";
 
 export function Navbar() {
@@ -42,14 +44,20 @@ export function Navbar() {
   }, [pathname]);
 
   const navLinks = [
+    { name: "Home", href: "/" },
     { name: "About", href: "/about" },
     { name: "Events", href: "/events" },
     { name: "Community", href: "/community" },
     { name: "Showcase", href: "/showcase" },
-    { name: "Partners", href: "/partners" },
   ];
 
   const moreLinks = [
+    {
+      name: "Partners",
+      href: "/partners",
+      desc: "Sponsorships, tracks & hiring funnels",
+      icon: Handshake,
+    },
     {
       name: "Opportunities",
       href: "/opportunities",
@@ -100,17 +108,19 @@ export function Navbar() {
       <Container>
         <div className="flex items-center justify-between">
           {/* Brand Logo */}
-          <Link href="/" className="flex items-center gap-3 group">
-            <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-brand-red text-white shadow-sm transition-transform duration-200 group-hover:scale-105">
-              <Terminal className="h-5 w-5" />
-            </div>
-            <div className="flex flex-col">
-              <span className="font-display text-lg font-bold tracking-tight text-white leading-none">
-                CATALYST<span className="text-brand-red">CREW</span>
-              </span>
-              <span className="text-[10px] tracking-widest text-brand-light/60 uppercase font-mono mt-0.5">
-                DEV COMMUNITY
-              </span>
+          <Link
+            href="/"
+            className="flex items-center group transition-transform duration-200 hover:scale-[1.02] focus:outline-none"
+            aria-label="Catalyst Crew Dev Community Home"
+          >
+            <div className="relative h-10 sm:h-11 w-36 sm:w-44">
+              <Image
+                src="/catalyst-crew-logo.png"
+                alt="Catalyst Crew Dev Community"
+                fill
+                priority
+                className="object-contain object-left"
+              />
             </div>
           </Link>
 
@@ -191,7 +201,7 @@ export function Navbar() {
               Live Quests
             </Link>
             <Button
-              href="https://chat.whatsapp.com/catalyst-crew-placeholder"
+              href="https://chat.whatsapp.com/JMueST1O52NEmwY7Xji92l"
               isExternal
               variant="primary"
               size="sm"
@@ -217,15 +227,6 @@ export function Navbar() {
       {mobileMenuOpen && (
         <div className="lg:hidden border-t border-brand-soft bg-brand-ink px-4 py-6 shadow-dark animate-in slide-in-from-top-4 duration-200">
           <div className="flex flex-col gap-2">
-            <Link
-              href="/"
-              className={cn(
-                "px-3 py-2.5 rounded-button text-sm uppercase tracking-wider font-display font-medium text-brand-light hover:text-white hover:bg-brand-soft",
-                pathname === "/" && "bg-brand-soft text-white"
-              )}
-            >
-              Home
-            </Link>
             {navLinks.map((link) => (
               <Link
                 key={link.name}
@@ -259,7 +260,7 @@ export function Navbar() {
 
             <div className="mt-4 pt-4 border-t border-brand-soft flex flex-col gap-2.5">
               <Button
-                href="https://chat.whatsapp.com/catalyst-crew-placeholder"
+                href="https://chat.whatsapp.com/JMueST1O52NEmwY7Xji92l"
                 isExternal
                 variant="primary"
                 size="md"

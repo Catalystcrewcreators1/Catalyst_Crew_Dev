@@ -53,7 +53,7 @@ export default function EventsPage() {
               CURRENT QUESTS
             </h1>
             <p className="mt-3 text-base text-brand-light/80 leading-relaxed">
-              Step into 48-hour build sprints, specialized engineering workshops, and competitive bounties. Official registrations are hosted via verified partners like Unstop.
+              Step into national hackathons, build sprints, and competitive quests. Official announcements, team coordination, and Round 1 PPT submissions are conducted via our verified community channels.
             </p>
           </div>
         </Container>
@@ -111,7 +111,11 @@ export default function EventsPage() {
       {/* Events Grid */}
       <section className="py-12 bg-brand-cream flex-1">
         <Container>
-          {filteredEvents.length > 0 ? (
+          {filteredEvents.length === 1 ? (
+            <div className="max-w-2xl mx-auto">
+              <EventCard key={filteredEvents[0].slug} event={filteredEvents[0]} />
+            </div>
+          ) : filteredEvents.length > 1 ? (
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
               {filteredEvents.map((event) => (
                 <EventCard key={event.slug} event={event} />

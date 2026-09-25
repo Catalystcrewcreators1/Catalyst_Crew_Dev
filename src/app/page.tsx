@@ -1,11 +1,14 @@
 import React from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { Container } from "@/components/ui/Container";
 import { Button } from "@/components/ui/Button";
 import { Badge } from "@/components/ui/Badge";
 import { SectionHeader } from "@/components/ui/SectionHeader";
 import { EventCard } from "@/components/events/EventCard";
+import { HeroEventCarousel } from "@/components/events/HeroEventCarousel";
 import { ProjectCard } from "@/components/showcase/ProjectCard";
+import { PartnerLogoCloud } from "@/components/ui/PartnerLogoCloud";
 import { eventsData } from "@/data/events";
 import { projectsData } from "@/data/projects";
 import {
@@ -23,6 +26,8 @@ import {
   GitBranch,
   Rocket,
   Compass,
+  MessageCircle,
+  ExternalLink,
 } from "lucide-react";
 
 export default function HomePage() {
@@ -59,110 +64,127 @@ export default function HomePage() {
     },
   ];
 
-  const loopSteps = [
-    { step: "01", name: "Discover", desc: "Discover upcoming hackathons, tool workshops, and real problem statements." },
-    { step: "02", name: "Join", desc: "Step into our WhatsApp and Discord hubs to find peer collaborators." },
-    { step: "03", name: "Learn", desc: "Access battle-tested roadmaps, masterclasses, and code review mentorship." },
-    { step: "04", name: "Build", desc: "Write actual code. Avoid tutorial paralysis by shipping functional products." },
-    { step: "05", name: "Compete", desc: "Test prototypes under pressure at 48-hour national hackathons." },
-    { step: "06", name: "Showcase", desc: "Put your GitHub repos and live demos on the national radar." },
-    { step: "07", name: "Connect", desc: "Direct interactions with engineering founders, mentors, and investors." },
-    { step: "08", name: "Grow", desc: "Unlock funded fellowships, high-growth internships, and career roles." },
-  ];
 
   return (
     <div className="flex flex-col">
       {/* HERO SECTION */}
-      <section className="relative overflow-hidden bg-brand-ink text-white pt-16 pb-20 md:pt-24 md:pb-28 border-b border-brand-soft">
+      <section className="relative overflow-hidden bg-brand-ink text-white pt-12 pb-18 md:pt-20 md:pb-24 border-b border-brand-soft">
         {/* Subtle grid pattern background */}
         <div className="absolute inset-0 bg-grid-dark opacity-50" />
         <div className="absolute top-1/4 -left-20 h-96 w-96 rounded-full bg-brand-red/10 blur-3xl pointer-events-none" />
         <div className="absolute bottom-10 right-0 h-80 w-80 rounded-full bg-brand-cream/5 blur-3xl pointer-events-none" />
 
         <Container className="relative z-10">
-          <div className="flex flex-col items-start max-w-4xl">
-            {/* Status indicator pill */}
-            <div className="mb-6 inline-flex items-center gap-2.5 rounded-full border border-brand-soft bg-brand-soft/90 px-3.5 py-1.5 text-xs font-mono">
-              <span className="relative flex h-2 w-2">
-                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
-                <span className="relative inline-flex rounded-full h-2 w-2 bg-emerald-500"></span>
-              </span>
-              <span className="text-brand-light/80 uppercase">WORLD LOADED</span>
-              <span className="text-brand-light/30">•</span>
-              <span className="text-emerald-400 font-semibold uppercase">COMMUNITY ONLINE</span>
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-8 items-center">
+            {/* Left Column (7 cols): Main Headline & CTAs */}
+            <div className="lg:col-span-7 flex flex-col items-start">
+              {/* Status indicator pill */}
+              <div className="mb-5 inline-flex items-center gap-2.5 rounded-full border border-brand-soft bg-brand-soft/90 px-3.5 py-1.5 text-xs font-mono">
+                <span className="relative flex h-2 w-2">
+                  <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
+                  <span className="relative inline-flex rounded-full h-2 w-2 bg-emerald-500"></span>
+                </span>
+                <span className="text-brand-light/80 uppercase">WORLD LOADED</span>
+                <span className="text-brand-light/30">•</span>
+                <span className="text-emerald-400 font-semibold uppercase">COMMUNITY ONLINE</span>
+              </div>
+
+              {/* Main Headline */}
+              <h1 className="font-display text-4xl sm:text-6xl lg:text-7xl font-extrabold tracking-tight text-white leading-[1.06]">
+                BUILD WHAT&apos;S <span className="text-brand-red">NEXT</span>.
+              </h1>
+
+              <p className="mt-5 text-base sm:text-lg text-brand-light/80 max-w-xl leading-relaxed font-sans">
+                Catalyst Crew is an authentic developer community for builders, innovators, and creators who don&apos;t just consume technology — they build with it.
+              </p>
+
+              {/* Call to Actions */}
+              <div className="mt-8 flex flex-wrap items-center gap-3 sm:gap-4 w-full sm:w-auto">
+                <Button
+                  href="https://chat.whatsapp.com/JMueST1O52NEmwY7Xji92l"
+                  isExternal
+                  variant="primary"
+                  size="lg"
+                  className="w-full sm:w-auto gap-2 text-sm"
+                >
+                  JOIN THE CREW
+                  <ArrowRight className="h-4 w-4" />
+                </Button>
+
+                <Button
+                  href="/events"
+                  variant="dark"
+                  size="lg"
+                  className="w-full sm:w-auto gap-2 text-sm border-brand-light/20 bg-brand-soft/80 hover:bg-brand-soft hover:border-brand-light/40"
+                >
+                  <Flame className="h-4 w-4 text-brand-red" />
+                  EXPLORE EVENTS
+                </Button>
+              </div>
+
+              {/* Trust badges */}
+              <div className="mt-8 flex flex-wrap items-center gap-x-5 gap-y-2 text-xs font-mono text-brand-light/60">
+                <div className="flex items-center gap-1.5">
+                  <CheckCircle className="h-3.5 w-3.5 text-brand-red" />
+                  <span>Catalyst Hack 2026 Online</span>
+                </div>
+                <div className="flex items-center gap-1.5">
+                  <CheckCircle className="h-3.5 w-3.5 text-brand-red" />
+                  <span>₹24,000 Cash Pool</span>
+                </div>
+                <div className="flex items-center gap-1.5">
+                  <CheckCircle className="h-3.5 w-3.5 text-brand-red" />
+                  <span>Working Prototypes Only</span>
+                </div>
+              </div>
             </div>
 
-            {/* Main Headline */}
-            <h1 className="font-display text-4xl sm:text-6xl md:text-7xl font-extrabold tracking-tight text-white leading-[1.08]">
-              BUILD WHAT&apos;S <span className="text-brand-red">NEXT</span>.
-            </h1>
-
-            <p className="mt-6 text-lg sm:text-xl text-brand-light/80 max-w-2xl leading-relaxed font-sans">
-              Catalyst Crew is an authentic developer community for builders, innovators, and creators who don&apos;t just consume technology — they build with it.
-            </p>
-
-            {/* Call to Actions */}
-            <div className="mt-8 flex flex-wrap items-center gap-3 sm:gap-4 w-full sm:w-auto">
-              <Button
-                href="https://chat.whatsapp.com/catalyst-crew-placeholder"
-                isExternal
-                variant="primary"
-                size="lg"
-                className="w-full sm:w-auto gap-2 text-sm"
-              >
-                JOIN THE CREW
-                <ArrowRight className="h-4 w-4" />
-              </Button>
-
-              <Button
-                href="/events"
-                variant="dark"
-                size="lg"
-                className="w-full sm:w-auto gap-2 text-sm border-brand-light/20 bg-brand-soft/80 hover:bg-brand-soft hover:border-brand-light/40"
-              >
-                <Flame className="h-4 w-4 text-brand-red" />
-                EXPLORE EVENTS
-              </Button>
+            {/* Right Column (5 cols): Interactive Event Showcase Terminal Window */}
+            <div className="lg:col-span-5 w-full">
+              <HeroEventCarousel events={eventsData} />
             </div>
+          </div>
 
-            {/* Quick Metrics Bar */}
-            <div className="mt-14 pt-8 border-t border-brand-soft/80 w-full grid grid-cols-2 sm:grid-cols-4 gap-6 text-left">
-              <div>
-                <div className="font-display text-2xl sm:text-3xl font-bold text-white">
-                  2,500+
-                </div>
-                <div className="text-xs uppercase font-mono tracking-wider text-brand-light/60 mt-1">
-                  Active Builders
-                </div>
+          {/* Quick Metrics Bar across full width */}
+          <div className="mt-14 pt-8 border-t border-brand-soft/80 w-full grid grid-cols-2 sm:grid-cols-4 gap-6 text-left">
+            <div>
+              <div className="font-display text-2xl sm:text-3xl font-bold text-white">
+                2,500+
               </div>
-              <div>
-                <div className="font-display text-2xl sm:text-3xl font-bold text-brand-red">
-                  ₹3,25,000+
-                </div>
-                <div className="text-xs uppercase font-mono tracking-wider text-brand-light/60 mt-1">
-                  Bounties Awarded
-                </div>
+              <div className="text-xs uppercase font-mono tracking-wider text-brand-light/60 mt-1">
+                Active Builders
               </div>
-              <div>
-                <div className="font-display text-2xl sm:text-3xl font-bold text-white">
-                  60+
-                </div>
-                <div className="text-xs uppercase font-mono tracking-wider text-brand-light/60 mt-1">
-                  Shipped Builds
-                </div>
+            </div>
+            <div>
+              <div className="font-display text-2xl sm:text-3xl font-bold text-brand-red">
+                ₹3,25,000+
               </div>
-              <div>
-                <div className="font-display text-2xl sm:text-3xl font-bold text-emerald-400">
-                  40+
-                </div>
-                <div className="text-xs uppercase font-mono tracking-wider text-brand-light/60 mt-1">
-                  Partner Colleges
-                </div>
+              <div className="text-xs uppercase font-mono tracking-wider text-brand-light/60 mt-1">
+                Bounties Awarded
+              </div>
+            </div>
+            <div>
+              <div className="font-display text-2xl sm:text-3xl font-bold text-white">
+                60+
+              </div>
+              <div className="text-xs uppercase font-mono tracking-wider text-brand-light/60 mt-1">
+                Shipped Builds
+              </div>
+            </div>
+            <div>
+              <div className="font-display text-2xl sm:text-3xl font-bold text-emerald-400">
+                40+
+              </div>
+              <div className="text-xs uppercase font-mono tracking-wider text-brand-light/60 mt-1">
+                Partner Colleges
               </div>
             </div>
           </div>
         </Container>
       </section>
+
+      {/* MINIMAL PARTNER LOGO STRIP */}
+      <PartnerLogoCloud />
 
       {/* CHOOSE YOUR PATH (PRD Section 8) */}
       <section className="py-20 bg-brand-cream border-b border-brand-light/80">
@@ -298,37 +320,6 @@ export default function HomePage() {
         </Container>
       </section>
 
-      {/* COMMUNITY PRODUCT LOOP (PRD Section 2 & 8) */}
-      <section className="py-20 bg-brand-cream border-b border-brand-light/80">
-        <Container>
-          <SectionHeader
-            align="center"
-            eyebrow="THE ENGINE"
-            title="The Builder Journey"
-            description="Our closed-loop ecosystem takes a student developer from finding an event to shipping software and getting hired."
-          />
-
-          <div className="mt-14 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
-            {loopSteps.map((step) => (
-              <div
-                key={step.step}
-                className="relative rounded-card border border-brand-light bg-brand-white p-5 transition-all hover:border-brand-ink/40"
-              >
-                <div className="font-mono text-xs font-bold text-brand-red">
-                  {step.step}
-                </div>
-                <h4 className="mt-1.5 font-display text-lg font-bold text-brand-ink">
-                  {step.name}
-                </h4>
-                <p className="mt-2 text-xs text-brand-neutral leading-relaxed">
-                  {step.desc}
-                </p>
-              </div>
-            ))}
-          </div>
-        </Container>
-      </section>
-
       {/* CURRENT QUESTS / EVENTS PREVIEW (PRD Section 8 & 10) */}
       <section className="py-20 bg-brand-white border-b border-brand-light/80">
         <Container>
@@ -344,11 +335,135 @@ export default function HomePage() {
             }
           />
 
-          <div className="mt-12 grid grid-cols-1 md:grid-cols-3 gap-6">
-            {featuredEvents.map((event) => (
-              <EventCard key={event.slug} event={event} />
-            ))}
-          </div>
+          {featuredEvents.length === 1 ? (
+            <div className="mt-10 rounded-card border border-brand-light bg-brand-white overflow-hidden shadow-subtle hover:shadow-card-hover transition-all">
+              <div className="grid grid-cols-1 lg:grid-cols-12 gap-0">
+                <div className="lg:col-span-5 relative min-h-[280px] lg:min-h-full overflow-hidden bg-brand-ink">
+                  <Image
+                    src={featuredEvents[0].image}
+                    alt={featuredEvents[0].title}
+                    fill
+                    className="object-cover"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-brand-ink via-brand-ink/40 to-transparent" />
+                  <div className="absolute top-4 left-4 flex items-center gap-2">
+                    <Badge variant="live">REGISTRATIONS OPEN</Badge>
+                    <span className="rounded bg-black/60 backdrop-blur-md px-2.5 py-1 text-[11px] font-mono uppercase tracking-wider text-white">
+                      Flagship Hackathon
+                    </span>
+                  </div>
+                  <div className="absolute bottom-4 left-4 right-4 rounded-lg bg-brand-ink/85 backdrop-blur-md border border-white/10 p-3.5 text-white">
+                    <div className="text-[10px] font-mono uppercase text-brand-light/60 tracking-wider">
+                      Total Cash Prize Pool
+                    </div>
+                    <div className="text-xl font-display font-extrabold text-amber-400">
+                      ₹28,000 Cash Pool
+                    </div>
+                    <div className="text-[11px] font-mono text-brand-light/80 mt-0.5">
+                      1st: ₹16K • 2nd: ₹8K • 3rd: ₹4K + E-Certificates
+                    </div>
+                  </div>
+                </div>
+
+                <div className="lg:col-span-7 p-6 sm:p-8 flex flex-col justify-between space-y-6">
+                  <div className="space-y-3">
+                    <div className="flex items-center gap-2 text-xs font-mono text-brand-red font-semibold uppercase tracking-wider">
+                      <span>{featuredEvents[0].tagline}</span>
+                      <span>•</span>
+                      <span>{featuredEvents[0].mode} (Discord)</span>
+                    </div>
+
+                    <h3 className="font-display text-2xl sm:text-3xl font-extrabold text-brand-ink">
+                      <Link href={`/events/${featuredEvents[0].slug}`} className="hover:text-brand-red transition-colors">
+                        {featuredEvents[0].title}
+                      </Link>
+                    </h3>
+
+                    <p className="text-sm text-brand-neutral leading-relaxed">
+                      {featuredEvents[0].description}
+                    </p>
+
+                    {/* Metadata pill grid */}
+                    <div className="grid grid-cols-2 sm:grid-cols-3 gap-2.5 pt-2 text-xs font-mono text-brand-neutral">
+                      <div className="rounded bg-brand-cream/60 border border-brand-light/80 p-2.5">
+                        <span className="text-[10px] text-brand-neutral/60 uppercase block">Starts On</span>
+                        <strong className="text-brand-ink">25 Sep 2026</strong>
+                      </div>
+                      <div className="rounded bg-brand-cream/60 border border-brand-light/80 p-2.5">
+                        <span className="text-[10px] text-brand-neutral/60 uppercase block">PPT Deadline</span>
+                        <strong className="text-brand-ink">20 Oct 2026</strong>
+                      </div>
+                      <div className="rounded bg-brand-cream/60 border border-brand-light/80 p-2.5 col-span-2 sm:col-span-1">
+                        <span className="text-[10px] text-brand-neutral/60 uppercase block">Team Size</span>
+                        <strong className="text-brand-ink">4 – 5 Members</strong>
+                      </div>
+                    </div>
+
+                    {/* 10 Themes Preview pills */}
+                    <div className="pt-2">
+                      <span className="text-[10px] font-mono uppercase text-brand-neutral/70 tracking-wider block mb-1.5 font-semibold">
+                        Challenge Tracks (10 Innovation Themes):
+                      </span>
+                      <div className="flex flex-wrap gap-1.5">
+                        {featuredEvents[0].themes?.slice(0, 5).map((theme) => (
+                          <span
+                            key={theme.title}
+                            className="rounded bg-brand-soft/10 text-brand-ink border border-brand-light px-2 py-0.5 text-[10px] font-mono"
+                          >
+                            {theme.title}
+                          </span>
+                        ))}
+                        <span className="rounded bg-brand-cream text-brand-red border border-brand-light px-2 py-0.5 text-[10px] font-mono font-bold">
+                          +5 More Tracks
+                        </span>
+                      </div>
+                    </div>
+                  </div>
+
+                  {/* Actions */}
+                  <div className="pt-4 border-t border-brand-light/80 flex flex-wrap items-center gap-3">
+                    <Button
+                      href={featuredEvents[0].registrationUrl}
+                      isExternal
+                      variant="primary"
+                      size="md"
+                      className="w-full sm:w-auto justify-center gap-2 shadow-md"
+                    >
+                      <span>REGISTER ON UNSTOP</span>
+                      <ExternalLink className="h-3.5 w-3.5" />
+                    </Button>
+
+                    <Button
+                      href={featuredEvents[0].whatsappUrl}
+                      isExternal
+                      variant="secondary"
+                      size="md"
+                      className="w-full sm:w-auto justify-center gap-2 bg-[#25D366] hover:bg-[#20ba5a] text-black font-bold border-none"
+                    >
+                      <MessageCircle className="h-4 w-4" />
+                      JOIN WHATSAPP GROUP
+                    </Button>
+
+                    <Button
+                      href={`/events/${featuredEvents[0].slug}`}
+                      variant="dark"
+                      size="md"
+                      className="w-full sm:w-auto justify-center gap-2"
+                    >
+                      QUEST OVERVIEW
+                      <ArrowRight className="h-3.5 w-3.5" />
+                    </Button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          ) : (
+            <div className="mt-12 grid grid-cols-1 md:grid-cols-3 gap-6">
+              {featuredEvents.map((event) => (
+                <EventCard key={event.slug} event={event} />
+              ))}
+            </div>
+          )}
         </Container>
       </section>
 
@@ -427,7 +542,7 @@ export default function HomePage() {
           </p>
           <div className="mt-8 flex flex-col sm:flex-row items-center justify-center gap-3">
             <Button
-              href="https://chat.whatsapp.com/catalyst-crew-placeholder"
+              href="https://chat.whatsapp.com/JMueST1O52NEmwY7Xji92l"
               isExternal
               variant="primary"
               size="lg"

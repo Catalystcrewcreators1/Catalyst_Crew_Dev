@@ -64,3 +64,23 @@
 ::-webkit-scrollbar-thumb:hover {
   background: #111111;
 }
+
+/* Infinite Marquee Runner */
+@keyframes marquee {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.animate-marquee-slow {
+  display: flex;
+  width: max-content;
+  animation: marquee 35s linear infinite;
+}
+
+.animate-marquee-slow:hover {
+  animation-play-state: paused;
+}

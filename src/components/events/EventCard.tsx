@@ -22,30 +22,42 @@ export function EventCard({ event, featured = false }: EventCardProps) {
   return (
     <div className="group relative flex flex-col overflow-hidden rounded-card border border-brand-light bg-brand-white transition-all duration-300 hover:-translate-y-1 hover:border-brand-ink/40 hover:shadow-card-hover">
       {/* Event Header Image */}
-      <div className="relative h-48 w-full overflow-hidden bg-brand-soft sm:h-52">
+      <div className="relative aspect-[1024/385] w-full overflow-hidden bg-black">
         <Image
           src={event.image}
           alt={event.title}
           fill
           className="object-cover transition-transform duration-500 group-hover:scale-105"
         />
-        <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent" />
+        {event.slug !== "catalyst-hack-2026" && (
+          <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent" />
+        )}
 
-        {/* Top Badges */}
-        <div className="absolute top-3 left-3 right-3 flex items-center justify-between">
-          <Badge variant={statusBadgeVariant}>
-            {event.status.toUpperCase()}
-          </Badge>
-          <span className="rounded bg-black/60 backdrop-blur-md px-2.5 py-1 text-[11px] font-mono uppercase tracking-wider text-white">
-            {event.category}
-          </span>
-        </div>
+        {/* Badges Overlay for standard cards */}
+        {event.slug !== "catalyst-hack-2026" ? (
+          <>
+            <div className="absolute top-3 left-3 right-3 flex items-center justify-between">
+              <Badge variant={statusBadgeVariant}>
+                {event.status.toUpperCase()}
+              </Badge>
+              <span className="rounded bg-black/60 backdrop-blur-md px-2.5 py-1 text-[11px] font-mono uppercase tracking-wider text-white">
+                {event.category}
+              </span>
+            </div>
 
-        {/* Prize Overlay Banner if available */}
-        {event.prize && (
-          <div className="absolute bottom-3 left-3 right-3 flex items-center gap-1.5 text-xs font-mono font-semibold text-white drop-shadow">
-            <Trophy className="h-4 w-4 text-amber-400 shrink-0" />
-            <span className="truncate">{event.prize}</span>
+            {event.prize && (
+              <div className="absolute bottom-3 left-3 right-3 flex items-center gap-1.5 text-xs font-mono font-semibold text-white drop-shadow">
+                <Trophy className="h-4 w-4 text-amber-400 shrink-0" />
+                <span className="truncate">{event.prize}</span>
+              </div>
+            )}
+          </>
+        ) : (
+          <div className="absolute top-2 right-2">
+            <span className="inline-flex items-center gap-1.5 rounded-full bg-emerald-950/80 backdrop-blur-md border border-emerald-500/50 px-2.5 py-0.5 text-[9px] font-mono uppercase tracking-wider text-emerald-300 font-bold shadow-lg">
+              <span className="h-1.5 w-1.5 rounded-full bg-emerald-400 animate-ping" />
+              LIVE
+            </span>
           </div>
         )}
       </div>
@@ -96,7 +108,7 @@ export function EventCard({ event, featured = false }: EventCardProps) {
               variant="primary"
               size="sm"
               className="gap-1 px-3"
-              title="Register on Unstop"
+              title="Join & Register"
             >
               <span>Register</span>
               <ExternalLink className="h-3 w-3" />

@@ -1,3 +1,14 @@
+export interface EventTheme {
+  title: string;
+  description: string;
+}
+
+export interface PptSlide {
+  slideNumber: number;
+  title: string;
+  description: string;
+}
+
 export interface Event {
   slug: string;
   title: string;
@@ -8,14 +19,20 @@ export interface Event {
   time: string;
   mode: "Online" | "In-Person" | "Hybrid";
   location: string;
+  organizer: string;
   eligibility: string;
   teamSize: string;
   prize: string;
   registrationUrl: string;
+  whatsappUrl: string;
   image: string;
   description: string;
   about: string;
+  organizerAbout: string;
   whyParticipate: string[];
+  themes: EventTheme[];
+  pptStructure: PptSlide[];
+  eliminationCriteria: string[];
   problemStatements: {
     title: string;
     description: string;
@@ -29,6 +46,7 @@ export interface Event {
   rounds: {
     name: string;
     duration: string;
+    fee?: string;
     description: string;
   }[];
   prizesBreakdown: {
@@ -57,263 +75,312 @@ export interface Event {
 export const eventsData: Event[] = [
   {
     slug: "catalyst-hack-2026",
-    title: "Catalyst Hack 2026: Genesis",
-    tagline: "48-Hour National Flagship Hackathon for Bold Builders",
-    status: "upcoming",
-    category: "Hackathon",
-    date: "October 18 - 20, 2026",
-    time: "Starts 6:00 PM IST",
-    mode: "Hybrid",
-    location: "Bengaluru Tech Hub & Discord",
-    eligibility: "Open to all college students & early-career developers",
-    teamSize: "2 - 4 Builders",
-    prize: "₹1,50,000 + Grants & Cloud Credits",
-    registrationUrl: "https://unstop.com",
-    image: "https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&w=1200&q=80",
-    description:
-      "Our premier 48-hour build sprint bringing together the most relentless developers, designers, and systems architects to ship real-world products in AI, Web3, and Open Infrastructure.",
-    about:
-      "Catalyst Hack Genesis isn't another pitch deck competition. We strictly evaluate working code, deployed prototypes, and real architecture. Whether you're building agentic AI workflows, decentralized micro-economies, or high-performance developer tools, this is your launchpad.",
-    whyParticipate: [
-      "Ship a production-grade product in 48 intense hours with peers.",
-      "1-on-1 direct access to top engineering mentors and founders.",
-      "Cash pool of ₹1,50,000 distributed among top 3 teams and track winners.",
-      "Fast-track interview opportunities with our partner startups & dev-tool sponsors.",
-      "Exclusive swag packs, custom mechanical keyboard accessories, and verified builder badges.",
-    ],
-    problemStatements: [
-      {
-        title: "Autonomous Developer Productivity Agents",
-        description:
-          "Build autonomous agents that index local workspaces, resolve pull requests, auto-generate deterministic tests, or orchestrate multi-modal code review pipelines.",
-        tags: ["LLMs", "DevTools", "TypeScript", "Python"],
-      },
-      {
-        title: "Decentralized Trust & Micro-Payment Protocols",
-        description:
-          "Design zero-latency micropayment primitives or verifiable credentials for open developer collaboration and bounty settlement.",
-        tags: ["Web3", "Solidity", "Rust", "Cryptography"],
-      },
-      {
-        title: "Next-Gen Local-First Collaborative Software",
-        description:
-          "Create resilient, offline-capable productivity tools using CRDTs (Conflict-free Replicated Data Types) and peer-to-peer sync protocols.",
-        tags: ["CRDT", "WebSockets", "React", "WASM"],
-      },
-    ],
-    timeline: [
-      { phase: "Registrations Open", date: "Sep 25, 2026", description: "Team registration & initial idea briefing on Unstop." },
-      { phase: "Team Formation & Warm-up", date: "Oct 12, 2026", description: "Discord matchmaking sessions and mentor AMAs." },
-      { phase: "Hackathon Kickoff", date: "Oct 18, 2026 (6:00 PM)", description: "Opening ceremony, problem release, hacking starts." },
-      { phase: "Mid-way Architecture Review", date: "Oct 19, 2026 (12:00 PM)", description: "Mentors review repo architectures and give feedback." },
-      { phase: "Submission & Demos", date: "Oct 20, 2026 (6:00 PM)", description: "Code freeze, live demos, and jury deliberation." },
-    ],
-    rounds: [
-      {
-        name: "Round 1: Architecture Proposal",
-        duration: "Online Screening",
-        description: "Submit a 1-page architecture breakdown, tech stack justification, and Github team roster.",
-      },
-      {
-        name: "Round 2: 48-Hour Live Build Sprint",
-        duration: "48 Hours",
-        description: "Intense coding sprint with hourly commit milestones and mentor checkpoints.",
-      },
-      {
-        name: "Grand Finale: Demo Day & Jury Pitch",
-        duration: "3 Hours",
-        description: "Top 10 teams pitch working software live to industry judges and VC investors.",
-      },
-    ],
-    prizesBreakdown: [
-      { rank: "Overall Winner (1st Place)", amount: "₹75,000", perks: "Cloud credits ($5,000), incubation fast-track, hardware perks." },
-      { rank: "1st Runner Up", amount: "₹40,000", perks: "Cloud credits ($2,500), founder mentorship sessions, custom swag." },
-      { rank: "2nd Runner Up", amount: "₹20,000", perks: "Cloud credits ($1,000), exclusive developer tool subscriptions." },
-      { rank: "Best Agentic AI Build", amount: "₹15,000", perks: "Special track award sponsored by AI partner." },
-    ],
-    judgingCriteria: [
-      { title: "Technical Complexity & Execution", weight: "35%", description: "Code quality, architecture resilience, and use of modern patterns." },
-      { title: "Functionality & Working Prototype", weight: "30%", description: "Does the demo actually work live without pre-baked mockups?" },
-      { title: "Originality & Problem Relevance", weight: "20%", description: "Is this solving an authentic, high-friction pain point?" },
-      { title: "UI/UX & Developer Ergonomics", weight: "15%", description: "Intuitive interface, clean typography, responsive design." },
-    ],
-    rules: [
-      "All code must be written during the 48-hour hacking window. Pre-built templates require disclosure.",
-      "Open-source libraries and APIs are fully encouraged; plagarism results in immediate disqualification.",
-      "Teams must consist of 2 to 4 eligible members with verified GitHub accounts.",
-      "Every project must feature a public GitHub repo with a comprehensive README and deploy link.",
-    ],
-    mentors: [
-      { name: "Ashwin S.", role: "Co-Founder & CTO", org: "Catalyst Crew", avatar: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=200&q=80" },
-      { name: "Neha Verma", role: "Staff AI Engineer", org: "HyperScale AI", avatar: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=200&q=80" },
-      { name: "Rohan Nair", role: "Principal Architect", org: "Kernel Distributed", avatar: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=200&q=80" },
-    ],
-    faqs: [
-      { question: "Is there any registration fee?", answer: "No, Catalyst Hack is completely free for all verified participants." },
-      { question: "Can I participate if I don't have a team yet?", answer: "Yes! Once you register, join our Discord server where we host structured team-formation rooms." },
-      { question: "Can beginners participate?", answer: "Absolutely. We provide dedicated mentor hours and workshops to help first-time hackathon attendees." },
-    ],
-  },
-  {
-    slug: "rust-systems-bootcamp",
-    title: "Rust Systems Deep Dive: Zero to Kernel",
-    tagline: "4-Week Intensive Systems Engineering Series",
-    status: "upcoming",
-    category: "Workshop",
-    date: "November 05 - 26, 2026",
-    time: "Every Saturday 11:00 AM IST",
-    mode: "Online",
-    location: "Live Stream + Private Workspace",
-    eligibility: "Developers with intermediate programming experience",
-    teamSize: "Individual",
-    prize: "Certificates of Mastery + Bounty Pool",
-    registrationUrl: "https://unstop.com",
-    image: "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?auto=format&fit=crop&w=1200&q=80",
-    description:
-      "Master memory safety, concurrency, async runtimes, and low-level networking in Rust. Built for developers eager to move beyond scripting languages into systems engineering.",
-    about:
-      "A hands-on, project-heavy masterclass. You will implement an in-memory key-value database, a custom async task executor, and a high-throughput HTTP/TCP proxy from raw sockets.",
-    whyParticipate: [
-      "Understand the Rust memory model: Borrow checker, lifetimes, and unsafe boundaries.",
-      "Build 3 non-trivial systems projects from scratch for your portfolio.",
-      "Code reviews conducted by production systems engineers.",
-    ],
-    problemStatements: [
-      {
-        title: "Mini-Redis In-Memory Engine",
-        description: "Implement a thread-safe RESP-compliant key-value cache with LRU eviction.",
-        tags: ["Rust", "Concurrency", "Networking"],
-      },
-    ],
-    timeline: [
-      { phase: "Week 1", date: "Nov 05", description: "Ownership, Borrowing, Structs & Traits deep-dive." },
-      { phase: "Week 2", date: "Nov 12", description: "Concurrency, Channels, Mutexes, and Multi-threading." },
-      { phase: "Week 3", date: "Nov 19", description: "Async Rust, Tokio internals, and custom futures." },
-      { phase: "Week 4", date: "Nov 26", description: "Final capstone project submission & code audits." },
-    ],
-    rounds: [
-      { name: "Phase 1: Foundations", duration: "1 Week", description: "Idiomatic Rust code and borrow checker fluency." },
-      { name: "Phase 2: Network Primitives", duration: "2 Weeks", description: "Socket programming and asynchronous I/O." },
-      { name: "Phase 3: Capstone Defense", duration: "1 Week", description: "Live demonstration of performance benchmarks." },
-    ],
-    prizesBreakdown: [
-      { rank: "Top Capstone Award", amount: "₹20,000", perks: "Full Rust book bundle, sponsored conference ticket." },
-    ],
-    judgingCriteria: [
-      { title: "Benchmarked Throughput", weight: "40%", description: "RPS and memory footprint under high concurrency." },
-      { title: "Idiomatic Architecture", weight: "40%", description: "Clean usage of error handling, traits, and zero-cost abstractions." },
-      { title: "Documentation & Test Suite", weight: "20%", description: "Unit tests, integration tests, and fuzzing." },
-    ],
-    rules: [
-      "Assignments must compile on stable Rust 1.82+ without unchecked warnings.",
-      "All submissions must pass automated criterion benchmarks.",
-    ],
-    mentors: [
-      { name: "Aditya Roy", role: "Systems Engineer", org: "CloudMesh", avatar: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=200&q=80" },
-    ],
-    faqs: [
-      { question: "Do I need prior Rust experience?", answer: "No, but you should know at least one compiled language (C++, Go, Java) or have solid Python/JS background." },
-    ],
-  },
-  {
-    slug: "agentic-ai-hack",
-    title: "Autonomous Agentic AI Sprint",
-    tagline: "Building Multi-Agent Swarms with Real-World Tooling",
+    title: "Catalyst Hack 2026",
+    tagline: "IDEATE • BUILD • IMPACT",
     status: "live",
     category: "Hackathon",
-    date: "September 22 - 25, 2026",
-    time: "Ongoing Live",
+    date: "Sep 25 - Oct 25, 2026",
+    time: "Registrations Open",
     mode: "Online",
-    location: "Global Discord & GitHub",
-    eligibility: "Open to worldwide builders",
-    teamSize: "1 - 3 Builders",
-    prize: "₹75,000 + $10,000 API Credits",
-    registrationUrl: "https://unstop.com",
-    image: "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=1200&q=80",
+    location: "Fully Online (Discord & Video Stream)",
+    organizer: "Catalyst Crew Dev Community",
+    eligibility: "Student developers, innovators, designers & tech enthusiasts from all branches, years & colleges",
+    teamSize: "Minimum 4 – Maximum 5 Members",
+    prize: "₹24,000 Cash Pool + E-Certificates",
+    registrationUrl: "https://unstop.com/p/catalyst-hack-2026-catalyst-crew-dev-community-1760000",
+    whatsappUrl: "https://chat.whatsapp.com/JMueST1O52NEmwY7Xji92l",
+    image: "/catalyst-hack-banner.jpg",
     description:
-      "A fast-paced 72-hour virtual build sprint focusing on autonomous multi-agent systems, function calling, vector indexes, and self-correcting code loops.",
+      "Catalyst Hack 2026 is a fully online technology and innovation hackathon designed to turn meaningful ideas into practical, scalable, and impactful solutions. Organized in collaboration with Rosterwa, the event brings together student developers, innovators, designers, and technology enthusiasts to solve real-world problems through collaboration and hands-on building.",
     about:
-      "Agents are shifting from toy chatbots to production systems that execute code, query internal databases, and collaborate. In this sprint, build real agents that accomplish non-trivial human workflows.",
+      "Teams progress through an online PPT and idea screening round, a mentor-screening semi-final, and a 10-hour final hackathon sprint. Shortlisted teams present their ideas, explain technical feasibility, and build working prototypes for final evaluation. Participants must follow the event rules, submit required deliverables on time, and maintain originality and professional conduct throughout the competition.",
+    organizerAbout:
+      "Catalyst Crew Dev Community × Rosterwa are the organizing partners behind Catalyst Hack 2026, focused on bringing student developers, innovators, and technology enthusiasts together through collaborative learning, technical activities, community initiatives, and innovation-driven events.",
     whyParticipate: [
-      "Instant access to $500 free LLM API credits per shortlisted team.",
-      "Live office hours with AI researchers and prompt engineers.",
-      "Showcase your agent directly to VC scouts looking for early-stage AI founders.",
+      "Turn your raw idea into a production-grade working prototype evaluated by tech mentors.",
+      "Cash prize pool of ₹24,000 awarded directly to top 3 winning teams.",
+      "Official E-Certificates awarded to all Semi-Finalist and Finalist participants.",
+      "Rigorous 3-stage format: PPT Ideation, Mentor Screening, and a 10-Hour Live Build Sprint.",
+      "Connect with passionate student developers and tech leaders across colleges nationwide.",
+    ],
+    themes: [
+      {
+        title: "AI for Humanity",
+        description: "Deploy machine learning and AI algorithms to tackle critical human, health, and accessibility challenges.",
+      },
+      {
+        title: "ClimateTech & Sustainability",
+        description: "Build software solutions for renewable energy optimization, carbon tracking, waste reduction, and ecology.",
+      },
+      {
+        title: "Future of Education",
+        description: "Pioneer adaptive learning systems, interactive student tools, and inclusive open education platforms.",
+      },
+      {
+        title: "FinTech & Financial Inclusion",
+        description: "Democratize modern financial services, fraud detection, automated accounting, and secure micro-transactions.",
+      },
+      {
+        title: "Cybersecurity & Digital Trust",
+        description: "Fortify user privacy, zero-trust systems, data sovereignty, and proactive threat detection engines.",
+      },
+      {
+        title: "Smart Cities & CivicTech",
+        description: "Engineer civic infrastructure tools, smart traffic coordination, municipal utility tech, and public transparency apps.",
+      },
+      {
+        title: "AgriTech & Rural Innovation",
+        description: "Empower farmers and rural economies with smart yield forecasting, precision irrigation, and supply chain tracking.",
+      },
+      {
+        title: "AI Agents & Autonomous Systems",
+        description: "Create autonomous multi-agent swarms, self-correcting workflows, and specialized robotic or desktop assistants.",
+      },
+      {
+        title: "Blockchain for Real-World Impact",
+        description: "Leverage tamper-proof distributed ledgers, verifiable credentials, and decentralized coordination protocols.",
+      },
+      {
+        title: "Open Innovation",
+        description: "Have a unique disruptive breakthrough that crosses boundaries? Build any high-impact solution you envision.",
+      },
+    ],
+    pptStructure: [
+      {
+        slideNumber: 1,
+        title: "Title & Team Introduction",
+        description: "Event name, project title, team name, member names, roles, college/branch details, and contact info.",
+      },
+      {
+        slideNumber: 2,
+        title: "Problem Statement & Target Users",
+        description: "Clear articulation of the real-world pain point, affected user demographic, and why existing solutions fall short.",
+      },
+      {
+        slideNumber: 3,
+        title: "Proposed Solution",
+        description: "High-level overview of your solution, core value proposition, and how it directly solves the problem.",
+      },
+      {
+        slideNumber: 4,
+        title: "Key Features & Innovation",
+        description: "Breakdown of 3-5 primary features, novelty, unique angle, and competitive differentiation.",
+      },
+      {
+        slideNumber: 5,
+        title: "Technology Stack & Architecture",
+        description: "Frontend, backend, database, AI/ML models, external APIs, and system architecture diagram.",
+      },
+      {
+        slideNumber: 6,
+        title: "Impact, Feasibility & Scalability",
+        description: "Practical utility, measurable positive impact, technical execution feasibility, and roadmap to scale.",
+      },
+      {
+        slideNumber: 7,
+        title: "Prototype, Future Roadmap & Conclusion",
+        description: "Working demo/mockup screenshots, what will be built in the 8h final sprint, future vision, and conclusion.",
+      },
+    ],
+    eliminationCriteria: [
+      "Failure to submit deliverables (PPT, prototype, repo) within the specified deadlines.",
+      "Found guilty of plagiarism, unfair practices, or unauthorized reuse of existing code/solutions without disclosure.",
+      "Violation of event rules, code of conduct, or displaying unprofessional behavior.",
+      "Missing mandatory online presentations, mentor screening rounds, or final demonstrations.",
+      "Providing false, inaccurate, or misleading registration/team information.",
     ],
     problemStatements: [
       {
-        title: "Autonomous Code Refactoring Agent",
-        description: "An agent that scans repos for deprecated patterns, opens branch PRs, and verifies tests.",
-        tags: ["Agents", "TypeScript", "LangChain", "OpenAI"],
+        title: "AI for Humanity & Public Impact",
+        description:
+          "Develop intelligent assistive systems, healthcare accessibility tools, or societal welfare platforms using applied artificial intelligence.",
+        tags: ["AI/ML", "Healthcare", "Accessibility", "Public Good"],
+      },
+      {
+        title: "ClimateTech, Sustainability & Smart Cities",
+        description:
+          "Design scalable systems for municipal resource optimization, carbon lifecycle tracking, or sustainable renewable energy distribution.",
+        tags: ["IoT", "Sustainability", "CivicTech", "CleanTech"],
+      },
+      {
+        title: "FinTech, Digital Trust & Cyber Resilience",
+        description:
+          "Build fraud-resistant payment flows, decentralized identity systems, or zero-trust security tools that protect digital citizens.",
+        tags: ["FinTech", "Security", "Cryptography", "Blockchain"],
+      },
+      {
+        title: "Autonomous AI Agents & Open Innovation",
+        description:
+          "Build self-executing agent swarms, automated workflow orchestrators, or ambitious cross-domain applications that redefine software interaction.",
+        tags: ["AI Agents", "LLMs", "Automation", "Open Innovation"],
       },
     ],
     timeline: [
-      { phase: "Day 1", date: "Sep 22", description: "Kickoff & API keys distribution." },
-      { phase: "Day 2", date: "Sep 23", description: "Agent Architecture checkpoints." },
-      { phase: "Day 3", date: "Sep 24", description: "Submission deadline (11:59 PM IST)." },
-      { phase: "Day 4", date: "Sep 25", description: "Live streamed demos on YouTube." },
+      {
+        phase: "Registration Opens",
+        date: "25 September 2026",
+        description: "Official registrations open. Form teams of 4–5 members and join the official WhatsApp community group.",
+      },
+      {
+        phase: "Registration & Round 1 PPT Deadline",
+        date: "20 October 2026",
+        description: "Final deadline for registration and submission of the 7-slide Round 1 Idea & Architecture presentation.",
+      },
+      {
+        phase: "Round 2: Semi-Final (Online Mentor Screening)",
+        date: "24 October 2026",
+        description: "Shortlisted teams present solutions to mentors for feasibility, scalability, and execution review (₹80/member fee).",
+      },
+      {
+        phase: "Round 3: Final Hackathon (10-Hour Sprint & Demos)",
+        date: "25 October 2026",
+        description: "Selected finalists participate in an intensive 10-hour live online build sprint, code submission, and final jury pitch.",
+      },
     ],
     rounds: [
-      { name: "Live Sprint", duration: "72 Hours", description: "Build and deploy public demo." },
-    ],
-    prizesBreakdown: [
-      { rank: "Winner", amount: "₹50,000", perks: "$5,000 API Credits" },
-      { rank: "Runner Up", amount: "₹25,000", perks: "$3,000 API Credits" },
-    ],
-    judgingCriteria: [
-      { title: "Reliability & Hallucination Rate", weight: "40%", description: "Does the agent gracefully recover from tool errors?" },
-      { title: "Utility & Innovation", weight: "40%", description: "Clear utility over standard chat." },
-      { title: "Latency & Cost Optimization", weight: "20%", description: "Efficient token usage." },
-    ],
-    rules: ["Demo must be accessible online via public URL."],
-    mentors: [
-      { name: "Samriddhi", role: "Co-Founder & CCO", org: "Catalyst Crew", avatar: "https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&w=200&q=80" },
-    ],
-    faqs: [
-      { question: "Where do we submit?", answer: "Submit the GitHub URL and hosted web demo on Unstop before the deadline." },
-    ],
-  },
-  {
-    slug: "web3-infra-challenge",
-    title: "Web3 Infrastructure & Cryptography Quest",
-    tagline: "Zero-Knowledge Proofs & Scalable Rollup Primitives",
-    status: "ended",
-    category: "Challenge",
-    date: "August 10 - 15, 2026",
-    time: "Archived",
-    mode: "Online",
-    location: "Global Virtual",
-    eligibility: "Smart contract & protocol developers",
-    teamSize: "1 - 2 Builders",
-    prize: "₹1,00,000 Awarded",
-    registrationUrl: "https://unstop.com",
-    image: "https://images.unsplash.com/photo-1639762681485-074b7f938ba0?auto=format&fit=crop&w=1200&q=80",
-    description:
-      "A competitive algorithmic challenge focused on implementing zk-SNARK circuits for private state verification and high-efficiency rollup compression.",
-    about:
-      "Completed in August 2026 with 320+ participating protocol engineers from across India and Southeast Asia. Over 45 production circuits were benchmarked.",
-    whyParticipate: [
-      "Archived challenge for educational review.",
-      "Access verified solution write-ups and benchmark test suits.",
-    ],
-    problemStatements: [
       {
-        title: "Private Membership Verification via Circom",
-        description: "Prove membership in an off-chain Merkle tree without revealing identity.",
-        tags: ["Circom", "zk-SNARK", "Solidity"],
+        name: "Round 1: Online PPT & Idea Submission",
+        duration: "Until 20 Oct 2026",
+        fee: "Free",
+        description:
+          "Teams submit a concise 7-slide presentation covering problem understanding, target users, proposed solution, innovation, technology stack, impact, feasibility, and prototype roadmap.",
+      },
+      {
+        name: "Round 2: Semi-Final (Mentor Screening)",
+        duration: "24 Oct 2026",
+        fee: "₹80 per member",
+        description:
+          "Shortlisted teams participate in an online mentor screening involving a solution pitch, technical discussion, feasibility, scalability, and execution-readiness assessment.",
+      },
+      {
+        name: "Round 3: Final Hackathon (10-Hour Sprint)",
+        duration: "25 Oct 2026 (10 Hours)",
+        fee: "Qualified Finalists",
+        description:
+          "Selected finalist teams participate in a 10-hour online build sprint and submit a working prototype, public repository, documentation, and live final presentation to the judging panel.",
       },
     ],
-    timeline: [
-      { phase: "Concluded", date: "Aug 15, 2026", description: "Prizes distributed & solutions open-sourced." },
+    prizesBreakdown: [
+      {
+        rank: "1st Winner (Champion)",
+        amount: "₹12,000",
+        perks: "Cash prize, Official Winner E-Certificate, featured spot in Catalyst Crew Showcase & community spotlight.",
+      },
+      {
+        rank: "Runner-Up (2nd Place)",
+        amount: "₹8,000",
+        perks: "Cash prize, Runner-Up E-Certificate, mentor network access & partner perks.",
+      },
+      {
+        rank: "2nd Runner-Up (3rd Place)",
+        amount: "₹4,000",
+        perks: "Cash prize, 2nd Runner-Up E-Certificate & community builder badge.",
+      },
+      {
+        rank: "Semi-Finalists & Finalists",
+        amount: "E-Certificates",
+        perks: "Official verified E-Certificates recognizing rigorous evaluation and participation in Catalyst Hack 2026.",
+      },
     ],
-    rounds: [{ name: "Final Evaluation", duration: "Completed", description: "Automated cryptographic test suite." }],
-    prizesBreakdown: [{ rank: "1st Place Winner", amount: "₹60,000", perks: "Awarded to Team ZeroProof" }],
-    judgingCriteria: [{ title: "Constraint Count Optimization", weight: "50%", description: "Lowest circuit constraints." }],
-    rules: ["All winning solutions have been published in our showcase."],
+    judgingCriteria: [
+      {
+        title: "Innovation & Originality",
+        weight: "20%",
+        description: "Uniqueness of idea, creative problem-solving approach, and distinctive technological differentiation.",
+      },
+      {
+        title: "Solution Quality",
+        weight: "20%",
+        description: "Depth of the proposed solution, UX considerations, robustness, and architectural completeness.",
+      },
+      {
+        title: "Problem Understanding",
+        weight: "15%",
+        description: "Clear grasp of the user pain point, market context, relevance, and authenticity of the challenge.",
+      },
+      {
+        title: "Technical Feasibility",
+        weight: "15%",
+        description: "Viability of the chosen tech stack, architecture soundness, and realistic execution capability.",
+      },
+      {
+        title: "Impact / Usefulness",
+        weight: "10%",
+        description: "Measurable real-world benefits to end-users, societal or industrial value, and practical utility.",
+      },
+      {
+        title: "Scalability",
+        weight: "10%",
+        description: "Potential of the solution to grow, handle higher loads, and transition into a viable production product.",
+      },
+      {
+        title: "Presentation Clarity",
+        weight: "10%",
+        description: "Structure, articulation, visual quality of slides, demo delivery, and effective Q&A defense.",
+      },
+    ],
+    rules: [
+      "Each team must consist of 4 to 5 members.",
+      "Team members may belong to different branches, academic years, or colleges (cross-college teams are fully permitted).",
+      "No team member changes are allowed after registration without explicit prior organizer approval.",
+      "Participants must provide accurate registration and contact information.",
+      "All required work and submissions (PPT, code repositories, prototypes) must be completed within the specified deadlines.",
+      "Plagiarism, code copying, or reuse of existing solutions without proper disclosure is strictly prohibited and leads to immediate disqualification.",
+      "AI tools, modern frameworks, APIs, and open-source libraries are permitted subject to published community policy and full disclosure.",
+      "Participants must maintain professional conduct and collaborative spirit throughout the event.",
+      "Any violation of rules or ethical standards will result in immediate disqualification.",
+    ],
     mentors: [
-      { name: "Aviral", role: "COO", org: "Catalyst Crew", avatar: "https://images.unsplash.com/photo-1522075469751-3a6694fb2f61?auto=format&fit=crop&w=200&q=80" },
+      {
+        name: "Catalyst Crew Technical Jury",
+        role: "Evaluators & Systems Mentors",
+        org: "Catalyst Crew Dev Community",
+        avatar: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=200&q=80",
+      },
+      {
+        name: "Industry Innovation Panel",
+        role: "Senior Architects & Founders",
+        org: "Partner Tech Network",
+        avatar: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=200&q=80",
+      },
+      {
+        name: "Community Mentorship Leads",
+        role: "Full-Stack & AI Specialists",
+        org: "Catalyst Crew",
+        avatar: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=200&q=80",
+      },
     ],
     faqs: [
-      { question: "Can I still view the problem statement?", answer: "Yes, all materials are preserved in our Resources archive." },
+      {
+        question: "How do I register for Catalyst Hack 2026?",
+        answer:
+          "You can register directly through the official Unstop portal (https://unstop.com/p/catalyst-hack-2026-catalyst-crew-dev-community-1760000). All registered participants are also required to join our official WhatsApp group (https://chat.whatsapp.com/JMueST1O52NEmwY7Xji92l) where screening links, deadlines, and PPT submission portals are shared.",
+      },
+      {
+        question: "What is the team size requirement?",
+        answer:
+          "Each team must have a minimum of 4 and a maximum of 5 members. Cross-college and cross-year teams are completely allowed.",
+      },
+      {
+        question: "Is there any fee to participate in Catalyst Hack 2026?",
+        answer:
+          "Round 1 (Registration and 7-slide PPT submission) is completely FREE. Teams that qualify for Round 2 (Semi-Final mentor screening) have a nominal participation fee of ₹80 per member.",
+      },
+      {
+        question: "What is the format of Round 1 PPT submission?",
+        answer:
+          "Teams must submit a 7-slide deck covering: Slide 1 (Title & Team Intro), Slide 2 (Problem & Target Users), Slide 3 (Proposed Solution), Slide 4 (Key Features & Innovation), Slide 5 (Tech Stack & Architecture), Slide 6 (Impact & Scalability), and Slide 7 (Prototype & Roadmap).",
+      },
+      {
+        question: "Is the hackathon completely online?",
+        answer:
+          "Yes! Catalyst Hack 2026 is 100% online. Mentor screening, reviews, and the 8-hour final hackathon build sprint take place over Discord and live video streams.",
+      },
+      {
+        question: "Can I use AI tools and open-source libraries?",
+        answer:
+          "Yes, AI tools, public APIs, and open-source libraries are permitted, provided you disclose them in your tech stack. However, direct copying of existing repositories or pre-built complete apps without disclosure is strictly banned.",
+      },
     ],
   },
 ];

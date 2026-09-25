@@ -42,7 +42,7 @@ export default function ContactPage() {
       title: "WhatsApp Community",
       email: "Direct Join Link",
       desc: "Join our active announcement groups and chat channels.",
-      link: "https://chat.whatsapp.com/catalyst-crew-placeholder",
+      link: "https://chat.whatsapp.com/JMueST1O52NEmwY7Xji92l",
       icon: MessageSquare,
     },
   ];
