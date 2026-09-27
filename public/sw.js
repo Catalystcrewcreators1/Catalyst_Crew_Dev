@@ -10,7 +10,7 @@ self.addEventListener('activate', (event) => {
     }).then((clients) => {
       clients.forEach((client) => {
         if (client.url && 'navigate' in client) {
-          // Unregistered
+          // Unregisteredjk
         }
       });
     })
