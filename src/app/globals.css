@@ -14,7 +14,7 @@
 
 @layer base {
   * {
-    @apply border-brand-border;
+    @apply border-brand-ink;
   }
   
   html {
@@ -24,41 +24,46 @@
   body {
     background-color: var(--color-cream);
     color: var(--color-ink);
-    font-family: var(--font-inter), -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    font-family: var(--font-dm-sans), -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
   }
 
   h1, h2, h3, h4, h5, h6 {
-    font-family: var(--font-space-grotesk), sans-serif;
+    font-family: var(--font-bricolage), sans-serif;
     letter-spacing: -0.02em;
   }
 }
 
-/* Subtle editorial dot-matrix grid for hero and accents */
+/* Neo-brutalist grid pattern */
 .bg-grid-pattern {
-  background-image: radial-gradient(rgba(17, 17, 17, 0.12) 1px, transparent 1px);
-  background-size: 24px 24px;
+  background-image: 
+    linear-gradient(rgba(17, 17, 17, 0.05) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(17, 17, 17, 0.05) 1px, transparent 1px);
+  background-size: 32px 32px;
 }
 
 .bg-grid-dark {
-  background-image: radial-gradient(rgba(244, 239, 230, 0.08) 1px, transparent 1px);
-  background-size: 24px 24px;
+  background-image: 
+    linear-gradient(rgba(244, 239, 230, 0.06) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(244, 239, 230, 0.06) 1px, transparent 1px);
+  background-size: 32px 32px;
 }
 
-/* Custom scrollbar */
+/* Brutalist scrollbar */
 ::-webkit-scrollbar {
-  width: 8px;
-  height: 8px;
+  width: 10px;
+  height: 10px;
 }
 
 ::-webkit-scrollbar-track {
   background: #F4EFE6;
+  border-left: 2px solid #111111;
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #C4BEB4;
-  border-radius: 4px;
+  background: #D83A35;
+  border: 2px solid #111111;
 }
 
 ::-webkit-scrollbar-thumb:hover {
@@ -83,4 +88,19 @@
 
 .animate-marquee-slow:hover {
   animation-play-state: paused;
+}
+
+/* Neo-brutal hover transition for cards */
+.brutal-card {
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+.brutal-card:hover {
+  transform: translate(-2px, -2px);
+  box-shadow: 6px 6px 0px 0px #111111;
+}
+
+.brutal-card:active {
+  transform: translate(1px, 1px);
+  box-shadow: 2px 2px 0px 0px #111111;
 }

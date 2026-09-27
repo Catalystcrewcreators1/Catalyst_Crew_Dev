@@ -2,11 +2,11 @@ import React from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { Container } from "@/components/ui/Container";
-import { Terminal, ArrowUpRight, Github, Twitter, Linkedin, MessageSquare } from "lucide-react";
+import { ArrowUpRight, Github, Twitter, Linkedin, MessageSquare } from "lucide-react";
 
 export function Footer() {
   return (
-    <footer className="bg-brand-ink border-t border-brand-soft text-brand-light/80 pt-16 pb-12">
+    <footer className="bg-brand-ink border-t-3 border-brand-ink text-brand-cream pt-16 pb-12">
       <Container>
         {/* Main Footer Grid */}
         <div className="grid grid-cols-1 gap-12 lg:grid-cols-5">
@@ -27,176 +27,88 @@ export function Footer() {
               </div>
             </Link>
 
-            <p className="text-sm leading-relaxed text-brand-light/70 max-w-sm">
+            <p className="text-sm leading-relaxed text-brand-cream/60 max-w-sm font-sans">
               A high-agency developer community for builders, innovators, and creators who don&apos;t just consume technology — they build with it.
             </p>
 
-            {/* Live Status indicator */}
-            <div className="inline-flex items-center gap-2.5 rounded-full border border-brand-soft bg-brand-soft/80 px-3.5 py-1.5 text-xs font-mono text-brand-light/90">
+            {/* Status */}
+            <div className="inline-flex items-center gap-2.5 rounded-brutal border-2 border-brand-cream/30 bg-brand-soft px-3.5 py-1.5 text-xs font-display font-bold uppercase tracking-wider text-brand-cream/80">
               <span className="relative flex h-2 w-2">
-                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
-                <span className="relative inline-flex rounded-full h-2 w-2 bg-emerald-500"></span>
+                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-brand-mint opacity-75"></span>
+                <span className="relative inline-flex rounded-full h-2 w-2 bg-brand-mint"></span>
               </span>
-              <span>WORLD LOADED</span>
-              <span className="text-brand-light/30">•</span>
-              <span className="text-emerald-400">COMMUNITY ONLINE</span>
+              Community Online
             </div>
 
             {/* Social Links */}
             <div className="flex items-center gap-3 pt-2">
-              <a
-                href="https://github.com/catalyst-crew"
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label="GitHub"
-                className="flex h-9 w-9 items-center justify-center rounded-button border border-brand-soft bg-brand-soft text-brand-light hover:text-white hover:border-brand-light/40 transition-colors"
-              >
-                <Github className="h-4 w-4" />
-              </a>
-              <a
-                href="https://x.com/catalystxcrew"
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label="Twitter / X"
-                className="flex h-9 w-9 items-center justify-center rounded-button border border-brand-soft bg-brand-soft text-brand-light hover:text-white hover:border-brand-light/40 transition-colors"
-              >
-                <Twitter className="h-4 w-4" />
-              </a>
-              <a
-                href="https://linkedin.com/company/catalystxcrew"
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label="LinkedIn"
-                className="flex h-9 w-9 items-center justify-center rounded-button border border-brand-soft bg-brand-soft text-brand-light hover:text-white hover:border-brand-light/40 transition-colors"
-              >
-                <Linkedin className="h-4 w-4" />
-              </a>
-              <a
-                href="https://chat.whatsapp.com/JMueST1O52NEmwY7Xji92l"
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label="WhatsApp Community"
-                className="flex h-9 w-9 items-center justify-center rounded-button border border-brand-soft bg-brand-soft text-brand-light hover:text-brand-red hover:border-brand-red/40 transition-colors"
-              >
-                <MessageSquare className="h-4 w-4" />
-              </a>
+              {[
+                { href: "https://github.com/catalyst-crew", icon: Github, label: "GitHub" },
+                { href: "https://x.com/catalystxcrew", icon: Twitter, label: "Twitter / X" },
+                { href: "https://linkedin.com/company/catalystxcrew", icon: Linkedin, label: "LinkedIn" },
+                { href: "https://chat.whatsapp.com/JMueST1O52NEmwY7Xji92l", icon: MessageSquare, label: "WhatsApp" },
+              ].map((social) => (
+                <a
+                  key={social.label}
+                  href={social.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label={social.label}
+                  className="flex h-10 w-10 items-center justify-center rounded-brutal border-2 border-brand-cream/30 bg-brand-soft text-brand-cream/70 hover:bg-brand-red hover:text-white hover:border-brand-cream/50 transition-all"
+                >
+                  <social.icon className="h-4 w-4" />
+                </a>
+              ))}
             </div>
           </div>
 
           {/* Nav Column 1: Core */}
           <div className="space-y-4">
-            <h3 className="font-display text-xs uppercase font-bold tracking-widest text-white">
+            <h3 className="font-display text-xs uppercase font-bold tracking-widest text-brand-yellow">
               Platform
             </h3>
-            <ul className="space-y-2.5 text-xs font-display">
+            <ul className="space-y-2.5 text-sm font-sans text-brand-cream/60">
+              <li><Link href="/" className="hover:text-brand-cream transition-colors">Home Overview</Link></li>
+              <li><Link href="/about" className="hover:text-brand-cream transition-colors">About Mission & Vision</Link></li>
               <li>
-                <Link href="/" className="hover:text-white transition-colors">
-                  Home Overview
-                </Link>
-              </li>
-              <li>
-                <Link href="/about" className="hover:text-white transition-colors">
-                  About Mission & Vision
-                </Link>
-              </li>
-              <li>
-                <Link href="/events" className="hover:text-white transition-colors flex items-center gap-1">
+                <Link href="/events" className="hover:text-brand-cream transition-colors flex items-center gap-1.5">
                   Current Quests
-                  <span className="text-[10px] text-brand-red bg-brand-red/10 px-1.5 py-0.5 rounded">NEW</span>
+                  <span className="text-[10px] font-display font-bold text-brand-ink bg-brand-red px-1.5 py-0.5 rounded-brutal border border-brand-cream/30">LIVE</span>
                 </Link>
               </li>
-              <li>
-                <Link href="/community" className="hover:text-white transition-colors">
-                  Join the Community
-                </Link>
-              </li>
-              <li>
-                <Link href="/showcase" className="hover:text-white transition-colors">
-                  Builder Showcase
-                </Link>
-              </li>
-              <li>
-                <Link href="/showcase/submit" className="hover:text-white transition-colors">
-                  Submit a Build
-                </Link>
-              </li>
-              <li>
-                <Link href="/partners" className="hover:text-white transition-colors">
-                  Partner With Us
-                </Link>
-              </li>
+              <li><Link href="/community" className="hover:text-brand-cream transition-colors">Join the Community</Link></li>
+              <li><Link href="/showcase" className="hover:text-brand-cream transition-colors">Builder Showcase</Link></li>
+              <li><Link href="/partners" className="hover:text-brand-cream transition-colors">Partner With Us</Link></li>
             </ul>
           </div>
 
           {/* Nav Column 2: Ecosystem */}
           <div className="space-y-4">
-            <h3 className="font-display text-xs uppercase font-bold tracking-widest text-white">
+            <h3 className="font-display text-xs uppercase font-bold tracking-widest text-brand-yellow">
               Ecosystem
             </h3>
-            <ul className="space-y-2.5 text-xs font-display">
-              <li>
-                <Link href="/opportunities" className="hover:text-white transition-colors">
-                  Opportunities & Jobs
-                </Link>
-              </li>
-              <li>
-                <Link href="/resources" className="hover:text-white transition-colors">
-                  Guides & Toolkits
-                </Link>
-              </li>
-              <li>
-                <Link href="/blog" className="hover:text-white transition-colors">
-                  Editorial & Stories
-                </Link>
-              </li>
-              <li>
-                <Link href="/crew" className="hover:text-white transition-colors">
-                  Founding Team & Crew
-                </Link>
-              </li>
-              <li>
-                <Link href="/faq" className="hover:text-white transition-colors">
-                  Frequently Asked
-                </Link>
-              </li>
-              <li>
-                <Link href="/contact" className="hover:text-white transition-colors">
-                  Direct Contact
-                </Link>
-              </li>
+            <ul className="space-y-2.5 text-sm font-sans text-brand-cream/60">
+              <li><Link href="/opportunities" className="hover:text-brand-cream transition-colors">Opportunities & Jobs</Link></li>
+              <li><Link href="/resources" className="hover:text-brand-cream transition-colors">Guides & Toolkits</Link></li>
+              <li><Link href="/blog" className="hover:text-brand-cream transition-colors">Editorial & Stories</Link></li>
+              <li><Link href="/crew" className="hover:text-brand-cream transition-colors">Founding Team</Link></li>
+              <li><Link href="/faq" className="hover:text-brand-cream transition-colors">FAQ</Link></li>
+              <li><Link href="/contact" className="hover:text-brand-cream transition-colors">Contact</Link></li>
             </ul>
           </div>
 
-          {/* Nav Column 3: Trust & Legal */}
+          {/* Nav Column 3: Legal */}
           <div className="space-y-4">
-            <h3 className="font-display text-xs uppercase font-bold tracking-widest text-white">
-              Standards & Legal
+            <h3 className="font-display text-xs uppercase font-bold tracking-widest text-brand-yellow">
+              Standards
             </h3>
-            <ul className="space-y-2.5 text-xs font-display">
+            <ul className="space-y-2.5 text-sm font-sans text-brand-cream/60">
+              <li><Link href="/code-of-conduct" className="hover:text-brand-cream transition-colors">Code of Conduct</Link></li>
+              <li><Link href="/privacy" className="hover:text-brand-cream transition-colors">Privacy Policy</Link></li>
+              <li><Link href="/terms" className="hover:text-brand-cream transition-colors">Terms of Service</Link></li>
               <li>
-                <Link href="/code-of-conduct" className="hover:text-white transition-colors">
-                  Code of Conduct
-                </Link>
-              </li>
-              <li>
-                <Link href="/privacy" className="hover:text-white transition-colors">
-                  Privacy Policy
-                </Link>
-              </li>
-              <li>
-                <Link href="/terms" className="hover:text-white transition-colors">
-                  Terms of Service
-                </Link>
-              </li>
-              <li>
-                <a
-                  href="https://unstop.com"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="hover:text-white transition-colors inline-flex items-center gap-1"
-                >
-                  Unstop Partner Portal
-                  <ArrowUpRight className="h-3 w-3" />
+                <a href="https://unstop.com" target="_blank" rel="noopener noreferrer" className="hover:text-brand-cream transition-colors inline-flex items-center gap-1">
+                  Unstop Portal <ArrowUpRight className="h-3 w-3" />
                 </a>
               </li>
             </ul>
@@ -204,16 +116,16 @@ export function Footer() {
         </div>
 
         {/* Bottom Bar */}
-        <div className="mt-14 pt-8 border-t border-brand-soft/80 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs font-mono text-brand-light/50">
-          <p>© {new Date().getFullYear()} Catalyst Crew (catalystxcrew.in). All rights reserved.</p>
+        <div className="mt-14 pt-8 border-t-2 border-brand-cream/15 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs font-display font-bold uppercase tracking-wider text-brand-cream/40">
+          <p>© {new Date().getFullYear()} Catalyst Crew. All rights reserved.</p>
           <p className="flex items-center gap-2">
-            <span>LEARN</span>
-            <span>•</span>
-            <span>BUILD</span>
-            <span>•</span>
-            <span>COLLABORATE</span>
-            <span>•</span>
-            <span className="text-brand-red">INNOVATE</span>
+            <span>Learn</span>
+            <span className="text-brand-cream/20">•</span>
+            <span>Build</span>
+            <span className="text-brand-cream/20">•</span>
+            <span>Collaborate</span>
+            <span className="text-brand-cream/20">•</span>
+            <span className="text-brand-red">Innovate</span>
           </p>
         </div>
       </Container>

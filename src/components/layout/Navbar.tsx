@@ -11,7 +11,6 @@ import {
   Menu,
   X,
   ChevronDown,
-  Terminal,
   Compass,
   BookOpen,
   Briefcase,
@@ -52,57 +51,22 @@ export function Navbar() {
   ];
 
   const moreLinks = [
-    {
-      name: "Partners",
-      href: "/partners",
-      desc: "Sponsorships, tracks & hiring funnels",
-      icon: Handshake,
-    },
-    {
-      name: "Opportunities",
-      href: "/opportunities",
-      desc: "Internships, fellowships & bounties",
-      icon: Briefcase,
-    },
-    {
-      name: "Resources",
-      href: "/resources",
-      desc: "Roadmaps, toolkits & starter kits",
-      icon: BookOpen,
-    },
-    {
-      name: "Blog",
-      href: "/blog",
-      desc: "Deep-dives & builder stories",
-      icon: Compass,
-    },
-    {
-      name: "The Crew",
-      href: "/crew",
-      desc: "Founders & core contributors",
-      icon: Users,
-    },
-    {
-      name: "FAQ",
-      href: "/faq",
-      desc: "Answers to common questions",
-      icon: HelpCircle,
-    },
-    {
-      name: "Contact",
-      href: "/contact",
-      desc: "Partnerships & community inquiries",
-      icon: Mail,
-    },
+    { name: "Partners", href: "/partners", desc: "Sponsorships, tracks & hiring funnels", icon: Handshake },
+    { name: "Opportunities", href: "/opportunities", desc: "Internships, fellowships & bounties", icon: Briefcase },
+    { name: "Resources", href: "/resources", desc: "Roadmaps, toolkits & starter kits", icon: BookOpen },
+    { name: "Blog", href: "/blog", desc: "Deep-dives & builder stories", icon: Compass },
+    { name: "The Crew", href: "/crew", desc: "Founders & core contributors", icon: Users },
+    { name: "FAQ", href: "/faq", desc: "Answers to common questions", icon: HelpCircle },
+    { name: "Contact", href: "/contact", desc: "Partnerships & community inquiries", icon: Mail },
   ];
 
   return (
     <header
       className={cn(
-        "sticky top-0 z-50 w-full transition-all duration-200 border-b",
+        "sticky top-0 z-50 w-full transition-all duration-200 border-b-3 border-brand-ink",
         scrolled
-          ? "bg-brand-ink/95 backdrop-blur-md border-brand-soft shadow-dark py-3"
-          : "bg-brand-ink border-brand-soft/80 py-4"
+          ? "bg-brand-cream/95 backdrop-blur-sm py-2.5 shadow-[0_4px_0_0_rgba(26,26,26,0.08)]"
+          : "bg-brand-cream py-3.5"
       )}
     >
       <Container>
@@ -125,7 +89,7 @@ export function Navbar() {
           </Link>
 
           {/* Desktop Nav */}
-          <nav className="hidden lg:flex items-center gap-1.5 xl:gap-2">
+          <nav className="hidden lg:flex items-center gap-1">
             {navLinks.map((link) => {
               const isActive = pathname === link.href;
               return (
@@ -133,10 +97,10 @@ export function Navbar() {
                   key={link.name}
                   href={link.href}
                   className={cn(
-                    "px-3.5 py-2 text-xs uppercase tracking-wider font-display font-medium rounded-button transition-colors duration-150",
+                    "px-4 py-2 text-xs uppercase tracking-wider font-display font-bold rounded-brutal transition-all duration-150",
                     isActive
-                      ? "text-white bg-brand-soft"
-                      : "text-brand-light/80 hover:text-white hover:bg-brand-soft/60"
+                      ? "bg-brand-yellow text-brand-ink border-2 border-brand-ink shadow-brutal-sm"
+                      : "text-brand-ink hover:bg-brand-yellow/40 border-2 border-transparent hover:border-brand-ink"
                   )}
                 >
                   {link.name}
@@ -150,8 +114,10 @@ export function Navbar() {
                 onClick={() => setMoreDropdownOpen(!moreDropdownOpen)}
                 onBlur={() => setTimeout(() => setMoreDropdownOpen(false), 200)}
                 className={cn(
-                  "flex items-center gap-1 px-3.5 py-2 text-xs uppercase tracking-wider font-display font-medium rounded-button text-brand-light/80 hover:text-white hover:bg-brand-soft/60 transition-colors duration-150",
-                  moreDropdownOpen && "bg-brand-soft text-white"
+                  "flex items-center gap-1 px-4 py-2 text-xs uppercase tracking-wider font-display font-bold rounded-brutal transition-all duration-150 border-2",
+                  moreDropdownOpen
+                    ? "bg-brand-yellow text-brand-ink border-brand-ink shadow-brutal-sm"
+                    : "text-brand-ink border-transparent hover:bg-brand-yellow/40 hover:border-brand-ink"
                 )}
               >
                 More
@@ -164,22 +130,22 @@ export function Navbar() {
               </button>
 
               {moreDropdownOpen && (
-                <div className="absolute right-0 mt-2 w-72 origin-top-right rounded-card border border-brand-soft bg-brand-soft/95 p-2 backdrop-blur-lg shadow-dark ring-1 ring-black/5 animate-in fade-in zoom-in-95 duration-100">
+                <div className="absolute right-0 mt-2 w-72 origin-top-right rounded-brutal border-3 border-brand-ink bg-brand-cream p-2 shadow-brutal-lg">
                   <div className="grid gap-1">
                     {moreLinks.map((item) => (
                       <Link
                         key={item.name}
                         href={item.href}
-                        className="flex items-start gap-3 rounded-button p-2.5 text-left transition-colors hover:bg-brand-ink/80 group"
+                        className="flex items-start gap-3 rounded-brutal p-2.5 text-left transition-colors hover:bg-brand-yellow/30 group"
                       >
-                        <div className="mt-0.5 flex h-7 w-7 shrink-0 items-center justify-center rounded bg-brand-ink text-brand-light group-hover:text-brand-red">
+                        <div className="mt-0.5 flex h-8 w-8 shrink-0 items-center justify-center rounded-brutal border-2 border-brand-ink bg-brand-white group-hover:bg-brand-red group-hover:text-white">
                           <item.icon className="h-4 w-4" />
                         </div>
                         <div>
-                          <div className="text-xs font-display font-semibold text-white group-hover:text-brand-red">
+                          <div className="text-xs font-display font-bold text-brand-ink">
                             {item.name}
                           </div>
-                          <div className="text-[11px] text-brand-light/60 line-clamp-1">
+                          <div className="text-[11px] text-brand-neutral line-clamp-1">
                             {item.desc}
                           </div>
                         </div>
@@ -195,7 +161,7 @@ export function Navbar() {
           <div className="hidden sm:flex items-center gap-3">
             <Link
               href="/events"
-              className="hidden md:inline-flex items-center gap-1.5 text-xs uppercase tracking-wider font-display text-brand-light hover:text-white px-3 py-2 transition-colors"
+              className="hidden md:inline-flex items-center gap-1.5 text-xs uppercase tracking-wider font-display font-bold text-brand-ink hover:text-brand-red px-3 py-2 transition-colors"
             >
               <Flame className="h-3.5 w-3.5 text-brand-red" />
               Live Quests
@@ -215,7 +181,7 @@ export function Navbar() {
           {/* Mobile Menu Button */}
           <button
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-            className="flex lg:hidden h-10 w-10 items-center justify-center rounded-button border border-brand-soft text-brand-light hover:text-white hover:bg-brand-soft"
+            className="flex lg:hidden h-10 w-10 items-center justify-center rounded-brutal border-2 border-brand-ink text-brand-ink hover:bg-brand-yellow shadow-brutal-sm hover:shadow-brutal-hover hover:translate-x-[1px] hover:translate-y-[1px] transition-all"
             aria-label="Toggle menu"
           >
             {mobileMenuOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
@@ -225,31 +191,33 @@ export function Navbar() {
 
       {/* Mobile Drawer */}
       {mobileMenuOpen && (
-        <div className="lg:hidden border-t border-brand-soft bg-brand-ink px-4 py-6 shadow-dark animate-in slide-in-from-top-4 duration-200">
+        <div className="lg:hidden border-t-3 border-brand-ink bg-brand-cream px-4 py-6">
           <div className="flex flex-col gap-2">
             {navLinks.map((link) => (
               <Link
                 key={link.name}
                 href={link.href}
                 className={cn(
-                  "px-3 py-2.5 rounded-button text-sm uppercase tracking-wider font-display font-medium text-brand-light hover:text-white hover:bg-brand-soft",
-                  pathname === link.href && "bg-brand-soft text-white"
+                  "px-4 py-3 rounded-brutal text-sm uppercase tracking-wider font-display font-bold border-2 transition-all",
+                  pathname === link.href
+                    ? "bg-brand-yellow border-brand-ink shadow-brutal-sm"
+                    : "text-brand-ink border-transparent hover:bg-brand-yellow/30 hover:border-brand-ink"
                 )}
               >
                 {link.name}
               </Link>
             ))}
 
-            <div className="my-2 border-t border-brand-soft pt-2">
-              <span className="px-3 text-[10px] uppercase font-mono tracking-widest text-brand-neutral">
+            <div className="my-3 border-t-2 border-brand-ink/20 pt-3">
+              <span className="px-3 text-[10px] uppercase font-display font-bold tracking-widest text-brand-neutral">
                 Ecosystem
               </span>
-              <div className="mt-2 grid grid-cols-2 gap-1">
+              <div className="mt-2 grid grid-cols-2 gap-1.5">
                 {moreLinks.map((item) => (
                   <Link
                     key={item.name}
                     href={item.href}
-                    className="flex items-center gap-2 px-3 py-2 rounded-button text-xs font-display text-brand-light/80 hover:text-white hover:bg-brand-soft"
+                    className="flex items-center gap-2 px-3 py-2.5 rounded-brutal text-xs font-display font-bold text-brand-ink hover:bg-brand-yellow/30 border-2 border-transparent hover:border-brand-ink"
                   >
                     <item.icon className="h-3.5 w-3.5 text-brand-red" />
                     {item.name}
@@ -258,7 +226,7 @@ export function Navbar() {
               </div>
             </div>
 
-            <div className="mt-4 pt-4 border-t border-brand-soft flex flex-col gap-2.5">
+            <div className="mt-4 pt-4 border-t-2 border-brand-ink/20 flex flex-col gap-2.5">
               <Button
                 href="https://chat.whatsapp.com/JMueST1O52NEmwY7Xji92l"
                 isExternal
@@ -266,16 +234,16 @@ export function Navbar() {
                 size="md"
                 className="w-full justify-center gap-2"
               >
-                JOIN THE CREW (WHATSAPP)
+                JOIN THE CREW
                 <ArrowRight className="h-4 w-4" />
               </Button>
               <Button
                 href="/events"
-                variant="dark"
+                variant="secondary"
                 size="md"
                 className="w-full justify-center"
               >
-                EXPLORE EVENTS & QUESTS
+                EXPLORE EVENTS
               </Button>
             </div>
           </div>

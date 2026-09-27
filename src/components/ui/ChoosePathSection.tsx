@@ -66,34 +66,23 @@ export function ChoosePathSection() {
                 key={path.role}
                 onMouseEnter={() => setHoveredIndex(idx)}
                 onMouseLeave={() => setHoveredIndex(null)}
-                className={`relative flex flex-col justify-between rounded-3xl border p-8 sm:p-10 transition-all duration-500 overflow-hidden ${
+                className={`relative flex flex-col justify-between rounded-brutal border-3 p-8 sm:p-10 transition-all duration-300 brutal-card ${
                   isActive 
-                    ? "border-brand-ink/10 bg-[#F4F1ED] shadow-xl scale-[1.02] z-20" 
-                    : "border-brand-light/90 bg-white scale-100 opacity-70 hover:opacity-100 z-10"
+                    ? "border-brand-ink bg-brand-white shadow-brutal scale-[1.02] z-20" 
+                    : "border-brand-ink bg-brand-cream/50 shadow-none scale-100 z-10 hover:bg-brand-white hover:shadow-brutal hover:scale-[1.02]"
                 }`}
                 layout
               >
-                {/* Subtle active glow inside card */}
-                {isActive && (
-                  <motion.div
-                    layoutId="activeGlow"
-                    className="absolute inset-0 bg-gradient-to-br from-brand-cream/40 via-transparent to-transparent pointer-events-none"
-                    initial={{ opacity: 0 }}
-                    animate={{ opacity: 1 }}
-                    exit={{ opacity: 0 }}
-                    transition={{ duration: 0.3 }}
-                  />
-                )}
 
                 <div className="relative z-10">
                   <div className="flex items-center justify-between mb-8">
-                    <div className={`flex h-14 w-14 items-center justify-center rounded-xl transition-colors duration-500 shadow-sm ${
-                      isActive ? "bg-brand-red text-white shadow-[0_4px_20px_rgba(230,57,70,0.4)]" : "bg-brand-ink text-white"
+                    <div className={`flex h-14 w-14 items-center justify-center rounded-brutal border-2 border-brand-ink transition-colors duration-300 ${
+                      isActive ? "bg-brand-yellow text-brand-ink shadow-brutal-sm" : "bg-brand-white text-brand-ink"
                     }`}>
-                      <path.icon className={`h-6 w-6 transition-transform duration-500 ${isActive ? "scale-110" : "scale-100"}`} />
+                      <path.icon className={`h-6 w-6 transition-transform duration-300 ${isActive ? "scale-110" : "scale-100"}`} />
                     </div>
-                    <span className={`px-3 py-1.5 rounded-full text-[10px] font-mono font-bold uppercase tracking-wider transition-colors duration-300 ${
-                      isActive ? "bg-brand-ink/5 text-brand-ink" : "bg-brand-cream/80 text-brand-neutral"
+                    <span className={`px-3 py-1.5 rounded-brutal border-2 border-brand-ink text-[10px] font-display font-bold uppercase tracking-wider transition-colors duration-300 ${
+                      isActive ? "bg-brand-red text-white" : "bg-brand-white text-brand-ink"
                     }`}>
                       {path.badge}
                     </span>
@@ -114,13 +103,13 @@ export function ChoosePathSection() {
                   </p>
                 </div>
 
-                <div className="mt-10 pt-6 border-t border-brand-ink/5 relative z-10">
+                <div className="mt-10 pt-6 border-t-2 border-brand-ink/10 relative z-10">
                   <Link
                     href={path.ctaHref}
-                    className={`group flex items-center justify-between w-full rounded-xl px-5 py-4 transition-all duration-300 font-display text-sm font-bold tracking-wide uppercase ${
+                    className={`group flex items-center justify-between w-full rounded-brutal border-2 border-brand-ink px-5 py-4 transition-all duration-300 font-display text-sm font-bold tracking-wide uppercase ${
                       isActive 
-                        ? "bg-brand-ink text-white shadow-md hover:bg-brand-ink/90 hover:shadow-xl hover:-translate-y-0.5" 
-                        : "bg-white border border-brand-light/90 text-brand-ink hover:border-brand-ink hover:bg-brand-cream/20"
+                        ? "bg-brand-ink text-white shadow-brutal-sm hover:translate-x-[2px] hover:translate-y-[2px] hover:shadow-none" 
+                        : "bg-brand-white text-brand-ink hover:bg-brand-yellow"
                     }`}
                   >
                     <span>{path.ctaText}</span>

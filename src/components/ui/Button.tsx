@@ -24,24 +24,24 @@ export const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
     ref
   ) => {
     const baseStyles =
-      "inline-flex items-center justify-center font-display font-medium rounded-button transition-all duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-red focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 select-none";
+      "inline-flex items-center justify-center font-display font-bold border-2 border-brand-ink transition-all duration-150 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-red focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 select-none rounded-brutal shadow-brutal hover:shadow-brutal-hover hover:translate-x-[2px] hover:translate-y-[2px] active:shadow-none active:translate-x-[4px] active:translate-y-[4px]";
 
     const variantStyles = {
       primary:
-        "bg-brand-red text-white hover:bg-brand-red-hover shadow-sm active:scale-[0.99]",
+        "bg-brand-red text-white",
       secondary:
-        "bg-white text-brand-ink border border-brand-light hover:border-brand-ink hover:bg-brand-cream/40 active:scale-[0.99]",
-      dark: "bg-brand-ink text-brand-cream hover:bg-brand-soft border border-brand-soft shadow-sm active:scale-[0.99]",
+        "bg-brand-yellow text-brand-ink",
+      dark: "bg-brand-ink text-brand-cream",
       outline:
-        "border border-brand-light bg-transparent text-brand-ink hover:border-brand-red hover:text-brand-red active:scale-[0.99]",
+        "bg-brand-cream text-brand-ink",
       ghost:
-        "bg-transparent text-brand-ink hover:bg-brand-light/50 active:scale-[0.99]",
+        "bg-transparent text-brand-ink border-transparent shadow-none hover:shadow-none hover:bg-brand-light/50 hover:translate-x-0 hover:translate-y-0",
     };
 
     const sizeStyles = {
-      sm: "h-9 px-3.5 text-xs tracking-wider uppercase",
-      md: "h-11 px-5 text-sm tracking-wider uppercase",
-      lg: "h-13 px-7 text-base tracking-wider uppercase py-3.5",
+      sm: "h-9 px-4 text-xs tracking-wider uppercase",
+      md: "h-11 px-6 text-sm tracking-wider uppercase",
+      lg: "h-13 px-8 text-base tracking-wider uppercase py-3.5",
     };
 
     const combinedClasses = cn(

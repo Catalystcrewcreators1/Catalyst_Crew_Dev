@@ -8,6 +8,7 @@ interface SectionHeaderProps {
   align?: "left" | "center";
   className?: string;
   action?: React.ReactNode;
+  dark?: boolean;
 }
 
 export function SectionHeader({
@@ -17,6 +18,7 @@ export function SectionHeader({
   align = "left",
   className,
   action,
+  dark = false,
 }: SectionHeaderProps) {
   return (
     <div
@@ -29,18 +31,23 @@ export function SectionHeader({
     >
       <div className={cn("max-w-2xl", align === "center" && "mx-auto")}>
         {eyebrow && (
-          <div className="mb-2 flex items-center gap-2">
-            <span className="h-1.5 w-1.5 rounded-full bg-brand-red"></span>
-            <span className="font-display text-xs font-semibold uppercase tracking-widest text-brand-neutral">
+          <div className="mb-3 inline-flex items-center gap-2">
+            <div className="inline-flex items-center rounded-brutal border-2 border-brand-ink bg-brand-peach px-3 py-1 text-[10px] font-display font-bold uppercase tracking-widest shadow-brutal-sm">
               {eyebrow}
-            </span>
+            </div>
           </div>
         )}
-        <h2 className="font-display text-3xl font-bold tracking-tight text-brand-ink sm:text-4xl">
+        <h2 className={cn(
+          "font-display text-3xl font-extrabold tracking-tight sm:text-4xl",
+          dark ? "text-white" : "text-brand-ink"
+        )}>
           {title}
         </h2>
         {description && (
-          <p className="mt-3 text-base leading-relaxed text-brand-neutral sm:text-lg">
+          <p className={cn(
+            "mt-3 text-base leading-relaxed sm:text-lg font-sans",
+            dark ? "text-brand-cream/70" : "text-brand-ink/60"
+          )}>
             {description}
           </p>
         )}

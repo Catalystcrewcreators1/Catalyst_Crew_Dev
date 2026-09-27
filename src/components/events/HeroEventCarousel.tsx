@@ -64,43 +64,39 @@ export function HeroEventCarousel({ events }: HeroEventCarouselProps) {
       onMouseEnter={() => setIsPaused(true)}
       onMouseLeave={() => setIsPaused(false)}
     >
-      {/* Subtle ambient backlight glow */}
-      <div className="absolute -inset-1.5 rounded-2xl bg-gradient-to-r from-brand-red/30 via-brand-red/10 to-transparent blur-xl opacity-75 pointer-events-none" />
-
-      {/* Main Terminal Window Frame */}
-      <div className="relative rounded-2xl border border-brand-soft/90 bg-brand-soft/95 backdrop-blur-xl shadow-2xl overflow-hidden ring-1 ring-white/10">
-        {/* Terminal Header Bar */}
-        <div className="flex items-center justify-between px-4 py-3 border-b border-brand-soft bg-brand-ink/80 select-none">
-          {/* macOS / Window traffic light buttons */}
+      {/* Main Neo-Brutalist Frame */}
+      <div className="relative rounded-brutal border-3 border-brand-ink bg-brand-white shadow-brutal-xl overflow-hidden">
+        <div className="flex items-center justify-between px-4 py-3 border-b-3 border-brand-ink bg-brand-yellow select-none">
+          {/* Decorative pills */}
           <div className="flex items-center gap-2">
-            <span className="h-3 w-3 rounded-full bg-[#D83A35] transition-opacity hover:opacity-80 inline-block shadow-sm" />
-            <span className="h-3 w-3 rounded-full bg-[#EAB308] transition-opacity hover:opacity-80 inline-block shadow-sm" />
-            <span className="h-3 w-3 rounded-full bg-[#22C55E] transition-opacity hover:opacity-80 inline-block shadow-sm" />
+            <span className="h-4 w-4 rounded-full border-2 border-brand-ink bg-brand-red inline-block shadow-brutal-sm" />
+            <span className="h-4 w-4 rounded-full border-2 border-brand-ink bg-brand-mint inline-block shadow-brutal-sm" />
+            <span className="h-4 w-4 rounded-full border-2 border-brand-ink bg-brand-lavender inline-block shadow-brutal-sm" />
           </div>
 
           {/* Center Monospace Pill */}
-          <div className="flex items-center gap-2 px-3 py-1 rounded-full bg-brand-soft/80 border border-brand-soft/80 text-[11px] font-mono tracking-widest text-brand-light/90">
-            <Flame className="h-3 w-3 text-brand-red animate-pulse" />
-            <span className="uppercase font-semibold text-white">LIVE_QUESTS</span>
-            <span className="text-brand-light/40">/</span>
-            <span className="text-brand-red font-bold">
+          <div className="flex items-center gap-2 px-3 py-1 rounded-brutal border-2 border-brand-ink bg-brand-white text-[11px] font-display font-bold tracking-widest text-brand-ink shadow-brutal-sm">
+            <Flame className="h-3 w-3 text-brand-red" />
+            <span className="uppercase text-brand-ink">LIVE_QUESTS</span>
+            <span className="text-brand-ink/40">/</span>
+            <span className="text-brand-red">
               0{currentIndex + 1}_OF_0{activeEvents.length}
             </span>
           </div>
 
           {/* Arrow Navigation Controls */}
-          <div className="flex items-center gap-1">
+          <div className="flex items-center gap-2">
             <button
               onClick={handlePrev}
               aria-label="Previous quest"
-              className="flex h-7 w-7 items-center justify-center rounded-button bg-brand-soft/80 hover:bg-brand-ink text-brand-light hover:text-white border border-brand-soft/60 transition-colors"
+              className="flex h-8 w-8 items-center justify-center rounded-brutal bg-brand-white text-brand-ink border-2 border-brand-ink hover:bg-brand-red hover:text-white transition-colors shadow-brutal-sm active:translate-y-0.5 active:shadow-none"
             >
               <ChevronLeft className="h-4 w-4" />
             </button>
             <button
               onClick={handleNext}
               aria-label="Next quest"
-              className="flex h-7 w-7 items-center justify-center rounded-button bg-brand-soft/80 hover:bg-brand-ink text-brand-light hover:text-white border border-brand-soft/60 transition-colors"
+              className="flex h-8 w-8 items-center justify-center rounded-brutal bg-brand-white text-brand-ink border-2 border-brand-ink hover:bg-brand-red hover:text-white transition-colors shadow-brutal-sm active:translate-y-0.5 active:shadow-none"
             >
               <ChevronRight className="h-4 w-4" />
             </button>
@@ -119,31 +115,31 @@ export function HeroEventCarousel({ events }: HeroEventCarouselProps) {
               className="space-y-4"
             >
               {/* Event Image Banner with Overlay */}
-              <div className="relative aspect-[1024/385] w-full rounded-xl overflow-hidden bg-black border border-white/10 group shadow-lg">
+              <div className="relative aspect-[1024/385] w-full rounded-brutal overflow-hidden border-2 border-brand-ink group shadow-brutal-sm">
                 <Image
                   src={currentEvent.image}
                   alt={currentEvent.title}
                   fill
-                  className="object-cover transition-transform duration-700 group-hover:scale-[1.02]"
+                  className="object-cover transition-transform duration-300 group-hover:scale-105"
                   priority
                 />
 
                 {currentEvent.slug !== "catalyst-hack-2026" ? (
                   <>
-                    <div className="absolute inset-0 bg-gradient-to-t from-brand-ink via-brand-ink/40 to-transparent" />
+                    <div className="absolute inset-0 bg-gradient-to-t from-brand-ink/80 via-brand-ink/20 to-transparent" />
                     {/* Top badges */}
                     <div className="absolute top-3 left-3 flex flex-wrap items-center gap-2">
-                      <span className="rounded-full bg-brand-ink/80 backdrop-blur-md border border-white/10 px-3 py-1 text-[10px] font-mono uppercase tracking-wider text-white font-semibold">
+                      <span className="rounded-brutal bg-brand-white border-2 border-brand-ink px-3 py-1 text-[10px] font-display uppercase tracking-wider text-brand-ink font-bold shadow-brutal-sm">
                         {currentEvent.category}
                       </span>
 
                       {currentEvent.status === "live" ? (
-                        <span className="inline-flex items-center gap-1.5 rounded-full bg-emerald-500/20 backdrop-blur-md border border-emerald-500/40 px-3 py-1 text-[10px] font-mono uppercase tracking-wider text-emerald-300 font-bold">
-                          <span className="h-1.5 w-1.5 rounded-full bg-emerald-400 animate-ping" />
+                        <span className="inline-flex items-center gap-1.5 rounded-brutal bg-brand-red border-2 border-brand-ink px-3 py-1 text-[10px] font-display uppercase tracking-wider text-white font-bold shadow-brutal-sm">
+                          <span className="h-1.5 w-1.5 rounded-full bg-white animate-ping" />
                           LIVE NOW
                         </span>
                       ) : currentEvent.status === "upcoming" ? (
-                        <span className="inline-flex items-center gap-1.5 rounded-full bg-amber-500/20 backdrop-blur-md border border-amber-500/40 px-3 py-1 text-[10px] font-mono uppercase tracking-wider text-amber-300 font-semibold">
+                        <span className="inline-flex items-center gap-1.5 rounded-brutal bg-brand-peach border-2 border-brand-ink px-3 py-1 text-[10px] font-display uppercase tracking-wider text-brand-ink font-bold shadow-brutal-sm">
                           <Clock className="h-3 w-3" />
                           UPCOMING
                         </span>
@@ -152,12 +148,12 @@ export function HeroEventCarousel({ events }: HeroEventCarouselProps) {
 
                     {/* Prize pill badge */}
                     {currentEvent.prize && (
-                      <div className="absolute bottom-3 left-3 right-3 flex items-center justify-between gap-2 rounded-lg bg-brand-ink/85 backdrop-blur-md border border-white/10 px-3 py-1.5">
-                        <div className="flex items-center gap-1.5 text-xs font-mono text-amber-300 font-bold">
-                          <Trophy className="h-3.5 w-3.5 text-amber-400" />
+                      <div className="absolute bottom-3 left-3 right-3 flex items-center justify-between gap-2 rounded-brutal bg-brand-yellow border-2 border-brand-ink px-3 py-1.5 shadow-brutal-sm">
+                        <div className="flex items-center gap-1.5 text-xs font-display text-brand-ink font-bold">
+                          <Trophy className="h-3.5 w-3.5" />
                           <span className="truncate">{currentEvent.prize}</span>
                         </div>
-                        <span className="text-[10px] font-mono text-emerald-400 uppercase tracking-wider shrink-0">
+                        <span className="text-[10px] font-display text-brand-red font-bold uppercase tracking-wider shrink-0">
                           Verified Quest
                         </span>
                       </div>
@@ -175,35 +171,35 @@ export function HeroEventCarousel({ events }: HeroEventCarouselProps) {
 
               {/* Title & Tagline */}
               <div>
-                <h3 className="font-display text-xl sm:text-2xl font-bold text-white tracking-tight hover:text-brand-red transition-colors line-clamp-1">
+                <h3 className="font-display text-xl sm:text-2xl font-bold text-brand-ink tracking-tight line-clamp-1">
                   <Link href={`/events/${currentEvent.slug}`}>
                     {currentEvent.title}
                   </Link>
                 </h3>
-                <p className="mt-1 text-xs sm:text-sm text-brand-light/75 line-clamp-2 leading-relaxed">
+                <p className="mt-1 text-xs sm:text-sm text-brand-ink/75 line-clamp-2 leading-relaxed font-sans">
                   {currentEvent.tagline}
                 </p>
               </div>
 
               {/* Event Metadata Matrix */}
-              <div className="grid grid-cols-2 gap-2.5 pt-1 text-xs font-mono text-brand-light/80">
-                <div className="flex items-center gap-2 rounded-lg bg-brand-ink/60 border border-brand-soft/70 px-3 py-2">
+              <div className="grid grid-cols-2 gap-2.5 pt-1 text-xs font-display font-bold text-brand-ink">
+                <div className="flex items-center gap-2 rounded-brutal bg-brand-cream border-2 border-brand-ink px-3 py-2 shadow-brutal-sm">
                   <Calendar className="h-3.5 w-3.5 text-brand-red shrink-0" />
                   <span className="truncate">{currentEvent.date}</span>
                 </div>
-                <div className="flex items-center gap-2 rounded-lg bg-brand-ink/60 border border-brand-soft/70 px-3 py-2">
+                <div className="flex items-center gap-2 rounded-brutal bg-brand-cream border-2 border-brand-ink px-3 py-2 shadow-brutal-sm">
                   <MapPin className="h-3.5 w-3.5 text-brand-red shrink-0" />
                   <span className="truncate">{currentEvent.mode} • {currentEvent.location}</span>
                 </div>
               </div>
 
               {/* Actions & Registration Buttons */}
-              <div className="pt-2 flex flex-col sm:flex-row items-center gap-2.5">
+              <div className="pt-2 flex flex-col sm:flex-row items-center gap-3">
                 <a
                   href={currentEvent.registrationUrl}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="w-full sm:flex-1 inline-flex items-center justify-center gap-2 rounded-button bg-brand-red hover:bg-red-600 text-white font-display text-xs font-bold uppercase tracking-wider py-3 px-4 shadow-md transition-all active:scale-[0.98]"
+                  className="w-full sm:flex-1 inline-flex items-center justify-center gap-2 rounded-brutal border-2 border-brand-ink bg-brand-red text-white font-display text-xs font-bold uppercase tracking-wider py-3 px-4 shadow-brutal transition-all hover:translate-x-0.5 hover:translate-y-0.5 hover:shadow-none"
                 >
                   <span>REGISTER ON UNSTOP</span>
                   <ExternalLink className="h-3.5 w-3.5" />
@@ -211,7 +207,7 @@ export function HeroEventCarousel({ events }: HeroEventCarouselProps) {
 
                 <Link
                   href={`/events/${currentEvent.slug}`}
-                  className="w-full sm:w-auto inline-flex items-center justify-center gap-1.5 rounded-button bg-brand-ink hover:bg-brand-soft text-brand-light hover:text-white border border-brand-soft text-xs font-display font-medium uppercase tracking-wider py-3 px-4 transition-colors"
+                  className="w-full sm:w-auto inline-flex items-center justify-center gap-1.5 rounded-brutal border-2 border-brand-ink bg-brand-white text-brand-ink font-display text-xs font-bold uppercase tracking-wider py-3 px-4 shadow-brutal transition-all hover:translate-x-0.5 hover:translate-y-0.5 hover:shadow-none hover:bg-brand-yellow"
                 >
                   <span>FULL DETAILS</span>
                   <ArrowRight className="h-3.5 w-3.5" />
@@ -221,9 +217,9 @@ export function HeroEventCarousel({ events }: HeroEventCarouselProps) {
           </AnimatePresence>
 
           {/* Quest Quick Switcher Tabs */}
-          <div className="pt-3 border-t border-brand-soft/80 flex items-center justify-between gap-2">
+          <div className="pt-3 border-t-2 border-brand-ink/10 flex items-center justify-between gap-2">
             {/* Quick mini indicators */}
-            <div className="flex items-center gap-1.5">
+            <div className="flex items-center gap-2">
               {activeEvents.map((ev, idx) => (
                 <button
                   key={ev.slug}
@@ -232,16 +228,16 @@ export function HeroEventCarousel({ events }: HeroEventCarouselProps) {
                     setDirection(idx > currentIndex ? "right" : "left");
                     setCurrentIndex(idx);
                   }}
-                  className={`h-2 transition-all rounded-full ${
+                  className={`h-3 transition-all rounded-brutal border-2 border-brand-ink ${
                     idx === currentIndex
-                      ? "w-7 bg-brand-red"
-                      : "w-2 bg-brand-light/30 hover:bg-brand-light/60"
+                      ? "w-8 bg-brand-red"
+                      : "w-3 bg-brand-cream hover:bg-brand-yellow"
                   }`}
                   aria-label={`Go to slide ${idx + 1}: ${ev.title}`}
                 />
               ))}
               {activeEvents.length === 1 && (
-                <span className="text-[10px] font-mono text-brand-light/60 uppercase">
+                <span className="text-[10px] font-display font-bold text-brand-ink/60 uppercase">
                   Flagship Online Hackathon 2026
                 </span>
               )}
@@ -250,10 +246,10 @@ export function HeroEventCarousel({ events }: HeroEventCarouselProps) {
             {/* View all events shortcut */}
             <Link
               href="/events"
-              className="inline-flex items-center gap-1 text-[11px] font-mono text-brand-light/60 hover:text-white transition-colors uppercase tracking-wider"
+              className="inline-flex items-center gap-1 text-[11px] font-display font-bold text-brand-ink hover:text-brand-red transition-colors uppercase tracking-wider"
             >
               <span>Explore Quests</span>
-              <ChevronRight className="h-3 w-3" />
+              <ChevronRight className="h-4 w-4" />
             </Link>
           </div>
         </div>

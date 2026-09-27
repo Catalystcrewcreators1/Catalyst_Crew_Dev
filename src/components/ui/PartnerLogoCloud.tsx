@@ -14,71 +14,34 @@ interface PartnerItem {
   logo: React.ReactNode;
 }
 
-// Next-Level Spotlight Card Component
+// Neo-Brutalist Partner Card
 function PartnerCard({ partner }: { partner: PartnerItem }) {
-  const ref = useRef<HTMLAnchorElement>(null);
-  const [position, setPosition] = useState({ x: 0, y: 0 });
-  const [opacity, setOpacity] = useState(0);
-
-  const handleMouseMove = (e: React.MouseEvent<HTMLAnchorElement>) => {
-    if (!ref.current) return;
-    const rect = ref.current.getBoundingClientRect();
-    setPosition({ x: e.clientX - rect.left, y: e.clientY - rect.top });
-  };
-
   return (
     <a
-      ref={ref}
       href={partner.url}
       target={partner.url.startsWith("http") ? "_blank" : undefined}
       rel={partner.url.startsWith("http") ? "noopener noreferrer" : undefined}
-      onMouseMove={handleMouseMove}
-      onMouseEnter={() => setOpacity(1)}
-      onMouseLeave={() => setOpacity(0)}
-      className="group/card relative flex flex-col justify-between w-[280px] sm:w-[320px] shrink-0 rounded-2xl border border-brand-light/60 bg-brand-white/80 backdrop-blur-md p-6 shadow-sm transition-all duration-500 hover:-translate-y-2 hover:shadow-2xl overflow-hidden"
+      className="group/card relative flex flex-col justify-between w-[280px] sm:w-[300px] shrink-0 rounded-brutal border-3 border-brand-ink bg-brand-white p-6 shadow-brutal brutal-card overflow-hidden"
     >
-      {/* 
-        SPOTLIGHT HOVER EFFECT
-        This creates a radial glow that tracks the mouse precisely.
-      */}
-      <div
-        className="pointer-events-none absolute -inset-px transition-opacity duration-300 z-0"
-        style={{
-          opacity,
-          background: `radial-gradient(400px circle at ${position.x}px ${position.y}px, rgba(230,57,70,0.06), transparent 50%)`,
-        }}
-      />
-      {/* Inner subtle border glow */}
-      <div
-        className="pointer-events-none absolute -inset-px rounded-2xl border transition-opacity duration-300 z-0"
-        style={{
-          opacity,
-          borderColor: "rgba(230,57,70,0.1)",
-          background: `radial-gradient(200px circle at ${position.x}px ${position.y}px, rgba(230,57,70,0.1), transparent 50%)`,
-          WebkitMaskImage: `radial-gradient(200px circle at ${position.x}px ${position.y}px, black, transparent 100%)`,
-        }}
-      />
-
-      <div className="relative z-10 flex flex-col h-full justify-between">
-        {/* Top Row: Category Pill + Circular Arrow */}
+      <div className="flex flex-col h-full justify-between">
+        {/* Top Row: Category Pill + Arrow */}
         <div className="flex items-center justify-between">
-          <span className="rounded-full bg-brand-cream/80 border border-brand-light px-3 py-1 text-[9px] font-mono font-bold tracking-widest text-brand-neutral uppercase shadow-sm group-hover/card:border-brand-red/20 group-hover/card:text-brand-red transition-colors">
+          <span className="rounded-brutal bg-brand-yellow border-2 border-brand-ink px-2.5 py-0.5 text-[9px] font-display font-bold tracking-widest text-brand-ink uppercase">
             {partner.category}
           </span>
-
-          <div className="flex h-8 w-8 items-center justify-center rounded-full border border-brand-light/70 bg-white text-brand-neutral group-hover/card:text-brand-red group-hover/card:border-brand-red/40 group-hover/card:bg-brand-red/5 transition-all duration-300 group-hover/card:scale-110 group-hover/card:shadow-[0_0_15px_rgba(230,57,70,0.2)]">
-            <ArrowUpRight className="h-4 w-4 transition-transform duration-300 group-hover/card:translate-x-0.5 group-hover/card:-translate-y-0.5" />
+          <div className="flex h-8 w-8 items-center justify-center rounded-brutal border-2 border-brand-ink bg-brand-cream text-brand-ink group-hover/card:bg-brand-red group-hover/card:text-white transition-all duration-200">
+            <ArrowUpRight className="h-4 w-4" />
           </div>
         </div>
 
         {/* Middle: Brand Logo & Title */}
-        <div className="py-8 flex items-center group-hover/card:scale-[1.02] transition-transform duration-500 origin-left">
+        <div className="py-6 flex items-center">
           {partner.logo}
         </div>
 
         {/* Bottom: Micro description */}
-        <div className="pt-4 border-t border-brand-light/40 group-hover/card:border-brand-red/10 transition-colors">
-          <p className="text-[12px] font-mono text-brand-neutral/80 leading-relaxed line-clamp-2">
+        <div className="pt-3 border-t-2 border-brand-ink/15">
+          <p className="text-[12px] font-sans text-brand-ink/60 leading-relaxed line-clamp-2">
             {partner.tagline}
           </p>
         </div>
@@ -234,82 +197,47 @@ export function PartnerLogoCloud() {
   ];
 
   return (
-    <section className="relative bg-brand-cream border-b border-brand-light/80 py-20 sm:py-24 overflow-hidden">
-      {/* Premium Ambient Background Effects */}
-      <div className="absolute inset-0 pointer-events-none">
-        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[300px] bg-white/40 blur-[100px] rounded-full" />
-        <div className="absolute bottom-[-100px] right-[-100px] w-[500px] h-[500px] bg-brand-red/5 blur-[120px] rounded-full" />
-        <div className="absolute inset-0 bg-grid-pattern opacity-30" />
-      </div>
+    <section className="relative bg-brand-white border-b-3 border-brand-ink py-16 sm:py-20 overflow-hidden">
+      <div className="absolute inset-0 bg-grid-pattern pointer-events-none opacity-30" />
 
       <Container className="relative z-10">
-        {/* Header Block */}
-        <motion.div 
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
-          className="flex flex-col items-center text-center space-y-4 mb-16"
-        >
-          {/* Top Pill Badge */}
-          <div className="inline-flex items-center gap-2 rounded-full bg-brand-ink px-4 py-1.5 text-[11px] font-mono tracking-widest text-white uppercase font-bold shadow-xl shadow-brand-ink/10 border border-brand-ink/80">
-            <span className="text-amber-400 font-bold drop-shadow-[0_0_5px_rgba(251,191,36,0.5)]">✦</span>
-            <span>STRONGER TOGETHER</span>
+        {/* Header */}
+        <div className="flex flex-col items-center text-center space-y-4 mb-12">
+          <div className="inline-flex items-center gap-2 rounded-brutal border-2 border-brand-ink bg-brand-peach px-4 py-1.5 text-xs font-display font-bold tracking-wider uppercase shadow-brutal-sm">
+            ✦ Stronger Together
           </div>
-
-          {/* Large Title */}
-          <h2 className="font-display text-4xl sm:text-5xl md:text-6xl font-extrabold text-brand-ink tracking-tight drop-shadow-sm">
+          <h2 className="font-display text-4xl sm:text-5xl font-extrabold text-brand-ink tracking-tight">
             Partners
           </h2>
-
-          {/* Subtitle */}
-          <p className="text-sm sm:text-base text-brand-neutral max-w-lg mx-auto font-sans leading-relaxed">
-            Building a more open, inclusive and decentralized future together.
+          <p className="text-base text-brand-ink/60 max-w-lg mx-auto font-sans">
+            Building a more open, inclusive future together.
           </p>
+        </div>
 
-          {/* Subtle Diamond Divider */}
-          <div className="flex items-center gap-3 pt-2 text-brand-neutral/40">
-            <span className="h-[1px] w-16 bg-gradient-to-r from-transparent to-brand-neutral/30 inline-block" />
-            <span className="text-[10px] text-brand-red font-bold shadow-sm">◆</span>
-            <span className="h-[1px] w-16 bg-gradient-to-l from-transparent to-brand-neutral/30 inline-block" />
-          </div>
-        </motion.div>
-
-        {/* Carousel / Cards Track */}
+        {/* Marquee */}
         <div className="relative w-full overflow-hidden">
-          {/* Left Edge Gradient Fade */}
-          <div className="pointer-events-none absolute left-0 top-0 bottom-0 w-24 sm:w-40 bg-gradient-to-r from-brand-cream to-transparent z-20" />
+          <div className="pointer-events-none absolute left-0 top-0 bottom-0 w-20 sm:w-32 bg-gradient-to-r from-brand-white to-transparent z-20" />
+          <div className="pointer-events-none absolute right-0 top-0 bottom-0 w-20 sm:w-32 bg-gradient-to-l from-brand-white to-transparent z-20" />
 
-          {/* Right Edge Gradient Fade */}
-          <div className="pointer-events-none absolute right-0 top-0 bottom-0 w-24 sm:w-40 bg-gradient-to-l from-brand-cream to-transparent z-20" />
-
-          {/* Infinite Marquee Runner Track */}
-          <div className="flex items-stretch gap-6 sm:gap-8 py-6 px-4 hover:[animation-play-state:paused] animate-marquee-slow w-max">
-            {/* We duplicate the array to allow infinite scrolling */}
+          <div className="flex items-stretch gap-5 sm:gap-6 py-4 px-4 hover:[animation-play-state:paused] animate-marquee-slow w-max">
             {[...partners, ...partners].map((partner, index) => (
               <PartnerCard key={`${partner.name}-${index}`} partner={partner} />
             ))}
           </div>
         </div>
 
-        {/* Bottom Small CTA */}
-        <motion.div 
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6, delay: 0.2 }}
-          className="mt-12 text-center"
-        >
+        {/* Bottom CTA */}
+        <div className="mt-10 text-center">
           <Link
             href="/partners"
-            className="group inline-flex items-center gap-2 text-sm font-mono uppercase tracking-widest text-brand-red font-bold transition-all hover:text-brand-ink"
+            className="group inline-flex items-center gap-2 text-sm font-display font-bold uppercase tracking-wider text-brand-ink hover:text-brand-red transition-colors"
           >
-            <span className="border-b border-transparent group-hover:border-brand-ink pb-0.5 transition-colors">
+            <span className="border-b-2 border-brand-ink group-hover:border-brand-red pb-0.5 transition-colors">
               Partner With Catalyst Crew
             </span>
             <span className="transition-transform duration-300 group-hover:translate-x-1">&rarr;</span>
           </Link>
-        </motion.div>
+        </div>
       </Container>
     </section>
   );
