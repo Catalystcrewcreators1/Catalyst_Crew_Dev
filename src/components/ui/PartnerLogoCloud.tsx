@@ -129,9 +129,6 @@ export function PartnerLogoCloud() {
 
         {/* Marquee */}
         <div className="relative w-full overflow-hidden">
-          <div className="pointer-events-none absolute left-0 top-0 bottom-0 w-20 sm:w-32 bg-gradient-to-r from-brand-white to-transparent z-20" />
-          <div className="pointer-events-none absolute right-0 top-0 bottom-0 w-20 sm:w-32 bg-gradient-to-l from-brand-white to-transparent z-20" />
-
           <div className="flex items-stretch gap-5 sm:gap-6 py-4 px-4 hover:[animation-play-state:paused] animate-marquee-slow w-max">
             {[...partners, ...partners].map((partner, index) => (
               <PartnerCard key={`${partner.name}-${index}`} partner={partner} />
