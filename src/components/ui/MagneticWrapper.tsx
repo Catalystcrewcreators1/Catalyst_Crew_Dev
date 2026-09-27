@@ -33,6 +33,7 @@ export const MagneticWrapper = ({
       className={`relative inline-flex p-6 -m-6 z-50 ${className}`}
     >
       <motion.div
+        className="w-full h-full"
         animate={{ x: position.x, y: position.y }}
         transition={{ type: "spring", stiffness: 150, damping: 15, mass: 0.1 }}
       >

@@ -73,8 +73,8 @@ export default function HomePage() {
               </p>
 
               {/* CTAs — brutalist buttons */}
-              <div className="mt-8 flex flex-wrap items-center gap-4 sm:gap-5 w-full sm:w-auto relative z-20">
-                <MagneticWrapper>
+              <div className="mt-8 flex flex-col sm:flex-row items-center gap-4 sm:gap-5 w-full sm:w-auto relative z-20">
+                <MagneticWrapper className="w-full sm:w-auto">
                   <Button
                     href="https://chat.whatsapp.com/JMueST1O52NEmwY7Xji92l"
                     isExternal
@@ -87,7 +87,7 @@ export default function HomePage() {
                   </Button>
                 </MagneticWrapper>
 
-                <MagneticWrapper>
+                <MagneticWrapper className="w-full sm:w-auto">
                   <Button
                     href="/events"
                     variant="secondary"
