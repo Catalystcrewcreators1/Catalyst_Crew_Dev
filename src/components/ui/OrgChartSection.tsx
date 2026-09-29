@@ -43,9 +43,9 @@ function MemberCard({ member, size = "normal", highlight = false }: { member: Te
     compact: "w-[200px] sm:w-[220px]",
   };
   const imgHeight = {
-    large: "h-56",
-    normal: "h-44",
-    compact: "h-36",
+    large: "h-72",
+    normal: "h-56",
+    compact: "h-48",
   };
 
   return (
@@ -64,7 +64,7 @@ function MemberCard({ member, size = "normal", highlight = false }: { member: Te
           src={member.avatar}
           alt={member.name}
           fill
-          className="object-cover transition-transform duration-500 group-hover:scale-110"
+          className="object-cover object-top transition-transform duration-500 group-hover:scale-110"
         />
         {/* Colored overlay on hover */}
         <div className="absolute inset-0 bg-brand-red/0 group-hover:bg-brand-red/10 transition-colors duration-300" />
