@@ -25,7 +25,7 @@ export const metadata: Metadata = {
 };
 
 export default function AboutPage() {
-  const foundingTeam = teamData.filter((m) => m.category === "Founding Team");
+  const foundingTeam = teamData.filter((m) => m.level === "founder" || m.level === "co-founder");
 
   return (
     <div className="flex flex-col">
