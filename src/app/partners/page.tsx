@@ -26,7 +26,7 @@ export default function PartnersPage() {
   return (
     <div className="flex flex-col min-h-screen">
       {/* Hero Header */}
-      <section className="bg-brand-ink text-white py-18 py-20 border-b border-brand-soft">
+      <section className="bg-brand-ink text-white py-18 py-20 border-b-3 border-brand-ink">
         <Container>
           <div className="max-w-3xl">
             <div className="flex items-center gap-2 mb-3">
@@ -46,7 +46,7 @@ export default function PartnersPage() {
       </section>
 
       {/* Why Partner & Value Metrics */}
-      <section className="py-20 bg-brand-cream border-b border-brand-light/80">
+      <section className="py-20 bg-brand-cream border-b-3 border-brand-ink">
         <Container>
           <SectionHeader
             eyebrow="THE VALUE PROPOSITION"
@@ -55,7 +55,7 @@ export default function PartnersPage() {
           />
 
           <div className="mt-12 grid grid-cols-1 md:grid-cols-3 gap-6">
-            <div className="rounded-card border border-brand-light bg-brand-white p-7 shadow-subtle">
+            <div className="rounded-brutal brutal-card border-3 border-brand-ink bg-brand-white p-7 shadow-brutal-sm">
               <Code2 className="h-8 w-8 text-brand-red mb-4" />
               <h3 className="font-display text-xl font-bold text-brand-ink">
                 Real API & Tool Adoption
@@ -65,7 +65,7 @@ export default function PartnersPage() {
               </p>
             </div>
 
-            <div className="rounded-card border border-brand-light bg-brand-white p-7 shadow-subtle">
+            <div className="rounded-brutal brutal-card border-3 border-brand-ink bg-brand-white p-7 shadow-brutal-sm">
               <Users2 className="h-8 w-8 text-brand-red mb-4" />
               <h3 className="font-display text-xl font-bold text-brand-ink">
                 High-Agency Talent Funnel
@@ -75,7 +75,7 @@ export default function PartnersPage() {
               </p>
             </div>
 
-            <div className="rounded-card border border-brand-light bg-brand-white p-7 shadow-subtle">
+            <div className="rounded-brutal brutal-card border-3 border-brand-ink bg-brand-white p-7 shadow-brutal-sm">
               <TrendingUp className="h-8 w-8 text-brand-red mb-4" />
               <h3 className="font-display text-xl font-bold text-brand-ink">
                 Verified Brand Authority
@@ -89,7 +89,7 @@ export default function PartnersPage() {
       </section>
 
       {/* 8 Partnership Tiers */}
-      <section className="py-20 bg-brand-white border-b border-brand-light/80">
+      <section className="py-20 bg-brand-white border-b-3 border-brand-ink">
         <Container>
           <SectionHeader
             eyebrow="TAILORED OPPORTUNITIES"
@@ -101,7 +101,7 @@ export default function PartnersPage() {
             {partnerTiers.map((tier) => (
               <div
                 key={tier.id}
-                className="rounded-card border border-brand-light bg-brand-cream/30 p-6 flex flex-col justify-between transition-all hover:border-brand-ink/40"
+                className="rounded-brutal brutal-card border-3 border-brand-ink bg-brand-cream/30 p-6 flex flex-col justify-between transition-all hover:border-brand-ink/40"
               >
                 <div>
                   <h3 className="font-display text-lg font-bold text-brand-ink">
@@ -137,7 +137,7 @@ export default function PartnersPage() {
       </section>
 
       {/* Collaboration Lifecycle Process */}
-      <section className="py-20 bg-brand-cream border-b border-brand-light/80">
+      <section className="py-20 bg-brand-cream border-b-3 border-brand-ink">
         <Container>
           <SectionHeader
             align="center"
@@ -150,7 +150,7 @@ export default function PartnersPage() {
             {partnershipProcess.map((item) => (
               <div
                 key={item.step}
-                className="rounded-card border border-brand-light bg-brand-white p-5 space-y-2 text-center sm:text-left"
+                className="rounded-brutal brutal-card border-3 border-brand-ink bg-brand-white p-5 space-y-2 text-center sm:text-left"
               >
                 <div className="font-mono text-xs font-bold text-brand-red">
                   {item.step}
@@ -168,7 +168,7 @@ export default function PartnersPage() {
       </section>
 
       {/* Interactive Partner Inquiry Form */}
-      <section className="py-20 bg-brand-white border-b border-brand-light/80" id="inquiry-form">
+      <section className="py-20 bg-brand-white border-b-3 border-brand-ink" id="inquiry-form">
         <Container size="narrow">
           <SectionHeader
             align="center"

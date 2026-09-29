@@ -100,7 +100,7 @@ export default function EventDetailPage({ params }: EventDetailPageProps) {
       </div>
 
       {/* Hero Section */}
-      <section className="bg-brand-ink text-white pt-8 pb-14 sm:pt-10 sm:pb-16 border-b border-brand-soft relative overflow-hidden">
+      <section className="bg-brand-ink text-white pt-8 pb-14 sm:pt-10 sm:pb-16 border-b-3 border-brand-ink relative overflow-hidden">
         <div className="absolute top-0 right-0 w-1/3 h-full opacity-10 bg-grid-dark pointer-events-none" />
         <div className="absolute top-1/4 left-1/2 -translate-x-1/2 w-3/4 h-72 bg-brand-red/15 blur-3xl rounded-full pointer-events-none" />
 
@@ -176,15 +176,15 @@ export default function EventDetailPage({ params }: EventDetailPageProps) {
 
               {/* Key Specs Pills */}
               <div className="pt-2 flex flex-wrap gap-3 text-xs font-mono text-brand-light/90">
-                <div className="flex items-center gap-1.5 bg-brand-soft px-3 py-1.5 rounded-button border border-brand-soft">
+                <div className="flex items-center gap-1.5 bg-brand-soft px-3 py-1.5 rounded-brutal border border-brand-soft">
                   <Calendar className="h-3.5 w-3.5 text-brand-red" />
                   <span>{event.date}</span>
                 </div>
-                <div className="flex items-center gap-1.5 bg-brand-soft px-3 py-1.5 rounded-button border border-brand-soft">
+                <div className="flex items-center gap-1.5 bg-brand-soft px-3 py-1.5 rounded-brutal border border-brand-soft">
                   <MapPin className="h-3.5 w-3.5 text-brand-red" />
                   <span>{event.mode} • Online</span>
                 </div>
-                <div className="flex items-center gap-1.5 bg-brand-soft px-3 py-1.5 rounded-button border border-brand-soft">
+                <div className="flex items-center gap-1.5 bg-brand-soft px-3 py-1.5 rounded-brutal border border-brand-soft">
                   <Users className="h-3.5 w-3.5 text-brand-red" />
                   <span>{event.teamSize}</span>
                 </div>
@@ -192,8 +192,8 @@ export default function EventDetailPage({ params }: EventDetailPageProps) {
             </div>
 
             {/* Quick Action Card on Right */}
-            <div className="lg:col-span-4 rounded-card border border-brand-soft bg-brand-soft/95 p-6 space-y-5 backdrop-blur-md shadow-2xl">
-              <div className="border-b border-brand-soft/80 pb-3">
+            <div className="lg:col-span-4 rounded-brutal brutal-card border border-brand-soft bg-brand-soft/95 p-6 space-y-5 backdrop-blur-md shadow-2xl">
+              <div className="border-b-3 border-brand-ink/80 pb-3">
                 <span className="text-[10px] font-mono uppercase tracking-widest text-brand-light/60">
                   Total Cash Prize Pool
                 </span>
@@ -289,7 +289,7 @@ export default function EventDetailPage({ params }: EventDetailPageProps) {
             {/* Left Column (8 cols): Comprehensive Event Documentation */}
             <div className="lg:col-span-8 space-y-12">
               {/* Overview & About */}
-              <div className="rounded-card border border-brand-light bg-brand-white p-7 sm:p-9 shadow-subtle space-y-4">
+              <div className="rounded-brutal brutal-card border-3 border-brand-ink bg-brand-white p-7 sm:p-9 shadow-brutal-sm space-y-4">
                 <div className="inline-flex items-center gap-2">
                   <span className="h-2 w-2 rounded-full bg-brand-red" />
                   <span className="font-mono text-xs uppercase tracking-widest text-brand-neutral font-semibold">
@@ -308,7 +308,7 @@ export default function EventDetailPage({ params }: EventDetailPageProps) {
               </div>
 
               {/* 10 Hackathon Innovation Themes */}
-              <div className="rounded-card border border-brand-light bg-brand-white p-7 sm:p-9 shadow-subtle space-y-6">
+              <div className="rounded-brutal brutal-card border-3 border-brand-ink bg-brand-white p-7 sm:p-9 shadow-brutal-sm space-y-6">
                 <div className="flex items-center justify-between flex-wrap gap-2">
                   <div>
                     <span className="font-mono text-xs uppercase tracking-widest text-brand-red font-semibold">
@@ -330,7 +330,7 @@ export default function EventDetailPage({ params }: EventDetailPageProps) {
                   {event.themes.map((theme, idx) => (
                     <div
                       key={idx}
-                      className="group rounded-lg border border-brand-light/80 bg-brand-cream/30 p-4 transition-all hover:bg-brand-white hover:border-brand-red/50 hover:shadow-sm"
+                      className="group rounded-lg border-3 border-brand-ink/80 bg-brand-cream/30 p-4 transition-all hover:bg-brand-white hover:border-brand-red/50 hover:shadow-sm"
                     >
                       <div className="flex items-center gap-2">
                         <span className="flex h-5 w-5 items-center justify-center rounded bg-brand-ink text-[10px] font-mono font-bold text-white group-hover:bg-brand-red transition-colors">
@@ -349,7 +349,7 @@ export default function EventDetailPage({ params }: EventDetailPageProps) {
               </div>
 
               {/* 3-Round Progression Details */}
-              <div className="rounded-card border border-brand-light bg-brand-white p-7 sm:p-9 shadow-subtle space-y-6">
+              <div className="rounded-brutal brutal-card border-3 border-brand-ink bg-brand-white p-7 sm:p-9 shadow-brutal-sm space-y-6">
                 <div className="flex items-center justify-between flex-wrap gap-2">
                   <div>
                     <span className="font-mono text-xs uppercase tracking-widest text-brand-red font-semibold">
@@ -368,7 +368,7 @@ export default function EventDetailPage({ params }: EventDetailPageProps) {
                   {event.rounds.map((round, idx) => (
                     <div
                       key={idx}
-                      className="relative rounded-lg border border-brand-light/80 bg-brand-cream/20 p-5 space-y-2"
+                      className="relative rounded-lg border-3 border-brand-ink/80 bg-brand-cream/20 p-5 space-y-2"
                     >
                       <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-1.5">
                         <div className="flex items-center gap-2.5">
@@ -380,7 +380,7 @@ export default function EventDetailPage({ params }: EventDetailPageProps) {
                           </h4>
                         </div>
                         <div className="flex items-center gap-2">
-                          <span className="rounded bg-brand-soft/10 text-brand-ink border border-brand-light px-2.5 py-0.5 text-[11px] font-mono">
+                          <span className="rounded bg-brand-soft/10 text-brand-ink border-3 border-brand-ink px-2.5 py-0.5 text-[11px] font-mono">
                             {round.duration}
                           </span>
                           {round.fee && (
@@ -399,7 +399,7 @@ export default function EventDetailPage({ params }: EventDetailPageProps) {
               </div>
 
               {/* Round 1 PPT Structure (Slide 1 to 7) */}
-              <div className="rounded-card border-2 border-brand-red/30 bg-brand-white p-7 sm:p-9 shadow-subtle space-y-6">
+              <div className="rounded-brutal brutal-card border-2 border-brand-red/30 bg-brand-white p-7 sm:p-9 shadow-brutal-sm space-y-6">
                 <div className="flex items-center gap-3">
                   <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-brand-red text-white">
                     <FileText className="h-5 w-5" />
@@ -422,7 +422,7 @@ export default function EventDetailPage({ params }: EventDetailPageProps) {
                   {event.pptStructure.map((slide) => (
                     <div
                       key={slide.slideNumber}
-                      className="flex items-start gap-3 rounded-lg border border-brand-light/70 bg-brand-cream/30 p-3.5"
+                      className="flex items-start gap-3 rounded-lg border-3 border-brand-ink/70 bg-brand-cream/30 p-3.5"
                     >
                       <span className="flex h-6 w-6 shrink-0 items-center justify-center rounded bg-brand-ink text-white text-xs font-mono font-bold">
                         S{slide.slideNumber}
@@ -441,7 +441,7 @@ export default function EventDetailPage({ params }: EventDetailPageProps) {
               </div>
 
               {/* Official Timeline */}
-              <div className="rounded-card border border-brand-light bg-brand-white p-7 sm:p-9 shadow-subtle space-y-6">
+              <div className="rounded-brutal brutal-card border-3 border-brand-ink bg-brand-white p-7 sm:p-9 shadow-brutal-sm space-y-6">
                 <h2 className="font-display text-2xl font-bold text-brand-ink">
                   Event Timeline & Key Deadlines
                 </h2>
@@ -468,7 +468,7 @@ export default function EventDetailPage({ params }: EventDetailPageProps) {
               </div>
 
               {/* Prizes Breakdown */}
-              <div className="rounded-card border border-brand-light bg-brand-white p-7 sm:p-9 shadow-subtle space-y-6">
+              <div className="rounded-brutal brutal-card border-3 border-brand-ink bg-brand-white p-7 sm:p-9 shadow-brutal-sm space-y-6">
                 <div className="flex items-center justify-between">
                   <h2 className="font-display text-2xl font-bold text-brand-ink">
                     Prizes & Recognition
@@ -482,7 +482,7 @@ export default function EventDetailPage({ params }: EventDetailPageProps) {
                   {event.prizesBreakdown.map((prize, idx) => (
                     <div
                       key={idx}
-                      className="rounded-lg border border-brand-light/80 bg-brand-cream/20 p-5 space-y-1.5"
+                      className="rounded-lg border-3 border-brand-ink/80 bg-brand-cream/20 p-5 space-y-1.5"
                     >
                       <div className="flex items-center justify-between">
                         <span className="text-[11px] font-mono uppercase tracking-wider text-brand-neutral font-semibold">
@@ -504,7 +504,7 @@ export default function EventDetailPage({ params }: EventDetailPageProps) {
               {/* Official Rules & Elimination */}
               <div className="space-y-6">
                 {/* Event Rules */}
-                <div className="rounded-card border border-brand-light bg-brand-white p-7 sm:p-9 shadow-subtle space-y-4">
+                <div className="rounded-brutal brutal-card border-3 border-brand-ink bg-brand-white p-7 sm:p-9 shadow-brutal-sm space-y-4">
                   <h2 className="font-display text-2xl font-bold text-brand-ink flex items-center gap-2">
                     <ShieldAlert className="h-5 w-5 text-brand-red" />
                     Official Hackathon Rules
@@ -520,7 +520,7 @@ export default function EventDetailPage({ params }: EventDetailPageProps) {
                 </div>
 
                 {/* Elimination Criteria Alert Box */}
-                <div className="rounded-card border border-red-200 bg-red-50/60 p-7 sm:p-8 space-y-4">
+                <div className="rounded-brutal brutal-card border border-red-200 bg-red-50/60 p-7 sm:p-8 space-y-4">
                   <h3 className="font-display text-xl font-bold text-red-900 flex items-center gap-2">
                     <AlertTriangle className="h-5 w-5 text-red-600" />
                     Elimination & Disqualification Policy
@@ -537,7 +537,7 @@ export default function EventDetailPage({ params }: EventDetailPageProps) {
               </div>
 
               {/* About the Organizer */}
-              <div className="rounded-card border border-brand-light bg-brand-white p-7 sm:p-9 shadow-subtle space-y-4">
+              <div className="rounded-brutal brutal-card border-3 border-brand-ink bg-brand-white p-7 sm:p-9 shadow-brutal-sm space-y-4">
                 <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 border-b border-brand-light/60 pb-3">
                   <div className="flex items-center gap-2 text-brand-neutral">
                     <Building2 className="h-4 w-4 text-brand-red" />
@@ -564,7 +564,7 @@ export default function EventDetailPage({ params }: EventDetailPageProps) {
 
               {/* FAQs */}
               {event.faqs.length > 0 && (
-                <div className="rounded-card border border-brand-light bg-brand-white p-7 sm:p-9 shadow-subtle space-y-5">
+                <div className="rounded-brutal brutal-card border-3 border-brand-ink bg-brand-white p-7 sm:p-9 shadow-brutal-sm space-y-5">
                   <h2 className="font-display text-2xl font-bold text-brand-ink flex items-center gap-2">
                     <HelpCircle className="h-5 w-5 text-brand-red" />
                     Frequently Asked Questions
@@ -588,7 +588,7 @@ export default function EventDetailPage({ params }: EventDetailPageProps) {
             {/* Right Column (4 cols): Sticky Sidebar with Judging Marking, Mentors & CTA */}
             <div className="lg:col-span-4 space-y-6">
               {/* Judging Criteria Marking Table */}
-              <div className="rounded-card border border-brand-light bg-brand-white p-6 shadow-subtle space-y-4">
+              <div className="rounded-brutal brutal-card border-3 border-brand-ink bg-brand-white p-6 shadow-brutal-sm space-y-4">
                 <div className="flex items-center justify-between border-b border-brand-light/70 pb-3">
                   <h3 className="font-display text-lg font-bold text-brand-ink">
                     Judging Criteria
@@ -615,7 +615,7 @@ export default function EventDetailPage({ params }: EventDetailPageProps) {
               </div>
 
               {/* Mentors Panel */}
-              <div className="rounded-card border border-brand-light bg-brand-white p-6 shadow-subtle space-y-4">
+              <div className="rounded-brutal brutal-card border-3 border-brand-ink bg-brand-white p-6 shadow-brutal-sm space-y-4">
                 <h3 className="font-display text-lg font-bold text-brand-ink">
                   Mentors & Evaluation Jury
                 </h3>
@@ -644,7 +644,7 @@ export default function EventDetailPage({ params }: EventDetailPageProps) {
               </div>
 
               {/* Bottom Sticky Action Box */}
-              <div className="rounded-card bg-brand-ink text-white p-6 space-y-4 border border-brand-soft shadow-xl">
+              <div className="rounded-brutal brutal-card bg-brand-ink text-white p-6 space-y-4 border border-brand-soft shadow-xl">
                 <div className="flex items-center gap-2 text-brand-red text-xs font-mono uppercase font-bold">
                   <Sparkles className="h-4 w-4" />
                   <span>REGISTRATION OPEN</span>

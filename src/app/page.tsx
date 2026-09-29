@@ -109,7 +109,7 @@ export default function HomePage() {
                 ].map((badge) => (
                   <div
                     key={badge.text}
-                    className="inline-flex items-center gap-1.5 rounded-brutal border border-brand-light/20 bg-brand-soft/80 px-3 py-1.5 text-xs font-display font-bold text-brand-light/70"
+                    className="inline-flex items-center gap-1.5 rounded-brutal border-3 border-brand-ink/20 bg-brand-soft/80 px-3 py-1.5 text-xs font-display font-bold text-brand-light/70"
                   >
                     <badge.icon className="h-3.5 w-3.5 text-brand-red" />
                     {badge.text}
@@ -132,7 +132,7 @@ export default function HomePage() {
               { value: "60+", label: "Shipped Builds", color: "text-white" },
               { value: "40+", label: "Partner Colleges", color: "text-emerald-400" },
             ].map((stat) => (
-              <div key={stat.label} className="rounded-brutal border border-brand-light/10 bg-brand-soft/50 p-4">
+              <div key={stat.label} className="rounded-brutal border-3 border-brand-ink/10 bg-brand-soft/50 p-4">
                 <div className={`font-display text-2xl sm:text-3xl font-bold ${stat.color}`}>
                   {stat.value}
                 </div>

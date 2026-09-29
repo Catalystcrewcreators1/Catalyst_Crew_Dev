@@ -34,7 +34,7 @@ export default function FAQPage() {
   return (
     <div className="flex flex-col min-h-screen">
       {/* Header Banner */}
-      <section className="bg-brand-ink text-white py-16 border-b border-brand-soft">
+      <section className="bg-brand-ink text-white py-16 border-b-3 border-brand-ink">
         <Container>
           <div className="max-w-3xl">
             <div className="flex items-center gap-2 mb-3">
@@ -54,7 +54,7 @@ export default function FAQPage() {
       </section>
 
       {/* Filter and Search Bar */}
-      <section className="py-6 bg-brand-cream border-b border-brand-light/80 sticky top-[73px] z-30 backdrop-blur-md bg-brand-cream/90">
+      <section className="py-6 bg-brand-cream border-b-3 border-brand-ink sticky top-[73px] z-30 backdrop-blur-md bg-brand-cream/90">
         <Container>
           <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
             <div className="flex items-center gap-2 overflow-x-auto pb-2 sm:pb-0">
@@ -62,10 +62,10 @@ export default function FAQPage() {
                 <button
                   key={cat}
                   onClick={() => setSelectedCategory(cat)}
-                  className={`px-3.5 py-1.5 rounded-button text-xs font-display font-medium uppercase tracking-wider transition-colors shrink-0 ${
+                  className={`px-3.5 py-1.5 rounded-brutal text-xs font-display font-medium uppercase tracking-wider transition-colors shrink-0 ${
                     selectedCategory === cat
                       ? "bg-brand-ink text-white"
-                      : "bg-brand-white border border-brand-light text-brand-neutral hover:text-brand-ink"
+                      : "bg-brand-white border-3 border-brand-ink text-brand-neutral hover:text-brand-ink"
                   }`}
                 >
                   {cat === "all" ? "All Questions" : cat}
@@ -80,7 +80,7 @@ export default function FAQPage() {
                 placeholder="Search FAQs..."
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
-                className="w-full pl-9 pr-3.5 py-1.5 rounded-button border border-brand-light bg-brand-white text-xs text-brand-ink placeholder:text-brand-neutral/50 focus:border-brand-red focus:outline-none"
+                className="w-full pl-9 pr-3.5 py-1.5 rounded-brutal border-3 border-brand-ink bg-brand-white text-xs text-brand-ink placeholder:text-brand-neutral/50 focus:border-brand-red focus:outline-none"
               />
             </div>
           </div>
@@ -96,7 +96,7 @@ export default function FAQPage() {
               return (
                 <div
                   key={index}
-                  className="rounded-card border border-brand-light bg-brand-white transition-all overflow-hidden shadow-subtle"
+                  className="rounded-brutal brutal-card border-3 border-brand-ink bg-brand-white transition-all overflow-hidden shadow-brutal-sm"
                 >
                   <button
                     onClick={() => setOpenIndex(isOpen ? null : index)}
@@ -111,7 +111,7 @@ export default function FAQPage() {
                       </h3>
                     </div>
                     <div
-                      className={`flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-brand-cream border border-brand-light transition-transform duration-200 ${
+                      className={`flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-brand-cream border-3 border-brand-ink transition-transform duration-200 ${
                         isOpen ? "rotate-180 bg-brand-ink text-white border-brand-ink" : "text-brand-ink"
                       }`}
                     >
@@ -130,7 +130,7 @@ export default function FAQPage() {
           </div>
 
           {/* Still Have Questions Box */}
-          <div className="mt-14 rounded-card bg-brand-ink text-white p-8 text-center space-y-4">
+          <div className="mt-14 rounded-brutal brutal-card bg-brand-ink text-white p-8 text-center space-y-4">
             <h3 className="font-display text-2xl font-bold">
               Have a question not answered here?
             </h3>

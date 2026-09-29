@@ -30,7 +30,7 @@ export default function AboutPage() {
   return (
     <div className="flex flex-col">
       {/* Hero Header */}
-      <section className="bg-brand-ink text-white py-20 border-b border-brand-soft">
+      <section className="bg-brand-ink text-white py-20 border-b-3 border-brand-ink">
         <Container size="narrow" className="text-center">
           <Badge variant="red" size="md" className="mb-4">
             OUR PURPOSE & ETHOS
@@ -46,10 +46,10 @@ export default function AboutPage() {
       </section>
 
       {/* Vision & Mission */}
-      <section className="py-20 bg-brand-cream border-b border-brand-light/80">
+      <section className="py-20 bg-brand-cream border-b-3 border-brand-ink">
         <Container>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            <div className="rounded-card border border-brand-light bg-brand-white p-8 sm:p-10 flex flex-col justify-between">
+            <div className="rounded-brutal brutal-card border-3 border-brand-ink bg-brand-white p-8 sm:p-10 flex flex-col justify-between">
               <div>
                 <div className="flex h-12 w-12 items-center justify-center rounded-lg bg-brand-ink text-white mb-6">
                   <Eye className="h-6 w-6 text-brand-red" />
@@ -66,7 +66,7 @@ export default function AboutPage() {
               </div>
             </div>
 
-            <div className="rounded-card border border-brand-light bg-brand-white p-8 sm:p-10 flex flex-col justify-between">
+            <div className="rounded-brutal brutal-card border-3 border-brand-ink bg-brand-white p-8 sm:p-10 flex flex-col justify-between">
               <div>
                 <div className="flex h-12 w-12 items-center justify-center rounded-lg bg-brand-ink text-white mb-6">
                   <Target className="h-6 w-6 text-brand-red" />
@@ -87,7 +87,7 @@ export default function AboutPage() {
       </section>
 
       {/* Why We Exist & What We Believe */}
-      <section className="py-20 bg-brand-white border-b border-brand-light/80">
+      <section className="py-20 bg-brand-white border-b-3 border-brand-ink">
         <Container>
           <SectionHeader
             eyebrow="PHILOSOPHY"
@@ -96,7 +96,7 @@ export default function AboutPage() {
           />
 
           <div className="mt-12 grid grid-cols-1 md:grid-cols-3 gap-6">
-            <div className="rounded-card border border-brand-light bg-brand-cream/30 p-7">
+            <div className="rounded-brutal brutal-card border-3 border-brand-ink bg-brand-cream/30 p-7">
               <Zap className="h-6 w-6 text-brand-red mb-3" />
               <h3 className="font-display text-xl font-bold text-brand-ink">
                 No Certificate Chasing
@@ -106,7 +106,7 @@ export default function AboutPage() {
               </p>
             </div>
 
-            <div className="rounded-card border border-brand-light bg-brand-cream/30 p-7">
+            <div className="rounded-brutal brutal-card border-3 border-brand-ink bg-brand-cream/30 p-7">
               <Users className="h-6 w-6 text-brand-red mb-3" />
               <h3 className="font-display text-xl font-bold text-brand-ink">
                 Peer Squad Dynamics
@@ -116,7 +116,7 @@ export default function AboutPage() {
               </p>
             </div>
 
-            <div className="rounded-card border border-brand-light bg-brand-cream/30 p-7">
+            <div className="rounded-brutal brutal-card border-3 border-brand-ink bg-brand-cream/30 p-7">
               <Shield className="h-6 w-6 text-brand-red mb-3" />
               <h3 className="font-display text-xl font-bold text-brand-ink">
                 Merit-Based Access
@@ -130,7 +130,7 @@ export default function AboutPage() {
       </section>
 
       {/* Founding Team Spotlight */}
-      <section className="py-20 bg-brand-cream border-b border-brand-light/80">
+      <section className="py-20 bg-brand-cream border-b-3 border-brand-ink">
         <Container>
           <SectionHeader
             eyebrow="LEADERSHIP"
@@ -147,7 +147,7 @@ export default function AboutPage() {
             {foundingTeam.map((member) => (
               <div
                 key={member.name}
-                className="rounded-card border border-brand-light bg-brand-white p-6 flex flex-col justify-between"
+                className="rounded-brutal brutal-card border-3 border-brand-ink bg-brand-white p-6 flex flex-col justify-between"
               >
                 <div>
                   <div className="relative h-48 w-full overflow-hidden rounded-lg bg-brand-soft mb-4">

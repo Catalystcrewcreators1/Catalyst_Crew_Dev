@@ -38,7 +38,7 @@ export default function OpportunitiesPage() {
   return (
     <div className="flex flex-col min-h-screen">
       {/* Header Banner */}
-      <section className="bg-brand-ink text-white py-16 border-b border-brand-soft">
+      <section className="bg-brand-ink text-white py-16 border-b-3 border-brand-ink">
         <Container>
           <div className="max-w-3xl">
             <div className="flex items-center gap-2 mb-3">
@@ -58,7 +58,7 @@ export default function OpportunitiesPage() {
       </section>
 
       {/* Filter and Search Bar */}
-      <section className="py-6 bg-brand-cream border-b border-brand-light/80 sticky top-[73px] z-30 backdrop-blur-md bg-brand-cream/90">
+      <section className="py-6 bg-brand-cream border-b-3 border-brand-ink sticky top-[73px] z-30 backdrop-blur-md bg-brand-cream/90">
         <Container>
           <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
             <div className="flex items-center gap-2 overflow-x-auto pb-2 sm:pb-0">
@@ -66,10 +66,10 @@ export default function OpportunitiesPage() {
                 <button
                   key={cat}
                   onClick={() => setSelectedCategory(cat)}
-                  className={`px-3.5 py-1.5 rounded-button text-xs font-display font-medium uppercase tracking-wider transition-colors shrink-0 ${
+                  className={`px-3.5 py-1.5 rounded-brutal text-xs font-display font-medium uppercase tracking-wider transition-colors shrink-0 ${
                     selectedCategory === cat
                       ? "bg-brand-ink text-white"
-                      : "bg-brand-white border border-brand-light text-brand-neutral hover:text-brand-ink"
+                      : "bg-brand-white border-3 border-brand-ink text-brand-neutral hover:text-brand-ink"
                   }`}
                 >
                   {cat === "all" ? "All Opportunities" : cat}
@@ -84,7 +84,7 @@ export default function OpportunitiesPage() {
                 placeholder="Search roles or skills..."
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
-                className="w-full pl-9 pr-3.5 py-1.5 rounded-button border border-brand-light bg-brand-white text-xs text-brand-ink placeholder:text-brand-neutral/50 focus:border-brand-red focus:outline-none"
+                className="w-full pl-9 pr-3.5 py-1.5 rounded-brutal border-3 border-brand-ink bg-brand-white text-xs text-brand-ink placeholder:text-brand-neutral/50 focus:border-brand-red focus:outline-none"
               />
             </div>
           </div>
@@ -98,7 +98,7 @@ export default function OpportunitiesPage() {
             {filteredOpportunities.map((opp) => (
               <div
                 key={opp.id}
-                className="rounded-card border border-brand-light bg-brand-white p-6 transition-all hover:border-brand-ink/40 hover:shadow-subtle flex flex-col md:flex-row md:items-center justify-between gap-6"
+                className="rounded-brutal brutal-card border-3 border-brand-ink bg-brand-white p-6 transition-all hover:border-brand-ink/40 hover:shadow-brutal-sm flex flex-col md:flex-row md:items-center justify-between gap-6"
               >
                 <div className="space-y-2.5 max-w-2xl">
                   <div className="flex flex-wrap items-center gap-2">
@@ -126,7 +126,7 @@ export default function OpportunitiesPage() {
                     {opp.skills.map((skill) => (
                       <span
                         key={skill}
-                        className="rounded bg-brand-cream/60 border border-brand-light/60 px-2 py-0.5 text-[11px] font-mono text-brand-neutral"
+                        className="rounded bg-brand-cream/60 border-3 border-brand-ink/60 px-2 py-0.5 text-[11px] font-mono text-brand-neutral"
                       >
                         {skill}
                       </span>

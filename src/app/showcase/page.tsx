@@ -28,7 +28,7 @@ export default function ShowcasePage() {
   return (
     <div className="flex flex-col min-h-screen">
       {/* Header Banner */}
-      <section className="bg-brand-ink text-white py-16 border-b border-brand-soft">
+      <section className="bg-brand-ink text-white py-16 border-b-3 border-brand-ink">
         <Container>
           <div className="max-w-3xl">
             <div className="flex items-center gap-2 mb-3">
@@ -48,7 +48,7 @@ export default function ShowcasePage() {
       </section>
 
       {/* Category Filter Bar */}
-      <section className="py-6 bg-brand-cream border-b border-brand-light/80 sticky top-[73px] z-30 backdrop-blur-md bg-brand-cream/90">
+      <section className="py-6 bg-brand-cream border-b-3 border-brand-ink sticky top-[73px] z-30 backdrop-blur-md bg-brand-cream/90">
         <Container>
           <div className="flex items-center justify-between gap-4 overflow-x-auto pb-2 sm:pb-0">
             <div className="flex items-center gap-2 shrink-0">
@@ -56,10 +56,10 @@ export default function ShowcasePage() {
                 <button
                   key={cat}
                   onClick={() => setSelectedCategory(cat)}
-                  className={`px-3.5 py-1.5 rounded-button text-xs font-display font-medium uppercase tracking-wider transition-colors ${
+                  className={`px-3.5 py-1.5 rounded-brutal text-xs font-display font-medium uppercase tracking-wider transition-colors ${
                     selectedCategory === cat
                       ? "bg-brand-ink text-white"
-                      : "bg-brand-white border border-brand-light text-brand-neutral hover:text-brand-ink"
+                      : "bg-brand-white border-3 border-brand-ink text-brand-neutral hover:text-brand-ink"
                   }`}
                 >
                   {cat === "all" ? "All Builds" : cat}
@@ -90,7 +90,7 @@ export default function ShowcasePage() {
           </div>
 
           {/* Submit Project Banner */}
-          <div className="mt-16 rounded-card border border-brand-light bg-brand-white p-8 sm:p-12 text-center shadow-card">
+          <div className="mt-16 rounded-brutal brutal-card border-3 border-brand-ink bg-brand-white p-8 sm:p-12 text-center shadow-brutal">
             <div className="mx-auto flex h-12 w-12 items-center justify-center rounded-lg bg-brand-ink text-white mb-4">
               <Sparkles className="h-6 w-6 text-brand-red" />
             </div>

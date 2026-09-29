@@ -22,7 +22,7 @@ export default function BlogPage() {
   return (
     <div className="flex flex-col min-h-screen">
       {/* Header Banner */}
-      <section className="bg-brand-ink text-white py-16 border-b border-brand-soft">
+      <section className="bg-brand-ink text-white py-16 border-b-3 border-brand-ink">
         <Container>
           <div className="max-w-3xl">
             <div className="flex items-center gap-2 mb-3">
@@ -43,9 +43,9 @@ export default function BlogPage() {
 
       {/* Featured Article Spotlight */}
       {featuredPost && (
-        <section className="py-12 bg-brand-cream border-b border-brand-light/80">
+        <section className="py-12 bg-brand-cream border-b-3 border-brand-ink">
           <Container>
-            <div className="rounded-card border border-brand-light bg-brand-white overflow-hidden grid grid-cols-1 lg:grid-cols-12 shadow-card hover:border-brand-ink/40 transition-colors">
+            <div className="rounded-brutal brutal-card border-3 border-brand-ink bg-brand-white overflow-hidden grid grid-cols-1 lg:grid-cols-12 shadow-brutal hover:border-brand-ink/40 transition-colors">
               <div className="relative h-64 lg:h-auto lg:col-span-6 bg-brand-soft">
                 <Image
                   src={featuredPost.image}
@@ -120,11 +120,11 @@ export default function BlogPage() {
             {regularPosts.map((post) => (
               <div
                 key={post.slug}
-                className="rounded-card border border-brand-light bg-brand-white p-7 flex flex-col justify-between transition-all hover:border-brand-ink/40 hover:shadow-subtle"
+                className="rounded-brutal brutal-card border-3 border-brand-ink bg-brand-white p-7 flex flex-col justify-between transition-all hover:border-brand-ink/40 hover:shadow-brutal-sm"
               >
                 <div className="space-y-3">
                   <div className="flex items-center gap-2 text-xs font-mono text-brand-neutral">
-                    <span className="rounded bg-brand-cream border border-brand-light px-2 py-0.5 text-[10px] uppercase">
+                    <span className="rounded bg-brand-cream border-3 border-brand-ink px-2 py-0.5 text-[10px] uppercase">
                       {post.category}
                     </span>
                     <span>•</span>

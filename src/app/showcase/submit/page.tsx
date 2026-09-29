@@ -80,7 +80,7 @@ export default function SubmitProjectPage() {
       </div>
 
       {/* Header Banner */}
-      <section className="bg-brand-ink text-white py-16 border-b border-brand-soft">
+      <section className="bg-brand-ink text-white py-16 border-b-3 border-brand-ink">
         <Container>
           <div className="max-w-3xl">
             <div className="flex items-center gap-2 mb-3">
@@ -103,7 +103,7 @@ export default function SubmitProjectPage() {
       <section className="py-12 flex-1">
         <Container>
           {status === "success" ? (
-            <div className="max-w-2xl mx-auto rounded-card border border-emerald-500/30 bg-emerald-50/80 p-8 sm:p-12 text-center shadow-card space-y-4">
+            <div className="max-w-2xl mx-auto rounded-brutal brutal-card border-3 border-brand-ink bg-emerald-50/80 p-8 sm:p-12 text-center shadow-brutal space-y-4">
               <div className="mx-auto flex h-16 w-16 items-center justify-center rounded-full bg-emerald-100 text-emerald-600">
                 <CheckCircle2 className="h-9 w-9" />
               </div>
@@ -147,7 +147,7 @@ export default function SubmitProjectPage() {
               <div className="lg:col-span-7">
                 <form
                   onSubmit={handleSubmit}
-                  className="rounded-card border border-brand-light bg-brand-white p-7 sm:p-9 shadow-card space-y-6"
+                  className="rounded-brutal brutal-card border-3 border-brand-ink bg-brand-white p-7 sm:p-9 shadow-brutal space-y-6"
                 >
                   <div className="border-b border-brand-light pb-4">
                     <h2 className="font-display text-2xl font-bold text-brand-ink">
@@ -179,7 +179,7 @@ export default function SubmitProjectPage() {
                         onChange={(e) =>
                           setFormData({ ...formData, name: e.target.value })
                         }
-                        className="w-full rounded-button border border-brand-light bg-brand-cream/30 px-3.5 py-2.5 text-sm text-brand-ink placeholder:text-brand-neutral/50 focus:border-brand-red focus:bg-white focus:outline-none"
+                        className="w-full rounded-brutal border-3 border-brand-ink bg-brand-cream/30 px-3.5 py-2.5 text-sm text-brand-ink placeholder:text-brand-neutral/50 focus:border-brand-red focus:bg-white focus:outline-none"
                       />
                     </div>
 
@@ -192,7 +192,7 @@ export default function SubmitProjectPage() {
                         onChange={(e) =>
                           setFormData({ ...formData, category: e.target.value })
                         }
-                        className="w-full rounded-button border border-brand-light bg-brand-cream/30 px-3.5 py-2.5 text-sm text-brand-ink focus:border-brand-red focus:bg-white focus:outline-none"
+                        className="w-full rounded-brutal border-3 border-brand-ink bg-brand-cream/30 px-3.5 py-2.5 text-sm text-brand-ink focus:border-brand-red focus:bg-white focus:outline-none"
                       >
                         <option value="Student Projects">Student Projects</option>
                         <option value="Hackathon Builds">Hackathon Builds</option>
@@ -218,7 +218,7 @@ export default function SubmitProjectPage() {
                       onChange={(e) =>
                         setFormData({ ...formData, tagline: e.target.value })
                       }
-                      className="w-full rounded-button border border-brand-light bg-brand-cream/30 px-3.5 py-2.5 text-sm text-brand-ink placeholder:text-brand-neutral/50 focus:border-brand-red focus:bg-white focus:outline-none"
+                      className="w-full rounded-brutal border-3 border-brand-ink bg-brand-cream/30 px-3.5 py-2.5 text-sm text-brand-ink placeholder:text-brand-neutral/50 focus:border-brand-red focus:bg-white focus:outline-none"
                     />
                   </div>
 
@@ -235,7 +235,7 @@ export default function SubmitProjectPage() {
                       onChange={(e) =>
                         setFormData({ ...formData, stack: e.target.value })
                       }
-                      className="w-full rounded-button border border-brand-light bg-brand-cream/30 px-3.5 py-2.5 text-sm text-brand-ink placeholder:text-brand-neutral/50 focus:border-brand-red focus:bg-white focus:outline-none"
+                      className="w-full rounded-brutal border-3 border-brand-ink bg-brand-cream/30 px-3.5 py-2.5 text-sm text-brand-ink placeholder:text-brand-neutral/50 focus:border-brand-red focus:bg-white focus:outline-none"
                     />
                   </div>
 
@@ -253,7 +253,7 @@ export default function SubmitProjectPage() {
                         onChange={(e) =>
                           setFormData({ ...formData, githubUrl: e.target.value })
                         }
-                        className="w-full rounded-button border border-brand-light bg-brand-cream/30 px-3.5 py-2.5 text-sm text-brand-ink placeholder:text-brand-neutral/50 focus:border-brand-red focus:bg-white focus:outline-none"
+                        className="w-full rounded-brutal border-3 border-brand-ink bg-brand-cream/30 px-3.5 py-2.5 text-sm text-brand-ink placeholder:text-brand-neutral/50 focus:border-brand-red focus:bg-white focus:outline-none"
                       />
                     </div>
 
@@ -268,7 +268,7 @@ export default function SubmitProjectPage() {
                         onChange={(e) =>
                           setFormData({ ...formData, demoUrl: e.target.value })
                         }
-                        className="w-full rounded-button border border-brand-light bg-brand-cream/30 px-3.5 py-2.5 text-sm text-brand-ink placeholder:text-brand-neutral/50 focus:border-brand-red focus:bg-white focus:outline-none"
+                        className="w-full rounded-brutal border-3 border-brand-ink bg-brand-cream/30 px-3.5 py-2.5 text-sm text-brand-ink placeholder:text-brand-neutral/50 focus:border-brand-red focus:bg-white focus:outline-none"
                       />
                     </div>
                   </div>
@@ -286,7 +286,7 @@ export default function SubmitProjectPage() {
                       onChange={(e) =>
                         setFormData({ ...formData, problem: e.target.value })
                       }
-                      className="w-full rounded-button border border-brand-light bg-brand-cream/30 px-3.5 py-2.5 text-sm text-brand-ink placeholder:text-brand-neutral/50 focus:border-brand-red focus:bg-white focus:outline-none resize-none"
+                      className="w-full rounded-brutal border-3 border-brand-ink bg-brand-cream/30 px-3.5 py-2.5 text-sm text-brand-ink placeholder:text-brand-neutral/50 focus:border-brand-red focus:bg-white focus:outline-none resize-none"
                     ></textarea>
                   </div>
 
@@ -303,7 +303,7 @@ export default function SubmitProjectPage() {
                       onChange={(e) =>
                         setFormData({ ...formData, solution: e.target.value })
                       }
-                      className="w-full rounded-button border border-brand-light bg-brand-cream/30 px-3.5 py-2.5 text-sm text-brand-ink placeholder:text-brand-neutral/50 focus:border-brand-red focus:bg-white focus:outline-none resize-none"
+                      className="w-full rounded-brutal border-3 border-brand-ink bg-brand-cream/30 px-3.5 py-2.5 text-sm text-brand-ink placeholder:text-brand-neutral/50 focus:border-brand-red focus:bg-white focus:outline-none resize-none"
                     ></textarea>
                   </div>
 
@@ -328,7 +328,7 @@ export default function SubmitProjectPage() {
                               builderName: e.target.value,
                             })
                           }
-                          className="w-full rounded-button border border-brand-light bg-brand-cream/30 px-3.5 py-2.5 text-sm text-brand-ink placeholder:text-brand-neutral/50 focus:border-brand-red focus:bg-white focus:outline-none"
+                          className="w-full rounded-brutal border-3 border-brand-ink bg-brand-cream/30 px-3.5 py-2.5 text-sm text-brand-ink placeholder:text-brand-neutral/50 focus:border-brand-red focus:bg-white focus:outline-none"
                         />
                       </div>
 
@@ -347,7 +347,7 @@ export default function SubmitProjectPage() {
                               builderEmail: e.target.value,
                             })
                           }
-                          className="w-full rounded-button border border-brand-light bg-brand-cream/30 px-3.5 py-2.5 text-sm text-brand-ink placeholder:text-brand-neutral/50 focus:border-brand-red focus:bg-white focus:outline-none"
+                          className="w-full rounded-brutal border-3 border-brand-ink bg-brand-cream/30 px-3.5 py-2.5 text-sm text-brand-ink placeholder:text-brand-neutral/50 focus:border-brand-red focus:bg-white focus:outline-none"
                         />
                       </div>
                     </div>
@@ -363,7 +363,7 @@ export default function SubmitProjectPage() {
                         onChange={(e) =>
                           setFormData({ ...formData, teammates: e.target.value })
                         }
-                        className="w-full rounded-button border border-brand-light bg-brand-cream/30 px-3.5 py-2.5 text-sm text-brand-ink placeholder:text-brand-neutral/50 focus:border-brand-red focus:bg-white focus:outline-none"
+                        className="w-full rounded-brutal border-3 border-brand-ink bg-brand-cream/30 px-3.5 py-2.5 text-sm text-brand-ink placeholder:text-brand-neutral/50 focus:border-brand-red focus:bg-white focus:outline-none"
                       />
                     </div>
                   </div>
@@ -395,14 +395,14 @@ export default function SubmitProjectPage() {
                 <div className="space-y-2">
                   <div className="flex items-center justify-between text-xs font-mono uppercase tracking-wider text-brand-neutral">
                     <span>Live Preview</span>
-                    <span className="text-[10px] bg-brand-cream border border-brand-light px-2 py-0.5 rounded">
+                    <span className="text-[10px] bg-brand-cream border-3 border-brand-ink px-2 py-0.5 rounded">
                       Interactive Card
                     </span>
                   </div>
 
-                  <div className="rounded-card border border-brand-light bg-brand-white p-6 shadow-card space-y-4">
+                  <div className="rounded-brutal brutal-card border-3 border-brand-ink bg-brand-white p-6 shadow-brutal space-y-4">
                     <div className="flex items-center justify-between">
-                      <span className="rounded bg-brand-cream border border-brand-light px-2.5 py-1 text-[10px] font-mono uppercase tracking-wider text-brand-neutral">
+                      <span className="rounded bg-brand-cream border-3 border-brand-ink px-2.5 py-1 text-[10px] font-mono uppercase tracking-wider text-brand-neutral">
                         {formData.category}
                       </span>
                       <span className="text-[10px] font-mono text-emerald-600 bg-emerald-50 px-2 py-0.5 rounded border border-emerald-200">
@@ -419,7 +419,7 @@ export default function SubmitProjectPage() {
                       </p>
                     </div>
 
-                    <div className="space-y-2 rounded-lg bg-brand-cream/40 p-3 text-xs border border-brand-light/40">
+                    <div className="space-y-2 rounded-lg bg-brand-cream/40 p-3 text-xs border-3 border-brand-ink/40">
                       <div>
                         <span className="font-semibold uppercase text-[10px] tracking-wider text-brand-neutral block">
                           Problem:
@@ -463,7 +463,7 @@ export default function SubmitProjectPage() {
                 </div>
 
                 {/* Verification Criteria */}
-                <div className="rounded-card border border-brand-light bg-brand-white p-6 shadow-subtle space-y-4">
+                <div className="rounded-brutal brutal-card border-3 border-brand-ink bg-brand-white p-6 shadow-brutal-sm space-y-4">
                   <h3 className="font-display text-base font-bold text-brand-ink flex items-center gap-2">
                     <ShieldCheck className="h-4 w-4 text-emerald-600" />
                     Review Standards

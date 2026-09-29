@@ -60,7 +60,7 @@ export default function CommunityPage() {
   return (
     <div className="flex flex-col min-h-screen">
       {/* Hero Header */}
-      <section className="bg-brand-ink text-white py-18 py-20 border-b border-brand-soft text-center">
+      <section className="bg-brand-ink text-white py-18 py-20 border-b-3 border-brand-ink text-center">
         <Container size="narrow">
           <Badge variant="red" size="md" className="mb-4">
             JOIN 2,500+ BUILDERS
@@ -99,7 +99,7 @@ export default function CommunityPage() {
       </section>
 
       {/* What Members Get */}
-      <section className="py-20 bg-brand-cream border-b border-brand-light/80">
+      <section className="py-20 bg-brand-cream border-b-3 border-brand-ink">
         <Container>
           <SectionHeader
             eyebrow="COMMUNITY PERKS"
@@ -111,7 +111,7 @@ export default function CommunityPage() {
             {perks.map((perk) => (
               <div
                 key={perk.title}
-                className="rounded-card border border-brand-light bg-brand-white p-7 transition-all duration-200 hover:-translate-y-1 hover:border-brand-ink/40 shadow-subtle"
+                className="rounded-brutal brutal-card border-3 border-brand-ink bg-brand-white p-7 transition-all duration-200 hover:-translate-y-1 hover:border-brand-ink/40 shadow-brutal-sm"
               >
                 <div className="flex h-12 w-12 items-center justify-center rounded-lg bg-brand-ink text-white mb-4">
                   <perk.icon className="h-6 w-6 text-brand-red" />
@@ -129,7 +129,7 @@ export default function CommunityPage() {
       </section>
 
       {/* Community Guidelines */}
-      <section className="py-20 bg-brand-white border-b border-brand-light/80">
+      <section className="py-20 bg-brand-white border-b-3 border-brand-ink">
         <Container size="narrow">
           <SectionHeader
             align="center"
@@ -159,7 +159,7 @@ export default function CommunityPage() {
             ].map((rule, idx) => (
               <div
                 key={idx}
-                className="rounded-card border border-brand-light bg-brand-cream/30 p-6 flex items-start gap-4"
+                className="rounded-brutal brutal-card border-3 border-brand-ink bg-brand-cream/30 p-6 flex items-start gap-4"
               >
                 <span className="font-mono text-sm font-bold text-brand-red pt-0.5">
                   0{idx + 1}

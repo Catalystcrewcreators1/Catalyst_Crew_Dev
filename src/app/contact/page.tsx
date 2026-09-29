@@ -50,7 +50,7 @@ export default function ContactPage() {
   return (
     <div className="flex flex-col min-h-screen">
       {/* Header Banner */}
-      <section className="bg-brand-ink text-white py-16 border-b border-brand-soft">
+      <section className="bg-brand-ink text-white py-16 border-b-3 border-brand-ink">
         <Container>
           <div className="max-w-3xl">
             <div className="flex items-center gap-2 mb-3">
@@ -88,7 +88,7 @@ export default function ContactPage() {
                 {contactChannels.map((channel) => (
                   <div
                     key={channel.title}
-                    className="rounded-card border border-brand-light bg-brand-white p-5 shadow-subtle flex items-start gap-4"
+                    className="rounded-brutal brutal-card border-3 border-brand-ink bg-brand-white p-5 shadow-brutal-sm flex items-start gap-4"
                   >
                     <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-brand-ink text-white mt-0.5">
                       <channel.icon className="h-5 w-5 text-brand-red" />
@@ -124,8 +124,8 @@ export default function ContactPage() {
               </div>
 
               {/* Base Location */}
-              <div className="rounded-card border border-brand-light bg-brand-white p-5 shadow-subtle flex items-center gap-4">
-                <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-brand-cream border border-brand-light text-brand-ink">
+              <div className="rounded-brutal brutal-card border-3 border-brand-ink bg-brand-white p-5 shadow-brutal-sm flex items-center gap-4">
+                <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-brand-cream border-3 border-brand-ink text-brand-ink">
                   <MapPin className="h-5 w-5 text-brand-red" />
                 </div>
                 <div>

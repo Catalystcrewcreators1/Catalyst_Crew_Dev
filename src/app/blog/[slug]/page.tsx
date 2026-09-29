@@ -58,7 +58,7 @@ export default function BlogPostPage({ params }: BlogPostPageProps) {
       </div>
 
       {/* Article Header */}
-      <header className="bg-brand-ink text-white py-16 sm:py-20 border-b border-brand-soft">
+      <header className="bg-brand-ink text-white py-16 sm:py-20 border-b-3 border-brand-ink">
         <Container size="narrow">
           <div className="space-y-4">
             <div className="flex items-center gap-2 text-xs font-mono text-brand-red">
@@ -104,7 +104,7 @@ export default function BlogPostPage({ params }: BlogPostPageProps) {
 
       {/* Hero Image */}
       <Container size="narrow" className="mt-8">
-        <div className="relative h-72 sm:h-96 w-full rounded-card overflow-hidden shadow-card border border-brand-light bg-brand-soft">
+        <div className="relative h-72 sm:h-96 w-full rounded-brutal brutal-card overflow-hidden shadow-brutal border-3 border-brand-ink bg-brand-soft">
           <Image
             src={post.image}
             alt={post.title}
@@ -117,7 +117,7 @@ export default function BlogPostPage({ params }: BlogPostPageProps) {
 
       {/* Article Content */}
       <Container size="narrow" className="mt-10">
-        <div className="rounded-card border border-brand-light bg-brand-white p-8 sm:p-12 shadow-subtle">
+        <div className="rounded-brutal brutal-card border-3 border-brand-ink bg-brand-white p-8 sm:p-12 shadow-brutal-sm">
           <div className="prose prose-neutral max-w-none space-y-5 text-sm sm:text-base leading-relaxed text-brand-ink/90 font-sans">
             {post.content.split("\n\n").map((paragraph, index) => {
               const trimmed = paragraph.trim();
@@ -143,7 +143,7 @@ export default function BlogPostPage({ params }: BlogPostPageProps) {
               }
               if (trimmed.startsWith("1. ") || trimmed.startsWith("- ")) {
                 return (
-                  <div key={index} className="rounded-lg bg-brand-cream/40 p-4 border border-brand-light/60 text-sm">
+                  <div key={index} className="rounded-lg bg-brand-cream/40 p-4 border-3 border-brand-ink/60 text-sm">
                     {trimmed}
                   </div>
                 );
@@ -162,7 +162,7 @@ export default function BlogPostPage({ params }: BlogPostPageProps) {
             {post.tags.map((tag) => (
               <span
                 key={tag}
-                className="rounded bg-brand-cream border border-brand-light px-2.5 py-1 text-xs font-mono text-brand-neutral"
+                className="rounded bg-brand-cream border-3 border-brand-ink px-2.5 py-1 text-xs font-mono text-brand-neutral"
               >
                 #{tag}
               </span>
@@ -171,7 +171,7 @@ export default function BlogPostPage({ params }: BlogPostPageProps) {
         </div>
 
         {/* Next Read Footer */}
-        <div className="mt-10 rounded-card bg-brand-ink text-white p-8 text-center space-y-4">
+        <div className="mt-10 rounded-brutal brutal-card bg-brand-ink text-white p-8 text-center space-y-4">
           <h3 className="font-display text-2xl font-bold">
             Write With Catalyst Crew
           </h3>

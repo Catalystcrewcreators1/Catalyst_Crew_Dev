@@ -21,7 +21,7 @@ export default function CrewPage() {
   return (
     <div className="flex flex-col min-h-screen">
       {/* Header Banner */}
-      <section className="bg-brand-ink text-white py-16 border-b border-brand-soft">
+      <section className="bg-brand-ink text-white py-16 border-b-3 border-brand-ink">
         <Container>
           <div className="max-w-3xl">
             <div className="flex items-center gap-2 mb-3">
@@ -41,7 +41,7 @@ export default function CrewPage() {
       </section>
 
       {/* Founding Leadership */}
-      <section className="py-16 bg-brand-cream border-b border-brand-light/80">
+      <section className="py-16 bg-brand-cream border-b-3 border-brand-ink">
         <Container>
           <SectionHeader
             eyebrow="FOUNDING COUNCIL"
@@ -53,7 +53,7 @@ export default function CrewPage() {
             {founding.map((member) => (
               <div
                 key={member.name}
-                className="rounded-card border border-brand-light bg-brand-white p-6 flex flex-col justify-between transition-all hover:border-brand-ink/40 shadow-subtle"
+                className="rounded-brutal brutal-card border-3 border-brand-ink bg-brand-white p-6 flex flex-col justify-between transition-all hover:border-brand-ink/40 shadow-brutal-sm"
               >
                 <div>
                   <div className="relative h-56 w-full overflow-hidden rounded-lg bg-brand-soft mb-4">
@@ -117,7 +117,7 @@ export default function CrewPage() {
       </section>
 
       {/* Core Engineering, Ops & Design */}
-      <section className="py-16 bg-brand-white border-b border-brand-light/80">
+      <section className="py-16 bg-brand-white border-b-3 border-brand-ink">
         <Container>
           <SectionHeader
             eyebrow="DOMAIN LEADS"
@@ -129,7 +129,7 @@ export default function CrewPage() {
             {core.map((member) => (
               <div
                 key={member.name}
-                className="rounded-card border border-brand-light bg-brand-cream/30 p-6 flex flex-col justify-between"
+                className="rounded-brutal brutal-card border-3 border-brand-ink bg-brand-cream/30 p-6 flex flex-col justify-between"
               >
                 <div>
                   <div className="relative h-44 w-full overflow-hidden rounded-lg bg-brand-soft mb-4">

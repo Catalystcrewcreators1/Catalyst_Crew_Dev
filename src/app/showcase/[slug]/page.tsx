@@ -75,7 +75,7 @@ export default function ProjectDetailPage({ params }: ProjectDetailPageProps) {
       </div>
 
       {/* Hero Header */}
-      <section className="bg-brand-ink text-white py-14 sm:py-16 border-b border-brand-soft">
+      <section className="bg-brand-ink text-white py-14 sm:py-16 border-b-3 border-brand-ink">
         <Container>
           <div className="max-w-4xl space-y-4">
             <div className="flex flex-wrap items-center gap-2">
@@ -136,7 +136,7 @@ export default function ProjectDetailPage({ params }: ProjectDetailPageProps) {
             {/* Left Column (8 cols): Deep Technical Narrative */}
             <div className="lg:col-span-8 space-y-10">
               {/* Preview Image */}
-              <div className="relative h-72 sm:h-96 w-full rounded-card overflow-hidden border border-brand-light shadow-card bg-brand-soft">
+              <div className="relative h-72 sm:h-96 w-full rounded-brutal brutal-card overflow-hidden border-3 border-brand-ink shadow-brutal bg-brand-soft">
                 <Image
                   src={project.image}
                   alt={project.name}
@@ -147,7 +147,7 @@ export default function ProjectDetailPage({ params }: ProjectDetailPageProps) {
               </div>
 
               {/* Overview */}
-              <div className="rounded-card border border-brand-light bg-brand-white p-7 sm:p-9 shadow-subtle space-y-4">
+              <div className="rounded-brutal brutal-card border-3 border-brand-ink bg-brand-white p-7 sm:p-9 shadow-brutal-sm space-y-4">
                 <h2 className="font-display text-2xl font-bold text-brand-ink flex items-center gap-2">
                   <Layers className="h-5 w-5 text-brand-red" />
                   Project Overview
@@ -158,7 +158,7 @@ export default function ProjectDetailPage({ params }: ProjectDetailPageProps) {
               </div>
 
               {/* Problem Breakdown */}
-              <div className="rounded-card border border-brand-light bg-brand-white p-7 sm:p-9 shadow-subtle space-y-4">
+              <div className="rounded-brutal brutal-card border-3 border-brand-ink bg-brand-white p-7 sm:p-9 shadow-brutal-sm space-y-4">
                 <div className="flex items-center gap-2">
                   <AlertCircle className="h-5 w-5 text-amber-600" />
                   <h2 className="font-display text-2xl font-bold text-brand-ink">
@@ -171,7 +171,7 @@ export default function ProjectDetailPage({ params }: ProjectDetailPageProps) {
               </div>
 
               {/* Engineering Solution */}
-              <div className="rounded-card border border-brand-light bg-brand-white p-7 sm:p-9 shadow-subtle space-y-4">
+              <div className="rounded-brutal brutal-card border-3 border-brand-ink bg-brand-white p-7 sm:p-9 shadow-brutal-sm space-y-4">
                 <div className="flex items-center gap-2">
                   <CheckCircle2 className="h-5 w-5 text-emerald-600" />
                   <h2 className="font-display text-2xl font-bold text-brand-ink">
@@ -184,7 +184,7 @@ export default function ProjectDetailPage({ params }: ProjectDetailPageProps) {
               </div>
 
               {/* Tech Stack Breakdown */}
-              <div className="rounded-card border border-brand-light bg-brand-white p-7 sm:p-9 shadow-subtle space-y-4">
+              <div className="rounded-brutal brutal-card border-3 border-brand-ink bg-brand-white p-7 sm:p-9 shadow-brutal-sm space-y-4">
                 <h2 className="font-display text-2xl font-bold text-brand-ink flex items-center gap-2">
                   <Code2 className="h-5 w-5 text-brand-red" />
                   Technologies & Frameworks
@@ -193,7 +193,7 @@ export default function ProjectDetailPage({ params }: ProjectDetailPageProps) {
                   {project.stack.map((tech) => (
                     <div
                       key={tech}
-                      className="inline-flex items-center gap-1.5 rounded-button border border-brand-light bg-brand-cream/50 px-3.5 py-1.5 text-xs font-mono text-brand-ink font-semibold"
+                      className="inline-flex items-center gap-1.5 rounded-brutal border-3 border-brand-ink bg-brand-cream/50 px-3.5 py-1.5 text-xs font-mono text-brand-ink font-semibold"
                     >
                       <Cpu className="h-3 w-3 text-brand-red" />
                       <span>{tech}</span>
@@ -206,7 +206,7 @@ export default function ProjectDetailPage({ params }: ProjectDetailPageProps) {
             {/* Right Column (4 cols): Builders & Specs */}
             <div className="lg:col-span-4 space-y-6">
               {/* Builders Squad */}
-              <div className="rounded-card border border-brand-light bg-brand-white p-6 shadow-subtle space-y-4">
+              <div className="rounded-brutal brutal-card border-3 border-brand-ink bg-brand-white p-6 shadow-brutal-sm space-y-4">
                 <h3 className="font-display text-lg font-bold text-brand-ink flex items-center gap-2">
                   <Users2 className="h-4 w-4 text-brand-red" />
                   The Builders Squad
@@ -250,7 +250,7 @@ export default function ProjectDetailPage({ params }: ProjectDetailPageProps) {
               </div>
 
               {/* Build Details */}
-              <div className="rounded-card border border-brand-light bg-brand-white p-6 shadow-subtle space-y-3 text-xs font-mono">
+              <div className="rounded-brutal brutal-card border-3 border-brand-ink bg-brand-white p-6 shadow-brutal-sm space-y-3 text-xs font-mono">
                 <h3 className="font-display text-base font-bold text-brand-ink font-sans pb-1 border-b border-brand-light/60">
                   Build Specifications
                 </h3>
@@ -269,7 +269,7 @@ export default function ProjectDetailPage({ params }: ProjectDetailPageProps) {
               </div>
 
               {/* Submit CTA Card */}
-              <div className="rounded-card bg-brand-ink text-white p-6 space-y-3 border border-brand-soft">
+              <div className="rounded-brutal brutal-card bg-brand-ink text-white p-6 space-y-3 border border-brand-soft">
                 <div className="flex items-center gap-2 text-brand-red font-mono text-xs uppercase tracking-wider">
                   <Sparkles className="h-4 w-4" />
                   <span>Your Turn to Build</span>
@@ -305,7 +305,7 @@ export default function ProjectDetailPage({ params }: ProjectDetailPageProps) {
                   <Link
                     key={rel.slug}
                     href={`/showcase/${rel.slug}`}
-                    className="group rounded-card border border-brand-light bg-brand-white p-5 flex gap-4 items-center hover:border-brand-ink/40 transition-colors shadow-subtle"
+                    className="group rounded-brutal brutal-card border-3 border-brand-ink bg-brand-white p-5 flex gap-4 items-center hover:border-brand-ink/40 transition-colors shadow-brutal-sm"
                   >
                     <div className="relative h-20 w-24 rounded-lg overflow-hidden bg-brand-soft shrink-0">
                       <Image

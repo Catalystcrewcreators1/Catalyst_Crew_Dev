@@ -13,7 +13,7 @@ export const metadata: Metadata = {
 export default function CodeOfConductPage() {
   return (
     <div className="flex flex-col min-h-screen bg-brand-cream pb-20">
-      <section className="bg-brand-ink text-white py-16 border-b border-brand-soft">
+      <section className="bg-brand-ink text-white py-16 border-b-3 border-brand-ink">
         <Container size="narrow">
           <Badge variant="red" size="sm" className="mb-3">
             COMMUNITY TRUST & SAFETY
@@ -28,7 +28,7 @@ export default function CodeOfConductPage() {
       </section>
 
       <Container size="narrow" className="mt-12">
-        <div className="rounded-card border border-brand-light bg-brand-white p-8 sm:p-12 shadow-subtle space-y-8 text-sm sm:text-base leading-relaxed text-brand-ink/90">
+        <div className="rounded-brutal brutal-card border-3 border-brand-ink bg-brand-white p-8 sm:p-12 shadow-brutal-sm space-y-8 text-sm sm:text-base leading-relaxed text-brand-ink/90">
           <section className="space-y-3">
             <h2 className="font-display text-2xl font-bold text-brand-ink flex items-center gap-2">
               <Heart className="h-5 w-5 text-brand-red" />
