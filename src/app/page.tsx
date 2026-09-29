@@ -15,6 +15,7 @@ import { ChoosePathSection } from "@/components/ui/ChoosePathSection";
 import { BrandPromiseSection } from "@/components/ui/BrandPromiseSection";
 import { EventTicketsSection } from "@/components/ui/EventTicketsSection";
 import { ShowcaseSection } from "@/components/ui/ShowcaseSection";
+import { OrgChartSection } from "@/components/ui/OrgChartSection";
 import { ImplosionCTA } from "@/components/ui/ImplosionCTA";
 import { eventsData } from "@/data/events";
 import { projectsData } from "@/data/projects";
@@ -162,6 +163,9 @@ export default function HomePage() {
 
       {/* TESTIMONIALS */}
       <TestimonialSlider />
+
+      {/* TEAM ORG CHART */}
+      <OrgChartSection />
 
       {/* PARTNER BANNER */}
       <section className="py-20 bg-brand-ink text-white border-b-3 border-brand-ink">
