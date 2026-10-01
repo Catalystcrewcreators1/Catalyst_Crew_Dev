@@ -298,8 +298,8 @@ export default function EventDetailPage({ params }: EventDetailPageProps) {
             <div className="animate-marquee gap-8 sm:gap-16 px-4 items-center">
               {/* Duplicate array to create seamless loop effect */}
               {[...event.sponsors, ...event.sponsors].map((sponsor, idx) => (
-                <div key={idx} className="flex flex-col items-center justify-center gap-2 group w-[140px] sm:w-[180px] shrink-0">
-                  <div className="relative h-14 sm:h-20 w-full grayscale opacity-80 group-hover:grayscale-0 group-hover:opacity-100 transition-all duration-300">
+                <div key={idx} className="flex flex-col items-center justify-center gap-3 group w-[220px] sm:w-[280px] shrink-0">
+                  <div className="relative h-20 sm:h-28 w-full grayscale opacity-80 group-hover:grayscale-0 group-hover:opacity-100 transition-all duration-300">
                     <Image
                       src={sponsor.logo}
                       alt={sponsor.name}
@@ -644,9 +644,9 @@ export default function EventDetailPage({ params }: EventDetailPageProps) {
                     {event.sponsors.map((sponsor, idx) => (
                       <div
                         key={idx}
-                        className="rounded-brutal border-3 border-brand-ink bg-brand-cream/30 p-4 flex flex-col items-center justify-center gap-3 hover:bg-brand-white hover:shadow-brutal-sm transition-all group"
+                        className="rounded-brutal border-3 border-brand-ink bg-brand-cream/30 p-5 sm:p-6 flex flex-col items-center justify-center gap-4 hover:bg-brand-white hover:shadow-brutal-sm transition-all group"
                       >
-                        <div className="relative h-16 w-full">
+                        <div className="relative h-24 sm:h-32 w-full">
                           <Image
                             src={sponsor.logo}
                             alt={sponsor.name}
