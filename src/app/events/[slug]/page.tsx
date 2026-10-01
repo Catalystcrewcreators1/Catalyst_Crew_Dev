@@ -261,8 +261,6 @@ export default function EventDetailPage({ params }: EventDetailPageProps) {
             </div>
           </div>
         </Container>
-          </div>
-        </Container>
       </section>
 
       {/* Sponsors Carousel Marquee below Hero */}
