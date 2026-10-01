@@ -113,14 +113,14 @@ export default function EventDetailPage({ params }: EventDetailPageProps) {
             {/* Ambient backlight glow */}
             <div className="absolute -inset-1 rounded-2xl bg-gradient-to-r from-brand-red/30 via-transparent to-brand-red/30 opacity-40 blur-xl pointer-events-none group-hover:opacity-75 transition-opacity duration-500" />
 
-            <div className="relative w-full aspect-[1024/385] overflow-hidden bg-black">
+            <div className="relative w-full h-[400px] sm:h-[500px] md:h-[650px] overflow-hidden bg-[#0A0A0A]">
               <Image
                 src={event.image}
                 alt={`${event.title} Official Hackathon Poster - Ideate, Build, Impact`}
                 fill
                 priority
                 sizes="(max-width: 768px) 100vw, (max-width: 1200px) 95vw, 1200px"
-                className="object-cover object-center transition-transform duration-700 group-hover:scale-[1.01]"
+                className="object-contain object-center transition-transform duration-700 group-hover:scale-[1.01] p-2"
               />
             </div>
 
@@ -261,7 +261,63 @@ export default function EventDetailPage({ params }: EventDetailPageProps) {
             </div>
           </div>
         </Container>
+          </div>
+        </Container>
       </section>
+
+      {/* Sponsors Carousel Marquee below Hero */}
+      {event.sponsors && event.sponsors.length > 0 && (
+        <section className="bg-brand-white border-b-3 border-brand-ink py-6 overflow-hidden flex flex-col justify-center">
+          <style dangerouslySetInnerHTML={{
+            __html: `
+            @keyframes marquee {
+              0% { transform: translateX(0%); }
+              100% { transform: translateX(-50%); }
+            }
+            .animate-marquee {
+              display: flex;
+              width: max-content;
+              animation: marquee 30s linear infinite;
+            }
+            .animate-marquee:hover {
+              animation-play-state: paused;
+            }
+          `}} />
+          <Container>
+            <div className="flex items-center gap-4 mb-4">
+              <div className="h-px bg-brand-light/70 flex-grow"></div>
+              <span className="font-mono text-[10px] uppercase tracking-[0.2em] text-brand-neutral font-bold">
+                OFFICIAL PARTNERS & SPONSORS
+              </span>
+              <div className="h-px bg-brand-light/70 flex-grow"></div>
+            </div>
+          </Container>
+          
+          <div className="w-full relative">
+            <div className="absolute inset-y-0 left-0 w-16 bg-gradient-to-r from-brand-white to-transparent z-10 pointer-events-none"></div>
+            <div className="absolute inset-y-0 right-0 w-16 bg-gradient-to-l from-brand-white to-transparent z-10 pointer-events-none"></div>
+            
+            <div className="animate-marquee gap-8 sm:gap-16 px-4 items-center">
+              {/* Duplicate array to create seamless loop effect */}
+              {[...event.sponsors, ...event.sponsors].map((sponsor, idx) => (
+                <div key={idx} className="flex flex-col items-center justify-center gap-2 group w-[140px] sm:w-[180px] shrink-0">
+                  <div className="relative h-14 sm:h-20 w-full grayscale opacity-80 group-hover:grayscale-0 group-hover:opacity-100 transition-all duration-300">
+                    <Image
+                      src={sponsor.logo}
+                      alt={sponsor.name}
+                      fill
+                      className="object-contain"
+                    />
+                  </div>
+                  <span className="text-[9px] font-mono font-bold text-brand-neutral uppercase tracking-wider opacity-0 group-hover:opacity-100 transition-opacity">
+                    {sponsor.category}
+                  </span>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+      )}
 
       {/* MANDATORY OFFICIAL COMMUNICATION NOTICE BANNER */}
       <section className="bg-emerald-950/40 border-b border-emerald-500/20 py-4">
