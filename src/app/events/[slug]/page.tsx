@@ -27,6 +27,9 @@ import {
   Lightbulb,
   Building2,
   Check,
+  Mail,
+  Phone,
+  Handshake,
 } from "lucide-react";
 
 interface EventDetailPageProps {
@@ -132,7 +135,7 @@ export default function EventDetailPage({ params }: EventDetailPageProps) {
               <div className="flex items-center gap-3 text-brand-light/70 text-[11px] sm:text-xs">
                 <span>Fully Online</span>
                 <span className="text-brand-light/30">|</span>
-                <span className="text-emerald-400 font-bold">₹24,000 Prize Pool</span>
+                <span className="text-emerald-400 font-semibold">Up to ₹20,000 Prize Pool</span>
                 <span className="text-brand-light/30">|</span>
                 <a
                   href={event.image}
@@ -162,7 +165,7 @@ export default function EventDetailPage({ params }: EventDetailPageProps) {
                 </span>
                 <span className="text-brand-light/40">•</span>
                 <span className="text-xs font-mono text-emerald-400 font-semibold">
-                  CatalystCrew × Rosterwa
+                  CatalystCrew × Posterwa × AWS SBG PSIT
                 </span>
               </div>
 
@@ -198,10 +201,10 @@ export default function EventDetailPage({ params }: EventDetailPageProps) {
                   Total Cash Prize Pool
                 </span>
                 <div className="text-2xl sm:text-3xl font-display font-extrabold text-amber-400 mt-0.5">
-                  ₹24,000
+                  Up to ₹20,000
                 </div>
                 <p className="text-[11px] font-mono text-brand-light/70 mt-1">
-                  1st: ₹12K • 2nd: ₹8K • 3rd: ₹4K + E-Certificates
+                  Winner: ₹12K • Runner-Up: ₹8K + E-Certificates
                 </p>
               </div>
 
@@ -212,7 +215,7 @@ export default function EventDetailPage({ params }: EventDetailPageProps) {
                 </div>
                 <div className="flex justify-between">
                   <span className="text-brand-light/50">Round 2 (Semi-Final):</span>
-                  <span className="font-semibold text-white">₹80 / member</span>
+                  <span className="font-semibold text-white">₹50 / member</span>
                 </div>
                 <div className="flex justify-between">
                   <span className="text-brand-light/50">Team Size:</span>
@@ -221,6 +224,10 @@ export default function EventDetailPage({ params }: EventDetailPageProps) {
                 <div className="flex justify-between">
                   <span className="text-brand-light/50">Mode:</span>
                   <span className="font-semibold text-white">Fully Online</span>
+                </div>
+                <div className="flex justify-between">
+                  <span className="text-brand-light/50">Eligibility:</span>
+                  <span className="font-semibold text-white">All Students</span>
                 </div>
               </div>
 
@@ -474,7 +481,7 @@ export default function EventDetailPage({ params }: EventDetailPageProps) {
                     Prizes & Recognition
                   </h2>
                   <span className="font-mono text-xs text-amber-500 font-bold">
-                    ₹28,000 Total Cash Pool
+                    Up to ₹20,000 Total Cash Pool
                   </span>
                 </div>
 
@@ -561,6 +568,80 @@ export default function EventDetailPage({ params }: EventDetailPageProps) {
                   {event.organizerAbout}
                 </p>
               </div>
+
+              {/* Official Sponsors & Partners */}
+              {event.sponsors && event.sponsors.length > 0 && (
+                <div className="rounded-brutal brutal-card border-3 border-brand-ink bg-brand-white p-7 sm:p-9 shadow-brutal-sm space-y-6">
+                  <div className="flex items-center gap-3">
+                    <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-brand-yellow text-brand-ink">
+                      <Handshake className="h-5 w-5" />
+                    </div>
+                    <div>
+                      <span className="font-mono text-xs uppercase tracking-widest text-brand-red font-semibold">
+                        OUR SPONSORS & PARTNERS
+                      </span>
+                      <h2 className="font-display text-2xl font-bold text-brand-ink">
+                        Supported By
+                      </h2>
+                    </div>
+                  </div>
+
+                  <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4">
+                    {event.sponsors.map((sponsor, idx) => (
+                      <div
+                        key={idx}
+                        className="rounded-brutal border-3 border-brand-ink bg-brand-cream/30 p-4 flex flex-col items-center justify-center gap-3 hover:bg-brand-white hover:shadow-brutal-sm transition-all group"
+                      >
+                        <div className="relative h-16 w-full">
+                          <Image
+                            src={sponsor.logo}
+                            alt={sponsor.name}
+                            fill
+                            className="object-contain"
+                          />
+                        </div>
+                        <div className="text-center">
+                          <div className="font-display text-xs font-bold text-brand-ink">
+                            {sponsor.name}
+                          </div>
+                          <div className="text-[10px] font-mono text-brand-red uppercase tracking-wider">
+                            {sponsor.category}
+                          </div>
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              )}
+
+              {/* Contact the Organisers */}
+              {event.contacts && event.contacts.length > 0 && (
+                <div className="rounded-brutal brutal-card border-3 border-brand-ink bg-brand-white p-7 sm:p-9 shadow-brutal-sm space-y-5">
+                  <h2 className="font-display text-2xl font-bold text-brand-ink flex items-center gap-2">
+                    <Phone className="h-5 w-5 text-brand-red" />
+                    Contact the Organisers
+                  </h2>
+                  <div className="space-y-3">
+                    {event.contacts.map((contact, idx) => (
+                      <div key={idx} className="flex flex-col sm:flex-row sm:items-center justify-between gap-2 border-b border-brand-light/60 pb-3 last:border-none">
+                        <div className="font-display text-sm font-bold text-brand-ink">
+                          {contact.name}
+                        </div>
+                        <div className="flex flex-wrap items-center gap-3 text-xs font-mono text-brand-neutral">
+                          <a href={`mailto:${contact.email}`} className="inline-flex items-center gap-1 hover:text-brand-red transition-colors">
+                            <Mail className="h-3 w-3" />
+                            {contact.email}
+                          </a>
+                          <a href={`tel:${contact.phone}`} className="inline-flex items-center gap-1 hover:text-brand-red transition-colors">
+                            <Phone className="h-3 w-3" />
+                            {contact.phone}
+                          </a>
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              )}
 
               {/* FAQs */}
               {event.faqs.length > 0 && (

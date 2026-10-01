@@ -9,6 +9,13 @@ export interface PptSlide {
   description: string;
 }
 
+export interface EventSponsor {
+  name: string;
+  logo: string;
+  category: string;
+  url?: string;
+}
+
 export interface Event {
   slug: string;
   title: string;
@@ -30,6 +37,7 @@ export interface Event {
   about: string;
   organizerAbout: string;
   whyParticipate: string[];
+  sponsors: EventSponsor[];
   themes: EventTheme[];
   pptStructure: PptSlide[];
   eliminationCriteria: string[];
@@ -70,6 +78,11 @@ export interface Event {
     question: string;
     answer: string;
   }[];
+  contacts?: {
+    name: string;
+    email: string;
+    phone: string;
+  }[];
 }
 
 export const eventsData: Event[] = [
@@ -82,26 +95,36 @@ export const eventsData: Event[] = [
     date: "Sep 25 - Oct 25, 2026",
     time: "Registrations Open",
     mode: "Online",
-    location: "Fully Online (Discord & Video Stream)",
+    location: "Fully Online",
     organizer: "Catalyst Crew Dev Community",
-    eligibility: "Student developers, innovators, designers & tech enthusiasts from all branches, years & colleges",
-    teamSize: "Minimum 4 – Maximum 5 Members",
-    prize: "₹24,000 Cash Pool + E-Certificates",
+    eligibility: "Undergraduate, Postgraduate, Engineering, Management, Arts, Commerce, Sciences, Law & Medical students from all branches, years & colleges",
+    teamSize: "4 – 5 Members",
+    prize: "Up to ₹20,000 Cash Prizes + E-Certificates",
     registrationUrl: "https://unstop.com/p/catalyst-hack-2026-catalyst-crew-dev-community-1760000",
     whatsappUrl: "https://chat.whatsapp.com/JMueST1O52NEmwY7Xji92l",
-    image: "/catalyst-hack-banner.jpg",
+    image: "/CH2026finalp.png",
     description:
-      "Catalyst Hack 2026 is a fully online technology and innovation hackathon designed to turn meaningful ideas into practical, scalable, and impactful solutions. Organized in collaboration with Rosterwa, the event brings together student developers, innovators, designers, and technology enthusiasts to solve real-world problems through collaboration and hands-on building.",
+      "Catalyst Hack 2026 is a fully online technology and innovation hackathon organised by Catalyst Crew Dev Community, in collaboration with Posterwa and AWS SBG PSIT. The hackathon brings together student developers, innovators, designers, and technology enthusiasts to transform meaningful ideas into practical, scalable, and impactful solutions for real-world problems.",
     about:
-      "Teams progress through an online PPT and idea screening round, a mentor-screening semi-final, and a 10-hour final hackathon sprint. Shortlisted teams present their ideas, explain technical feasibility, and build working prototypes for final evaluation. Participants must follow the event rules, submit required deliverables on time, and maintain originality and professional conduct throughout the competition.",
+      "Teams progress through an online PPT and idea screening round, a mentor-screening semi-final (₹50/member fee for shortlisted teams only), and a 10-hour final hackathon sprint. Shortlisted teams present their ideas, explain technical feasibility, and build working prototypes for final evaluation. Participants must follow the event rules, submit required deliverables on time, and maintain originality and professional conduct throughout the competition.",
     organizerAbout:
-      "Catalyst Crew Dev Community × Rosterwa are the organizing partners behind Catalyst Hack 2026, focused on bringing student developers, innovators, and technology enthusiasts together through collaborative learning, technical activities, community initiatives, and innovation-driven events.",
+      "Catalyst Crew Dev Community is the organising developer community behind Catalyst Hack 2026. The community focuses on bringing student developers, innovators, and technology enthusiasts together through collaborative learning, technical activities, community initiatives, and innovation-driven events. Organised in collaboration with Posterwa and AWS SBG PSIT.",
     whyParticipate: [
-      "Turn your raw idea into a production-grade working prototype evaluated by tech mentors.",
-      "Cash prize pool of ₹24,000 awarded directly to top 3 winning teams.",
+      "Up to ₹20,000 Cash Prizes awarded to top winning teams.",
+      "Cloud Innovation Opportunity with AWS SBG PSIT collaboration.",
+      "Build Real-World Solutions — turn ideas into working prototypes.",
       "Official E-Certificates awarded to all Semi-Finalist and Finalist participants.",
       "Rigorous 3-stage format: PPT Ideation, Mentor Screening, and a 10-Hour Live Build Sprint.",
       "Connect with passionate student developers and tech leaders across colleges nationwide.",
+    ],
+    sponsors: [
+      { name: "AWS Student Builder Groups", logo: "/awssbg.jpeg", category: "Cloud Partner" },
+      { name: "Posterwa", logo: "/porsterwaP.jpeg", category: "Collaboration Partner" },
+      { name: "Unstop", logo: "/unstopp.jpeg", category: "Platform Partner" },
+      { name: "Shekun JP", logo: "/Shekunjp.jpeg", category: "Community Partner" },
+      { name: "Enginow", logo: "/Enginow.png", category: "Tech Partner" },
+      { name: "Sulax Solar", logo: "/Sulax_Solar.png", category: "Energy Partner" },
+      { name: "Tribex Esports", logo: "/Tribex%20Esports.jpeg", category: "Gaming Partner" },
     ],
     themes: [
       {
@@ -229,7 +252,7 @@ export const eventsData: Event[] = [
       {
         phase: "Round 2: Semi-Final (Online Mentor Screening)",
         date: "24 October 2026",
-        description: "Shortlisted teams present solutions to mentors for feasibility, scalability, and execution review (₹80/member fee).",
+        description: "Shortlisted teams present solutions to mentors for feasibility, scalability, and execution review. Mandatory Fee: ₹50 per member, payable only after Round 1 shortlisting.",
       },
       {
         phase: "Round 3: Final Hackathon (10-Hour Sprint & Demos)",
@@ -248,9 +271,9 @@ export const eventsData: Event[] = [
       {
         name: "Round 2: Semi-Final (Mentor Screening)",
         duration: "24 Oct 2026",
-        fee: "₹80 per member",
+        fee: "₹50 per member",
         description:
-          "Shortlisted teams participate in an online mentor screening involving a solution pitch, technical discussion, feasibility, scalability, and execution-readiness assessment.",
+          "Shortlisted teams participate in an online mentor screening involving a solution pitch, technical discussion, feasibility, scalability, and execution-readiness assessment. Fee payable only after Round 1 shortlisting.",
       },
       {
         name: "Round 3: Final Hackathon (10-Hour Sprint)",
@@ -262,24 +285,19 @@ export const eventsData: Event[] = [
     ],
     prizesBreakdown: [
       {
-        rank: "1st Winner (Champion)",
+        rank: "Winner",
         amount: "₹12,000",
-        perks: "Cash prize, Official Winner E-Certificate, featured spot in Catalyst Crew Showcase & community spotlight.",
+        perks: "Cash prize, Official Winner E-Certificate of Catalyst Hack 2026.",
       },
       {
-        rank: "Runner-Up (2nd Place)",
+        rank: "Runner-Up",
         amount: "₹8,000",
-        perks: "Cash prize, Runner-Up E-Certificate, mentor network access & partner perks.",
-      },
-      {
-        rank: "2nd Runner-Up (3rd Place)",
-        amount: "₹4,000",
-        perks: "Cash prize, 2nd Runner-Up E-Certificate & community builder badge.",
+        perks: "Cash prize, Runner-Up E-Certificate of Catalyst Hack 2026.",
       },
       {
         rank: "Semi-Finalists & Finalists",
         amount: "E-Certificates",
-        perks: "Official verified E-Certificates recognizing rigorous evaluation and participation in Catalyst Hack 2026.",
+        perks: "Official Participation E-Certificates. All prizes and certificates will be released within 15 days after the event.",
       },
     ],
     judgingCriteria: [
@@ -354,33 +372,38 @@ export const eventsData: Event[] = [
       {
         question: "How do I register for Catalyst Hack 2026?",
         answer:
-          "You can register directly through the official Unstop portal (https://unstop.com/p/catalyst-hack-2026-catalyst-crew-dev-community-1760000). All registered participants are also required to join our official WhatsApp group (https://chat.whatsapp.com/JMueST1O52NEmwY7Xji92l) where screening links, deadlines, and PPT submission portals are shared.",
+          "Register through the official Unstop portal. All registered participants must also join the official WhatsApp group for announcements, screening links, deadlines, and PPT submission portals.",
       },
       {
         question: "What is the team size requirement?",
         answer:
-          "Each team must have a minimum of 4 and a maximum of 5 members. Cross-college and cross-year teams are completely allowed.",
+          "Each team must have 4 to 5 members. Cross-college, cross-branch and cross-year teams are completely allowed.",
       },
       {
-        question: "Is there any fee to participate in Catalyst Hack 2026?",
+        question: "Is there any fee to participate?",
         answer:
-          "Round 1 (Registration and 7-slide PPT submission) is completely FREE. Teams that qualify for Round 2 (Semi-Final mentor screening) have a nominal participation fee of ₹80 per member.",
+          "Registration and Round 1 (PPT submission) is completely FREE. Teams shortlisted for Round 2 (Semi-Final) pay a nominal fee of ₹50 per member.",
       },
       {
-        question: "What is the format of Round 1 PPT submission?",
+        question: "No team? How can I find teammates?",
         answer:
-          "Teams must submit a 7-slide deck covering: Slide 1 (Title & Team Intro), Slide 2 (Problem & Target Users), Slide 3 (Proposed Solution), Slide 4 (Key Features & Innovation), Slide 5 (Tech Stack & Architecture), Slide 6 (Impact & Scalability), and Slide 7 (Prototype & Roadmap).",
+          "Fill the team formation form at formstuff.in/f/catalyst-hack-2026-p092v and find teammates based on your skills, interests & ideas.",
       },
       {
         question: "Is the hackathon completely online?",
         answer:
-          "Yes! Catalyst Hack 2026 is 100% online. Mentor screening, reviews, and the 8-hour final hackathon build sprint take place over Discord and live video streams.",
+          "Yes! Catalyst Hack 2026 is 100% online. All rounds including PPT submission, mentor screening, and the 10-hour final hackathon build sprint take place online.",
       },
       {
         question: "Can I use AI tools and open-source libraries?",
         answer:
-          "Yes, AI tools, public APIs, and open-source libraries are permitted, provided you disclose them in your tech stack. However, direct copying of existing repositories or pre-built complete apps without disclosure is strictly banned.",
+          "Yes, AI tools, development frameworks, APIs, and open-source resources are permitted. However, usage must follow the event's applicable policies and required disclosure. Teams must demonstrate genuine understanding and contribution.",
       },
+    ],
+    contacts: [
+      { name: "Catalyst Crew", email: "catalystcrewcreators@gmail.com", phone: "+919235823255" },
+      { name: "Aviral Mishra", email: "aviral18m@gmail.com", phone: "+919170252358" },
+      { name: "Aryan Pandey", email: "aryanp24.comm24@gmail.com", phone: "+919559287755" },
     ],
   },
 ];
