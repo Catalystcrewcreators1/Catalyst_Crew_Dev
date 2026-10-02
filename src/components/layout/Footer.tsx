@@ -1,15 +1,23 @@
+"use client";
+
 import React from "react";
 import Link from "next/link";
 import Image from "next/image";
+import { useRouter } from "next/navigation";
 import { Container } from "@/components/ui/Container";
 import { ArrowUpRight, Github, Twitter, Linkedin, MessageSquare } from "lucide-react";
+// @ts-ignore
+import { Download04Icon, Rocket01Icon, Settings02Icon } from '@hugeicons/core-free-icons';
+import BranchedMenu from "../ui/BranchedMenu";
 
 export function Footer() {
+  const router = useRouter();
+
   return (
     <footer className="bg-brand-ink border-t-3 border-brand-ink text-brand-cream pt-16 pb-12">
       <Container>
         {/* Main Footer Grid */}
-        <div className="grid grid-cols-1 gap-12 lg:grid-cols-5">
+        <div className="grid grid-cols-1 gap-12 lg:grid-cols-7">
           {/* Brand Manifesto Column */}
           <div className="lg:col-span-2 space-y-5">
             <Link
@@ -112,6 +120,42 @@ export function Footer() {
                 </a>
               </li>
             </ul>
+          </div>
+
+          {/* Nav Column 4: Menu */}
+          <div className="lg:col-span-2 space-y-4">
+            <h3 className="font-display text-xs uppercase font-bold tracking-widest text-brand-yellow">
+              Resources
+            </h3>
+            <BranchedMenu
+              items={[
+                {
+                  label: 'Getting started',
+                  children: [
+                    { value: 'install', label: 'Installation', icon: Download04Icon },
+                    { value: 'quick', label: 'Quick start', icon: Rocket01Icon },
+                    { value: 'config', label: 'Configuration', icon: Settings02Icon }
+                  ]
+                },
+                { label: 'Components', children: [{ value: 'buttons', label: 'Buttons', icon: undefined }, { value: 'overlays', label: 'Overlays', icon: undefined }] }
+              ] as any}
+              defaultOpen={0}
+              defaultActive="quick"
+              onSelect={(value: string) => router.push(`/${value}`)}
+              onToggle={(index: number, open: boolean) => {}}
+              color="#f5f5f5"
+              accentColor="#f5f5f5"
+              lineColor="#3f3f46"
+              width={240}
+              rowHeight={36}
+              indent={40}
+              trunk={14}
+              radius={10}
+              lineWidth={1.5}
+              fontSize={14}
+              drawDuration={400}
+              foldDuration={300}
+            />
           </div>
         </div>
 
