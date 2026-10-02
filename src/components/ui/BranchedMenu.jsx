@@ -7,10 +7,10 @@ const DEFAULT_ITEMS = [
   {
     label: 'Getting started',
     children: [
-      { value: 'install', label: 'Installation', icon: Download04Icon },
-      { value: 'quick', label: 'Quick start', icon: Rocket01Icon },
-      { value: 'config', label: 'Configuration', icon: Settings02Icon },
-      { value: 'theming', label: 'Theming', icon: PaintBoardIcon }
+      { value: 'install', label: 'Installation' },
+      { value: 'quick', label: 'Quick start' },
+      { value: 'config', label: 'Configuration' },
+      { value: 'theming', label: 'Theming' }
     ]
   },
   {
