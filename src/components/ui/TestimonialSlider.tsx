@@ -17,55 +17,55 @@ const testimonials = [
     content: "I have been participating in Catalyst Crew events for over a year now and I love it! I can't imagine my dev journey without it.",
     author: "Imtiaz Ali",
     role: "VP, Design, Apple Inc",
-    image: "https://api.dicebear.com/9.x/avataaars/svg?seed=Imtiaz&backgroundColor=ffdfbf",
+    image: "https://randomuser.me/api/portraits/men/32.jpg",
   },
   {
     content: "The hackathons organized by Catalyst Crew are top-notch. The community is incredibly supportive and I've learned more here than in my college classes.",
     author: "Sarah Jenkins",
     role: "Frontend Developer",
-    image: "https://api.dicebear.com/9.x/avataaars/svg?seed=Sarah&backgroundColor=b6e3f4",
+    image: "https://randomuser.me/api/portraits/women/44.jpg",
   },
   {
     content: "Finding co-founders and team members used to be a pain. Through this community, I found my current startup team. Absolutely invaluable resource.",
     author: "Rahul Sharma",
     role: "Founder, TechStart",
-    image: "https://api.dicebear.com/9.x/avataaars/svg?seed=Rahul&backgroundColor=c0aede",
+    image: "https://randomuser.me/api/portraits/men/22.jpg",
   },
   {
     content: "The level of engineering talent here is insane. As a recruiter, this is my go-to place to find developers who actually know how to build and ship.",
     author: "Emily Chen",
     role: "Technical Recruiter",
-    image: "https://api.dicebear.com/9.x/avataaars/svg?seed=Emily&backgroundColor=ffdfbf",
+    image: "https://randomuser.me/api/portraits/women/68.jpg",
   },
   {
     content: "I love the focus on practical building rather than just tutorials. The masterclasses are dense with information and immediately applicable.",
     author: "David Kumar",
     role: "Systems Engineer",
-    image: "https://api.dicebear.com/9.x/avataaars/svg?seed=David&backgroundColor=d1d4f9",
+    image: "https://randomuser.me/api/portraits/men/46.jpg",
   },
   {
     content: "The Catalyst Crew environment pushes you to ship code fast and efficiently. It's unlike any other dev community I've seen on campus.",
     author: "Ananya Desai",
     role: "Student Developer",
-    image: "https://api.dicebear.com/9.x/avataaars/svg?seed=Ananya&backgroundColor=b6e3f4",
+    image: "https://randomuser.me/api/portraits/women/24.jpg",
   },
   {
     content: "Sponsoring their flagship hackathon gave us direct access to 500+ top tier developers. The ROI for our dev-tools platform was absolutely incredible.",
     author: "Michael Ross",
     role: "DevRel, TechCorp",
-    image: "https://api.dicebear.com/9.x/avataaars/svg?seed=Michael&backgroundColor=ffdfbf",
+    image: "https://randomuser.me/api/portraits/men/62.jpg",
   },
   {
     content: "I built my first real-world production app here. The mentors don't just give you the answers; they teach you how to think like an engineer.",
     author: "Priya Patel",
     role: "Software Intern",
-    image: "https://api.dicebear.com/9.x/avataaars/svg?seed=Priya&backgroundColor=c0aede",
+    image: "https://randomuser.me/api/portraits/women/36.jpg",
   },
   {
     content: "If you want to surround yourself with people who are actually building the future instead of just talking about it, this is the place to be.",
     author: "Rohan Gupta",
     role: "AI Researcher",
-    image: "https://api.dicebear.com/9.x/avataaars/svg?seed=Rohan&backgroundColor=d1d4f9",
+    image: "https://randomuser.me/api/portraits/men/17.jpg",
   }
 ];
 
@@ -153,7 +153,7 @@ export const TestimonialSlider = () => {
                 </p>
                 
                 <div className="flex items-center gap-4 mt-auto relative z-10 pt-4">
-                  <div className="relative h-12 w-12 rounded-full overflow-hidden shrink-0 border-2 border-brand-ink bg-brand-cream">
+                  <div className="relative h-12 w-12 rounded-full overflow-hidden shrink-0 border border-white/20">
                     <img 
                       src={testimonial.image} 
                       alt={testimonial.author}
