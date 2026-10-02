@@ -102,7 +102,7 @@ export const eventsData: Event[] = [
     prize: "Up to ₹20,000 Cash Prizes + E-Certificates",
     registrationUrl: "https://unstop.com/p/catalyst-hack-2026-catalyst-crew-dev-community-1760000",
     whatsappUrl: "https://chat.whatsapp.com/JMueST1O52NEmwY7Xji92l",
-    image: "/CH2026finalp.png",
+    image: "/poster1x1.png",
     description:
       "Catalyst Hack 2026 is a fully online technology and innovation hackathon organised by Catalyst Crew Dev Community, in collaboration with Posterwa and AWS SBG PSIT. The hackathon brings together student developers, innovators, designers, and technology enthusiasts to transform meaningful ideas into practical, scalable, and impactful solutions for real-world problems.",
     about:

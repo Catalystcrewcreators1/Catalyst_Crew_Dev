@@ -153,10 +153,11 @@ export const EventTicketsSection = () => {
             </h2>
           </div>
           
-          <div className="md:w-1/3">
+          <div className="md:w-1/3 flex flex-col gap-8">
             <p className="text-brand-ink/80 font-sans text-base leading-relaxed border-l-4 border-brand-ink pl-4">
               Compete in our flagship hackathons, build alongside top student talent, and win major cash bounties. Don't just watch — participate.
             </p>
+
           </div>
         </div>
 
