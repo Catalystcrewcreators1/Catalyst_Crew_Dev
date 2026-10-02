@@ -5,9 +5,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { useRouter } from "next/navigation";
 import { Container } from "@/components/ui/Container";
-import { ArrowUpRight, Github, Twitter, Linkedin, MessageSquare } from "lucide-react";
-// @ts-ignore
-import { Download04Icon, Rocket01Icon, Settings02Icon } from '@hugeicons/core-free-icons';
+import { ArrowUpRight, Github, Twitter, Linkedin, MessageSquare, Download, Rocket, Settings } from "lucide-react";
 import BranchedMenu from "../ui/BranchedMenu";
 
 export function Footer() {
@@ -132,9 +130,9 @@ export function Footer() {
                 {
                   label: 'Getting started',
                   children: [
-                    { value: 'install', label: 'Installation', icon: Download04Icon },
-                    { value: 'quick', label: 'Quick start', icon: Rocket01Icon },
-                    { value: 'config', label: 'Configuration', icon: Settings02Icon }
+                    { value: 'install', label: 'Installation', icon: Download },
+                    { value: 'quick', label: 'Quick start', icon: Rocket },
+                    { value: 'config', label: 'Configuration', icon: Settings }
                   ]
                 },
                 { label: 'Components', children: [{ value: 'buttons', label: 'Buttons', icon: undefined }, { value: 'overlays', label: 'Overlays', icon: undefined }] }
