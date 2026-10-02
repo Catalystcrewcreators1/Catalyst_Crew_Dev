@@ -1,17 +1,6 @@
 'use client';
 
 import { isValidElement, useLayoutEffect, useRef, useState } from 'react';
-import { HugeiconsIcon } from '@hugeicons/react';
-import {
-  CursorPointer01Icon,
-  Download04Icon,
-  Layers01Icon,
-  Notification03Icon,
-  PaintBoardIcon,
-  Rocket01Icon,
-  Settings02Icon,
-  TextFontIcon
-} from '@hugeicons/core-free-icons';
 import './BranchedMenu.css';
 
 const DEFAULT_ITEMS = [
@@ -27,17 +16,17 @@ const DEFAULT_ITEMS = [
   {
     label: 'Components',
     children: [
-      { value: 'buttons', label: 'Buttons', icon: CursorPointer01Icon },
-      { value: 'typography', label: 'Typography', icon: TextFontIcon },
-      { value: 'overlays', label: 'Overlays', icon: Layers01Icon },
-      { value: 'toasts', label: 'Toasts', icon: Notification03Icon }
+      { value: 'buttons', label: 'Buttons' },
+      { value: 'typography', label: 'Typography' },
+      { value: 'overlays', label: 'Overlays' },
+      { value: 'toasts', label: 'Toasts' }
     ]
   }
 ];
 const PAD = 6;
 const MARK = 16;
 
-const renderIcon = icon => (isValidElement(icon) ? icon : <HugeiconsIcon icon={icon} size={16} strokeWidth={1.8} />);
+const renderIcon = Icon => (isValidElement(Icon) ? Icon : (typeof Icon === 'function' || typeof Icon === 'object') ? <Icon size={16} strokeWidth={1.8} /> : null);
 const toSet = open => new Set(Array.isArray(open) ? open : open >= 0 ? [open] : []);
 
 export default function BranchedMenu({
