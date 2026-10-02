@@ -120,7 +120,7 @@ export function HeroEventCarousel({ events }: HeroEventCarouselProps) {
                   src={currentEvent.image}
                   alt={currentEvent.title}
                   fill
-                  className="object-cover object-top transition-transform duration-300 group-hover:scale-105"
+                  className="object-cover object-[center_30%] transition-transform duration-300 group-hover:scale-105"
                   priority
                 />
 
