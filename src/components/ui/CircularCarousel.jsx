@@ -838,6 +838,7 @@ const CircularCarousel = ({
             alt=""
             draggable={false}
             decoding="async"
+            loading="lazy"
             style={photoStyle}
           />
           {back && <div className="circular-carousel__inner" />}
