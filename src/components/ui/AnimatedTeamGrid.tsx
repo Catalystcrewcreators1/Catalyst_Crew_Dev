@@ -42,7 +42,7 @@ export function AnimatedTeamGrid({ team }: AnimatedTeamGridProps) {
 
   return (
     <motion.div 
-      className="mt-12 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6"
+      className="mt-12 grid grid-cols-1 lg:grid-cols-2 gap-8"
       variants={container}
       initial="hidden"
       whileInView="show"
@@ -58,25 +58,28 @@ export function AnimatedTeamGrid({ team }: AnimatedTeamGridProps) {
             y: -5,
             transition: { type: "spring", stiffness: 400, damping: 10 }
           }}
-          className="rounded-brutal brutal-card border-3 border-brand-ink bg-brand-white p-6 flex flex-col justify-between shadow-brutal hover:shadow-[8px_8px_0px_0px_rgba(20,20,20,1)] transition-shadow duration-300 cursor-pointer"
+          className="rounded-brutal brutal-card border-3 border-brand-ink bg-brand-white p-6 flex flex-col sm:flex-row gap-6 shadow-brutal hover:shadow-[8px_8px_0px_0px_rgba(20,20,20,1)] transition-shadow duration-300 cursor-pointer items-start"
         >
-          <div>
-            <div className="relative h-48 w-full overflow-hidden rounded-lg bg-brand-soft mb-4 border-2 border-brand-ink">
-              <Image
-                src={member.avatar}
-                alt={member.name}
-                fill
-                sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 25vw"
-                className="object-cover transition-transform duration-500 hover:scale-110"
-              />
-            </div>
-            <h3 className="font-display text-xl font-bold text-brand-ink">
+          {/* Left: Avatar */}
+          <div className="relative h-48 w-full sm:w-48 sm:h-48 shrink-0 overflow-hidden rounded-lg bg-brand-soft border-2 border-brand-ink">
+            <Image
+              src={member.avatar}
+              alt={member.name}
+              fill
+              sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+              className="object-cover transition-transform duration-700 hover:scale-110"
+            />
+          </div>
+          
+          {/* Right: Info */}
+          <div className="flex flex-col justify-center h-full py-2">
+            <h3 className="font-display text-2xl font-bold text-brand-ink">
               {member.name}
             </h3>
-            <div className="text-xs font-mono font-medium text-brand-red uppercase mt-0.5">
+            <div className="inline-block px-3 py-1 bg-brand-yellow/20 border-2 border-brand-ink rounded-brutal text-xs font-mono font-bold text-brand-ink uppercase mt-2 w-max shadow-[2px_2px_0px_0px_rgba(20,20,20,1)]">
               {member.role}
             </div>
-            <p className="mt-3 text-xs text-brand-neutral leading-relaxed">
+            <p className="mt-4 text-sm text-brand-neutral/90 leading-relaxed font-sans">
               {member.bio}
             </p>
           </div>
