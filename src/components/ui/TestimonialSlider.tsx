@@ -14,28 +14,28 @@ const cardThemes = [
 
 const testimonials = [
   {
-    content: "I have been participating in Catalyst Crew events for over a year now and I love it! I can't imagine my dev journey without it.",
-    author: "Imtiaz Ali",
-    role: "VP, Design, Apple Inc",
+    content: "Partnering with Catalyst Crew for our merchandise and hackathon swag was incredible. The energy of these student developers is unmatched, and their community engagement is top-notch.",
+    author: "Krishna",
+    role: "Founder, Posterwa",
     image: "https://randomuser.me/api/portraits/men/32.jpg",
   },
   {
-    content: "The hackathons organized by Catalyst Crew are top-notch. The community is incredibly supportive and I've learned more here than in my college classes.",
-    author: "Sarah Jenkins",
-    role: "Frontend Developer",
-    image: "https://randomuser.me/api/portraits/women/44.jpg",
+    content: "The level of cloud architecture solutions these students build during the 24-hour hackathons is insane. Catalyst Crew is setting a new benchmark for AWS Student Builders in India.",
+    author: "Aryan Sharma",
+    role: "AWS Student Ambassador",
+    image: "https://randomuser.me/api/portraits/men/44.jpg",
   },
   {
-    content: "Finding co-founders and team members used to be a pain. Through this community, I found my current startup team. Absolutely invaluable resource.",
-    author: "Rahul Sharma",
-    role: "Founder, TechStart",
+    content: "We hosted an esports and dev intersection event with Catalyst Crew, and the turnout was phenomenal. Finding developers who actually know how to build gaming infrastructure is rare.",
+    author: "Rohan Verma",
+    role: "Founder, Tribex Esports",
     image: "https://randomuser.me/api/portraits/men/22.jpg",
   },
   {
-    content: "The level of engineering talent here is insane. As a recruiter, this is my go-to place to find developers who actually know how to build and ship.",
-    author: "Emily Chen",
-    role: "Technical Recruiter",
-    image: "https://randomuser.me/api/portraits/women/68.jpg",
+    content: "We challenged the community to build energy-monitoring dashboards, and the MVPs they shipped in a single weekend were production-ready. Absolute rockstars.",
+    author: "Vikram Singh",
+    role: "CEO, Sulax Solar",
+    image: "https://randomuser.me/api/portraits/men/68.jpg",
   },
   {
     content: "I love the focus on practical building rather than just tutorials. The masterclasses are dense with information and immediately applicable.",
@@ -51,9 +51,9 @@ const testimonials = [
   },
   {
     content: "Sponsoring their flagship hackathon gave us direct access to 500+ top tier developers. The ROI for our dev-tools platform was absolutely incredible.",
-    author: "Michael Ross",
-    role: "DevRel, TechCorp",
-    image: "https://randomuser.me/api/portraits/men/62.jpg",
+    author: "Sneha Rao",
+    role: "DevRel Manager",
+    image: "https://randomuser.me/api/portraits/women/62.jpg",
   },
   {
     content: "I built my first real-world production app here. The mentors don't just give you the answers; they teach you how to think like an engineer.",
@@ -63,7 +63,7 @@ const testimonials = [
   },
   {
     content: "If you want to surround yourself with people who are actually building the future instead of just talking about it, this is the place to be.",
-    author: "Rohan Gupta",
+    author: "Rahul Gupta",
     role: "AI Researcher",
     image: "https://randomuser.me/api/portraits/men/17.jpg",
   }
