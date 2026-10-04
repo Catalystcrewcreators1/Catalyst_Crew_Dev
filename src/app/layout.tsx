@@ -3,7 +3,6 @@ import { Bricolage_Grotesque, DM_Sans } from "next/font/google";
 import "./globals.css";
 import { Navbar } from "@/components/layout/Navbar";
 import { Footer } from "@/components/layout/Footer";
-import { SplashScreen } from "@/components/ui/SplashScreen";
 
 const bricolage = Bricolage_Grotesque({
   subsets: ["latin"],
@@ -75,7 +74,6 @@ export default function RootLayout({
   return (
     <html lang="en" className={`${bricolage.variable} ${dmSans.variable}`}>
       <body className="min-h-screen flex flex-col bg-brand-cream text-brand-ink antialiased">
-        <SplashScreen />
         <Navbar />
         <main className="flex-1">{children}</main>
         <Footer />
