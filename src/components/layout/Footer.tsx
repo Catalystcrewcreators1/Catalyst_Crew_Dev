@@ -193,44 +193,7 @@ export function Footer() {
             />
           </div>
 
-          {/* Nav Column 4: Menu */}
-          <div className="space-y-4">
-            <h3 className="font-display text-xs uppercase font-bold tracking-widest text-brand-yellow">
-              Resources
-            </h3>
-            <BranchedMenu
-              items={[
-                {
-                  label: 'Getting started',
-                  children: [
-                    { value: 'install', label: 'Installation', icon: Download },
-                    { value: 'quick', label: 'Quick start', icon: Rocket },
-                    { value: 'config', label: 'Configuration', icon: Settings }
-                  ]
-                },
-                { label: 'Components', children: [{ value: 'buttons', label: 'Buttons', icon: undefined }, { value: 'overlays', label: 'Overlays', icon: undefined }] }
-              ] as any}
-              defaultOpen={0}
-              defaultActive="quick"
-              onSelect={(value: string) => {
-                if (value.startsWith('http')) window.open(value, '_blank', 'noopener,noreferrer');
-                else router.push(`/${value}`);
-              }}
-              onToggle={(index: number, open: boolean) => {}}
-              color="#f5f5f5"
-              accentColor="#f5f5f5"
-              lineColor="#3f3f46"
-              width={320}
-              rowHeight={36}
-              indent={40}
-              trunk={14}
-              radius={10}
-              lineWidth={1.5}
-              fontSize={14}
-              drawDuration={400}
-              foldDuration={300}
-            />
-          </div>
+
         </div>
 
         {/* Bottom Bar */}
