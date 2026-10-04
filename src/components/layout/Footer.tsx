@@ -19,10 +19,9 @@ export function Footer() {
   return (
     <footer className="bg-brand-ink border-t-3 border-brand-ink text-brand-cream pt-16 pb-12">
       <Container>
-        {/* Main Footer Grid */}
-        <div className="grid grid-cols-1 gap-12 lg:grid-cols-7">
+        <div className="flex flex-col lg:flex-row flex-wrap lg:justify-between gap-12">
           {/* Brand Manifesto Column */}
-          <div className="lg:col-span-2 space-y-5">
+          <div className="lg:max-w-xs space-y-5">
             <Link
               href="/"
               className="inline-block group transition-transform duration-200 hover:scale-[1.02] focus:outline-none"
@@ -195,7 +194,7 @@ export function Footer() {
           </div>
 
           {/* Nav Column 4: Menu */}
-          <div className="lg:col-span-2 space-y-4">
+          <div className="space-y-4">
             <h3 className="font-display text-xs uppercase font-bold tracking-widest text-brand-yellow">
               Resources
             </h3>

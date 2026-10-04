@@ -15,8 +15,7 @@
   position: relative;
   display: flex;
   flex-direction: column;
-  width: fit-content;
-  max-width: min(var(--bm-w), 100%);
+  width: max-content;
   padding-left: 14px;
   color: var(--bm-ink);
   font-family: inherit;
