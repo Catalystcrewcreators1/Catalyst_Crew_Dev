@@ -17,6 +17,7 @@ import {
   Users,
   Award,
 } from "lucide-react";
+import { AnimatedTeamGrid } from "@/components/ui/AnimatedTeamGrid";
 
 export const metadata: Metadata = {
   title: "About Us — Mission, Vision & Team",
@@ -143,34 +144,7 @@ export default function AboutPage() {
             }
           />
 
-          <div className="mt-12 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-            {foundingTeam.map((member) => (
-              <div
-                key={member.name}
-                className="rounded-brutal brutal-card border-3 border-brand-ink bg-brand-white p-6 flex flex-col justify-between"
-              >
-                <div>
-                  <div className="relative h-48 w-full overflow-hidden rounded-lg bg-brand-soft mb-4">
-                    <Image
-                      src={member.avatar}
-                      alt={member.name}
-                      fill
-                      className="object-cover"
-                    />
-                  </div>
-                  <h3 className="font-display text-xl font-bold text-brand-ink">
-                    {member.name}
-                  </h3>
-                  <div className="text-xs font-mono font-medium text-brand-red uppercase mt-0.5">
-                    {member.role}
-                  </div>
-                  <p className="mt-3 text-xs text-brand-neutral leading-relaxed">
-                    {member.bio}
-                  </p>
-                </div>
-              </div>
-            ))}
-          </div>
+          <AnimatedTeamGrid team={foundingTeam} />
         </Container>
       </section>
 
