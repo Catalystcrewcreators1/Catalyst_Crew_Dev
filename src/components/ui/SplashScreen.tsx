@@ -8,12 +8,25 @@ export function SplashScreen() {
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
-    // Only show the splash screen on initial load
-    const timer = setTimeout(() => {
-      setIsLoading(false);
-    }, 1500);
+    let timeoutId: NodeJS.Timeout;
 
-    return () => clearTimeout(timer);
+    const hideSplash = () => {
+      // Ensure the loader stays for at least 1000ms to avoid flashing,
+      // but only hides when the page is fully loaded.
+      timeoutId = setTimeout(() => {
+        setIsLoading(false);
+      }, 1000);
+    };
+
+    if (document.readyState === "complete") {
+      hideSplash();
+    } else {
+      window.addEventListener("load", hideSplash);
+      return () => {
+        window.removeEventListener("load", hideSplash);
+        clearTimeout(timeoutId);
+      };
+    }
   }, []);
 
   return (
