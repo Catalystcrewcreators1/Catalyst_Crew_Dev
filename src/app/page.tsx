@@ -167,42 +167,6 @@ export default function HomePage() {
       {/* TEAM ORG CHART */}
       <OrgChartSection />
 
-      {/* PARTNER BANNER */}
-      <section className="py-20 bg-brand-ink text-white border-b-3 border-brand-ink">
-        <Container>
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
-            <div className="lg:col-span-8 space-y-4">
-              <div className="inline-flex items-center gap-2 rounded-brutal border-2 border-brand-light/20 bg-brand-soft px-4 py-1.5 text-xs font-display font-bold uppercase tracking-wider text-brand-light/80 shadow-brutal-sm">
-                Collaboration Proposition
-              </div>
-              <h2 className="font-display text-3xl sm:text-5xl font-bold tracking-tight text-white">
-                BUILD WITH US<span className="text-brand-red">.</span>
-              </h2>
-              <p className="text-base text-brand-light/70 max-w-2xl leading-relaxed font-sans">
-                We believe in genuine developer activation over vanity logo placement. Partner with Catalyst Crew to launch custom API tracks, host technical workshops, and recruit top-tier student builders through their actual code commits.
-              </p>
-            </div>
-            <div className="lg:col-span-4 flex flex-col sm:flex-row lg:flex-col gap-3">
-              <Button
-                href="/partners"
-                variant="primary"
-                size="md"
-                className="w-full justify-center border-brand-light/30"
-              >
-                PARTNER WITH CATALYST CREW
-              </Button>
-              <Button
-                href="/contact"
-                variant="dark"
-                size="md"
-                className="w-full justify-center border-brand-light/20"
-              >
-                SCHEDULE AN INTRO CALL
-              </Button>
-            </div>
-          </div>
-        </Container>
-      </section>
 
       {/* FINAL CTA */}
       <ImplosionCTA />
