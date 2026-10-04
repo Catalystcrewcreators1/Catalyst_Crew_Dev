@@ -5,7 +5,12 @@ import Link from "next/link";
 import Image from "next/image";
 import { useRouter } from "next/navigation";
 import { Container } from "@/components/ui/Container";
-import { ArrowUpRight, Github, Twitter, Linkedin, MessageSquare, Download, Rocket, Settings } from "lucide-react";
+import { 
+  ArrowUpRight, Github, Twitter, Linkedin, MessageSquare, Download, Rocket, Settings,
+  Home, Info, Calendar, Users, Trophy, Handshake,
+  Briefcase, Library, BookOpen, UserCircle, HelpCircle, Mail,
+  Shield, Lock, FileText, ExternalLink
+} from "lucide-react";
 import BranchedMenu from "../ui/BranchedMenu";
 
 export function Footer() {
@@ -73,19 +78,40 @@ export function Footer() {
             <h3 className="font-display text-xs uppercase font-bold tracking-widest text-brand-yellow">
               Platform
             </h3>
-            <ul className="space-y-2.5 text-sm font-sans text-brand-cream/60">
-              <li><Link href="/" className="hover:text-brand-cream transition-colors">Home Overview</Link></li>
-              <li><Link href="/about" className="hover:text-brand-cream transition-colors">About Mission & Vision</Link></li>
-              <li>
-                <Link href="/events" className="hover:text-brand-cream transition-colors flex items-center gap-1.5">
-                  Current Quests
-                  <span className="text-[10px] font-display font-bold text-brand-ink bg-brand-red px-1.5 py-0.5 rounded-brutal border border-brand-cream/30">LIVE</span>
-                </Link>
-              </li>
-              <li><Link href="/community" className="hover:text-brand-cream transition-colors">Join the Community</Link></li>
-              <li><Link href="/showcase" className="hover:text-brand-cream transition-colors">Builder Showcase</Link></li>
-              <li><Link href="/partners" className="hover:text-brand-cream transition-colors">Partner With Us</Link></li>
-            </ul>
+            <BranchedMenu
+              items={[
+                {
+                  label: 'Core',
+                  children: [
+                    { value: '', label: 'Home Overview', icon: Home },
+                    { value: 'about', label: 'About Mission', icon: Info },
+                    { value: 'events', label: 'Current Quests', icon: Calendar },
+                    { value: 'community', label: 'Join Community', icon: Users },
+                    { value: 'showcase', label: 'Builder Showcase', icon: Trophy },
+                    { value: 'partners', label: 'Partner With Us', icon: Handshake }
+                  ]
+                }
+              ] as any}
+              defaultOpen={0}
+              defaultActive=""
+              onSelect={(value: string) => {
+                if (value.startsWith('http')) window.open(value, '_blank', 'noopener,noreferrer');
+                else router.push(`/${value}`);
+              }}
+              onToggle={() => {}}
+              color="#f5f5f5"
+              accentColor="#f5f5f5"
+              lineColor="#3f3f46"
+              width={200}
+              rowHeight={36}
+              indent={40}
+              trunk={14}
+              radius={10}
+              lineWidth={1.5}
+              fontSize={14}
+              drawDuration={400}
+              foldDuration={300}
+            />
           </div>
 
           {/* Nav Column 2: Ecosystem */}
@@ -93,14 +119,40 @@ export function Footer() {
             <h3 className="font-display text-xs uppercase font-bold tracking-widest text-brand-yellow">
               Ecosystem
             </h3>
-            <ul className="space-y-2.5 text-sm font-sans text-brand-cream/60">
-              <li><Link href="/opportunities" className="hover:text-brand-cream transition-colors">Opportunities & Jobs</Link></li>
-              <li><Link href="/resources" className="hover:text-brand-cream transition-colors">Guides & Toolkits</Link></li>
-              <li><Link href="/blog" className="hover:text-brand-cream transition-colors">Editorial & Stories</Link></li>
-              <li><Link href="/crew" className="hover:text-brand-cream transition-colors">Founding Team</Link></li>
-              <li><Link href="/faq" className="hover:text-brand-cream transition-colors">FAQ</Link></li>
-              <li><Link href="/contact" className="hover:text-brand-cream transition-colors">Contact</Link></li>
-            </ul>
+            <BranchedMenu
+              items={[
+                {
+                  label: 'Network',
+                  children: [
+                    { value: 'opportunities', label: 'Opportunities', icon: Briefcase },
+                    { value: 'resources', label: 'Guides & Tools', icon: Library },
+                    { value: 'blog', label: 'Editorial', icon: BookOpen },
+                    { value: 'crew', label: 'Founding Team', icon: UserCircle },
+                    { value: 'faq', label: 'FAQ', icon: HelpCircle },
+                    { value: 'contact', label: 'Contact', icon: Mail }
+                  ]
+                }
+              ] as any}
+              defaultOpen={0}
+              defaultActive=""
+              onSelect={(value: string) => {
+                if (value.startsWith('http')) window.open(value, '_blank', 'noopener,noreferrer');
+                else router.push(`/${value}`);
+              }}
+              onToggle={() => {}}
+              color="#f5f5f5"
+              accentColor="#f5f5f5"
+              lineColor="#3f3f46"
+              width={200}
+              rowHeight={36}
+              indent={40}
+              trunk={14}
+              radius={10}
+              lineWidth={1.5}
+              fontSize={14}
+              drawDuration={400}
+              foldDuration={300}
+            />
           </div>
 
           {/* Nav Column 3: Legal */}
@@ -108,16 +160,38 @@ export function Footer() {
             <h3 className="font-display text-xs uppercase font-bold tracking-widest text-brand-yellow">
               Standards
             </h3>
-            <ul className="space-y-2.5 text-sm font-sans text-brand-cream/60">
-              <li><Link href="/code-of-conduct" className="hover:text-brand-cream transition-colors">Code of Conduct</Link></li>
-              <li><Link href="/privacy" className="hover:text-brand-cream transition-colors">Privacy Policy</Link></li>
-              <li><Link href="/terms" className="hover:text-brand-cream transition-colors">Terms of Service</Link></li>
-              <li>
-                <a href="https://unstop.com" target="_blank" rel="noopener noreferrer" className="hover:text-brand-cream transition-colors inline-flex items-center gap-1">
-                  Unstop Portal <ArrowUpRight className="h-3 w-3" />
-                </a>
-              </li>
-            </ul>
+            <BranchedMenu
+              items={[
+                {
+                  label: 'Legal & Ethics',
+                  children: [
+                    { value: 'code-of-conduct', label: 'Code of Conduct', icon: Shield },
+                    { value: 'privacy', label: 'Privacy Policy', icon: Lock },
+                    { value: 'terms', label: 'Terms of Service', icon: FileText },
+                    { value: 'https://unstop.com', label: 'Unstop Portal', icon: ExternalLink }
+                  ]
+                }
+              ] as any}
+              defaultOpen={0}
+              defaultActive=""
+              onSelect={(value: string) => {
+                if (value.startsWith('http')) window.open(value, '_blank', 'noopener,noreferrer');
+                else router.push(`/${value}`);
+              }}
+              onToggle={() => {}}
+              color="#f5f5f5"
+              accentColor="#f5f5f5"
+              lineColor="#3f3f46"
+              width={200}
+              rowHeight={36}
+              indent={40}
+              trunk={14}
+              radius={10}
+              lineWidth={1.5}
+              fontSize={14}
+              drawDuration={400}
+              foldDuration={300}
+            />
           </div>
 
           {/* Nav Column 4: Menu */}
@@ -139,7 +213,10 @@ export function Footer() {
               ] as any}
               defaultOpen={0}
               defaultActive="quick"
-              onSelect={(value: string) => router.push(`/${value}`)}
+              onSelect={(value: string) => {
+                if (value.startsWith('http')) window.open(value, '_blank', 'noopener,noreferrer');
+                else router.push(`/${value}`);
+              }}
               onToggle={(index: number, open: boolean) => {}}
               color="#f5f5f5"
               accentColor="#f5f5f5"
