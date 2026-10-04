@@ -102,7 +102,7 @@ export function Footer() {
               color="#f5f5f5"
               accentColor="#f5f5f5"
               lineColor="#3f3f46"
-              width={200}
+              width={320}
               rowHeight={36}
               indent={40}
               trunk={14}
@@ -143,7 +143,7 @@ export function Footer() {
               color="#f5f5f5"
               accentColor="#f5f5f5"
               lineColor="#3f3f46"
-              width={200}
+              width={320}
               rowHeight={36}
               indent={40}
               trunk={14}
@@ -182,7 +182,7 @@ export function Footer() {
               color="#f5f5f5"
               accentColor="#f5f5f5"
               lineColor="#3f3f46"
-              width={200}
+              width={320}
               rowHeight={36}
               indent={40}
               trunk={14}
@@ -221,7 +221,7 @@ export function Footer() {
               color="#f5f5f5"
               accentColor="#f5f5f5"
               lineColor="#3f3f46"
-              width={240}
+              width={320}
               rowHeight={36}
               indent={40}
               trunk={14}
