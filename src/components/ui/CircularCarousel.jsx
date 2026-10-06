@@ -818,8 +818,8 @@ const CircularCarousel = ({
         : { left: -size / 2, top: -cardH / 2, width: size, height: cardH };
     const photoStyle =
       axis === 'x'
-        ? { left: 0, top: -offset, width: cardW, height: cardH }
-        : { left: -offset, top: 0, width: cardW, height: cardH };
+        ? { left: 0, top: -offset, width: cardW, height: cardH, objectPosition: item.objectPosition || 'center top' }
+        : { left: -offset, top: 0, width: cardW, height: cardH, objectPosition: item.objectPosition || 'center top' };
     const flip = axis === 'x' ? ' rotateX(180deg)' : ' rotateY(180deg)';
     return (
       <div

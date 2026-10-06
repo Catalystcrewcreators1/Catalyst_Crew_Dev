@@ -97,7 +97,7 @@
   display: block;
   max-width: none;
   object-fit: cover;
-  object-position: center 10%;
+  object-position: top;
   pointer-events: none;
   user-select: none;
   -webkit-user-drag: none;

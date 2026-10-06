@@ -7,6 +7,7 @@ export interface TeamMember {
   twitter?: string;
   github?: string;
   linkedin?: string;
+  objectPosition?: string;
 }
 
 export const teamData: TeamMember[] = [
@@ -19,6 +20,7 @@ export const teamData: TeamMember[] = [
     twitter: "https://x.com",
     github: "https://github.com",
     linkedin: "https://linkedin.com",
+    objectPosition: "center top",
   },
   {
     name: "Samriddhi Bansal",
@@ -29,6 +31,7 @@ export const teamData: TeamMember[] = [
     twitter: "https://x.com",
     github: "https://github.com",
     linkedin: "https://linkedin.com",
+    objectPosition: "center top",
   },
   {
     name: "Ashwin Jauhary",
@@ -39,6 +42,7 @@ export const teamData: TeamMember[] = [
     twitter: "https://x.com",
     github: "https://github.com/Ashwinjauhary",
     linkedin: "https://linkedin.com",
+    objectPosition: "center top",
   },
   {
     name: "Aviral Mishra",
@@ -49,6 +53,7 @@ export const teamData: TeamMember[] = [
     twitter: "https://x.com",
     github: "https://github.com",
     linkedin: "https://linkedin.com",
+    objectPosition: "center top",
   },
   {
     name: "Aryan Pandey",
@@ -57,6 +62,7 @@ export const teamData: TeamMember[] = [
     bio: "Driving product strategy, growth metrics, and go-to-market execution to scale Catalyst Crew's reach across Tier 1, 2, and 3 colleges nationwide.",
     avatar: "/Aryan.jpg",
     linkedin: "https://linkedin.com",
+    objectPosition: "center top",
   },
   {
     name: "Vansh Agnihotri",
@@ -65,6 +71,7 @@ export const teamData: TeamMember[] = [
     bio: "Building strategic brand partnerships, managing sponsor communications, and securing resources to fuel community events and hackathons.",
     avatar: "/Vansh.png",
     linkedin: "https://linkedin.com",
+    objectPosition: "center top",
   },
   {
     name: "Anurag Tiwari",
@@ -73,6 +80,7 @@ export const teamData: TeamMember[] = [
     bio: "Shaping the visual identity, editorial typography, merchandise aesthetics, and design systems that define the Catalyst Crew brand.",
     avatar: "/Anurag.jpg",
     twitter: "https://x.com",
+    objectPosition: "center top",
   },
   {
     name: "Manikant Awasthi",
@@ -81,6 +89,7 @@ export const teamData: TeamMember[] = [
     bio: "Building and maintaining the Catalyst Crew web platform, internal tools, and hackathon infrastructure with modern full-stack technologies.",
     avatar: "/Manikant.jpg",
     github: "https://github.com",
+    objectPosition: "center top",
   },
   {
     name: "Lavanya Sachan",
@@ -88,6 +97,7 @@ export const teamData: TeamMember[] = [
     level: "intern",
     bio: "Supporting the design pipeline with event creatives, social media assets, and brand collateral that keeps the community engaged and excited.",
     avatar: "/Lavanya.jpg",
+    objectPosition: "center top",
   },
   {
     name: "Riddhima Gupta",
@@ -96,5 +106,6 @@ export const teamData: TeamMember[] = [
     bio: "Crafting engaging social media content, managing community channels, and amplifying Catalyst Crew's digital presence across platforms.",
     avatar: "/Riddhima.jpg",
     linkedin: "https://linkedin.com",
+    objectPosition: "center top",
   },
 ];
