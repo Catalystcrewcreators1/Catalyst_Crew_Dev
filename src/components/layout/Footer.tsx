@@ -197,15 +197,15 @@ export function Footer() {
         </div>
 
         {/* Bottom Bar */}
-        <div className="mt-14 pt-8 border-t-2 border-brand-cream/15 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs font-display font-bold uppercase tracking-wider text-brand-cream/40">
+        <div className="mt-14 pt-8 border-t-2 border-brand-cream/15 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs font-display font-bold uppercase tracking-wider text-brand-cream/60">
           <p>© {new Date().getFullYear()} Catalyst Crew. All rights reserved.</p>
           <p className="flex items-center gap-2">
             <span>Learn</span>
-            <span className="text-brand-cream/20">•</span>
+            <span className="text-brand-cream/40">•</span>
             <span>Build</span>
-            <span className="text-brand-cream/20">•</span>
+            <span className="text-brand-cream/40">•</span>
             <span>Collaborate</span>
-            <span className="text-brand-cream/20">•</span>
+            <span className="text-brand-cream/40">•</span>
             <span className="text-brand-red">Innovate</span>
           </p>
         </div>

@@ -36,7 +36,7 @@
 
 .branched-menu__marker {
   position: absolute;
-  top: -1px;
+  top: 0;
   left: 0;
   z-index: 1;
   width: 2px;
@@ -45,7 +45,7 @@
   background: var(--bm-accent);
   opacity: 0;
   transition:
-    top 220ms var(--bm-ease-out),
+    transform 220ms var(--bm-ease-out),
     opacity 150ms ease;
 }
 

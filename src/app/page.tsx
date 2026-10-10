@@ -83,7 +83,7 @@ export default function HomePage() {
                     size="lg"
                     className="w-full sm:w-auto gap-2 text-sm border-brand-light/30"
                   >
-                    JOIN THE CREW
+                    JOIN WHATSAPP
                     <ArrowRight className="h-4 w-4" />
                   </Button>
                 </MagneticWrapper>

@@ -173,7 +173,7 @@ export function Navbar() {
               size="sm"
               className="gap-2"
             >
-              JOIN THE CREW
+              JOIN WHATSAPP
               <ArrowRight className="h-3.5 w-3.5" />
             </Button>
           </div>
@@ -234,7 +234,7 @@ export function Navbar() {
                 size="md"
                 className="w-full justify-center gap-2"
               >
-                JOIN THE CREW
+                JOIN WHATSAPP
                 <ArrowRight className="h-4 w-4" />
               </Button>
               <Button

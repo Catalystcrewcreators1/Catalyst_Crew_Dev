@@ -70,7 +70,7 @@ export default function BranchedMenu({
       if (!m) return;
       const on = markerShown && el;
       if (!glide) m.style.transition = 'none';
-      if (on) m.style.top = `${el.offsetTop + (el.offsetHeight - MARK) / 2}px`;
+      if (on) m.style.transform = `translateY(${el.offsetTop + (el.offsetHeight - MARK) / 2}px)`;
       m.toggleAttribute('data-on', Boolean(on));
       if (!glide) {
         void m.offsetHeight;

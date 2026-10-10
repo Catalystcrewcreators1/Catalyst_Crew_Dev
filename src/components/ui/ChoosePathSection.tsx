@@ -98,7 +98,7 @@ export function ChoosePathSection() {
                   }`}>
                     {path.subtitle}
                   </div>
-                  <p className="mt-4 text-sm text-brand-neutral/90 leading-relaxed font-sans">
+                  <p className="mt-4 text-sm text-brand-ink/90 leading-relaxed font-sans">
                     {path.desc}
                   </p>
                 </div>

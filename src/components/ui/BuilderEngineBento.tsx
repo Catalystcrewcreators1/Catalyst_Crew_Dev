@@ -173,9 +173,9 @@ export function BuilderEngineBento() {
             {/* Bottom feature callout */}
             <div className="mt-6 pt-4 border-t border-brand-soft flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3">
               <div>
-                <h4 className="font-display text-base font-bold text-white">
+                <h3 className="font-display text-base font-bold text-white">
                   Proof of Work Over Pitch Decks
-                </h4>
+                </h3>
                 <p className="text-xs text-brand-light/60 mt-0.5">
                   Every project is evaluated on live URL uptime, test suites, and clean repos.
                 </p>

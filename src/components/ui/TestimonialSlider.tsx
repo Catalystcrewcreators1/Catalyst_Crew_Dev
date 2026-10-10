@@ -164,9 +164,9 @@ export const TestimonialSlider = () => {
                     />
                   </div>
                   <div>
-                    <h4 className={`font-bold font-sans text-base leading-none mb-1.5 ${theme.text}`}>
+                    <h3 className={`font-bold font-sans text-base leading-none mb-1.5 ${theme.text}`}>
                       {testimonial.author}
-                    </h4>
+                    </h3>
                     <p className={`text-[13px] font-sans font-medium ${theme.subText}`}>
                       {testimonial.role}
                     </p>
