@@ -59,7 +59,7 @@ export const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
             target="_blank"
             rel="noopener noreferrer"
             className={combinedClasses}
-            {...props}
+            {...(props as any)}
           >
             {children}
           </a>
