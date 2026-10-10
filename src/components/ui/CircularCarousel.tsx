@@ -1,6 +1,6 @@
 // @ts-nocheck
 'use client';
-import Image from 'next/image';
+import NextImage from 'next/image';
 
 import React, { useCallback, useEffect, useLayoutEffect, useMemo, useRef, useState } from 'react';
 
@@ -866,7 +866,7 @@ const CircularCarousel: React.FC<CircularCarouselProps> = ({
           className="circular-carousel__frame"
           style={{ height: axis === 'x' ? size : cardH, borderRadius: frameRadius }}
         >
-          <Image
+          <NextImage
             className="circular-carousel__photo"
             src={item.src}
             alt=""
