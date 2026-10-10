@@ -1,11 +1,6 @@
 import React from "react";
 import { Metadata } from "next";
-import dynamic from "next/dynamic";
 import { Container } from "@/components/ui/Container";
-
-const InteractiveGlobe = dynamic(() => import("@/components/ui/InteractiveGlobe"), {
-  ssr: false,
-});
 import { SectionHeader } from "@/components/ui/SectionHeader";
 import { Button } from "@/components/ui/Button";
 import { Badge } from "@/components/ui/Badge";
@@ -99,36 +94,6 @@ export default function CommunityPage() {
               <Instagram className="h-5 w-5 text-brand-red" />
               FOLLOW ON INSTAGRAM
             </Button>
-          </div>
-        </Container>
-      </section>
-
-      {/* Global Network Map */}
-      <section className="py-20 bg-brand-ink border-b-3 border-brand-ink overflow-hidden relative">
-        <Container>
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-            <div className="text-left text-brand-white z-10">
-              <Badge variant="blue" size="md" className="mb-4 text-brand-ink">
-                GLOBAL REACH
-              </Badge>
-              <h2 className="font-display text-4xl sm:text-5xl font-extrabold tracking-tight mb-6">
-                BUILDERS ACROSS <br /> <span className="text-brand-blue">THE PLANET.</span>
-              </h2>
-              <p className="text-lg text-brand-light/80 leading-relaxed max-w-md">
-                Catalyst Crew started as a local university chapter and exploded into a global network. 
-                Drag and spin the globe to see where our top engineering hubs and active hackathon participants are located.
-              </p>
-              <div className="mt-8 flex items-center gap-4 text-sm font-bold tracking-widest text-brand-light/50">
-                <div className="flex items-center gap-2">
-                  <div className="w-3 h-3 rounded-full bg-brand-red animate-pulse"></div>
-                  HUB LOCATIONS
-                </div>
-              </div>
-            </div>
-            
-            <div className="relative">
-              <InteractiveGlobe />
-            </div>
           </div>
         </Container>
       </section>
