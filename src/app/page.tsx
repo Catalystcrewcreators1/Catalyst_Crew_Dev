@@ -14,7 +14,7 @@ import { MagneticWrapper } from "@/components/ui/MagneticWrapper";
 import { ChoosePathSection } from "@/components/ui/ChoosePathSection";
 import { BrandPromiseSection } from "@/components/ui/BrandPromiseSection";
 import { EventTicketsSection } from "@/components/ui/EventTicketsSection";
-import { ShowcaseSection } from "@/components/ui/ShowcaseSection";
+// import { ShowcaseSection } from "@/components/ui/ShowcaseSection";
 import { OrgChartSection } from "@/components/ui/OrgChartSection";
 import { ImplosionCTA } from "@/components/ui/ImplosionCTA";
 import { eventsData } from "@/data/events";
@@ -159,7 +159,7 @@ export default function HomePage() {
       <EventTicketsSection />
 
       {/* BUILDER SHOWCASE */}
-      <ShowcaseSection />
+      {/* <ShowcaseSection /> */}
 
       {/* TESTIMONIALS */}
       <TestimonialSlider />
