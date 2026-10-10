@@ -25,11 +25,11 @@ export const blogPostsData: BlogPost[] = [
     author: {
       name: "Arpit",
       role: "Founder & CEO",
-      avatar: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=200&q=80",
+      avatar: "/Ashwin.png",
     },
     date: "September 15, 2026",
     readTime: "5 min read",
-    image: "https://images.unsplash.com/photo-1517694712202-14dd9538aa97?auto=format&fit=crop&w=1200&q=80",
+    image: "/poster1x1.png",
     tags: ["Philosophy", "Hackathons", "Culture"],
     content: `
 ### The Epidemic of the Slides-Only Hackathon
@@ -60,11 +60,11 @@ When you remove the pressure to present like a Silicon Valley pitchman, somethin
     author: {
       name: "Ashwin",
       role: "Co-Founder & CTO",
-      avatar: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=200&q=80",
+      avatar: "/Vansh.png",
     },
     date: "September 08, 2026",
     readTime: "8 min read",
-    image: "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=1200&q=80",
+    image: "/hero_showcase.webp",
     tags: ["AI", "Agents", "TypeScript", "Architecture"],
     content: `
 ### From Chatbot to Stateful Orchestration
@@ -97,11 +97,11 @@ Building agents isn't just about prompt engineering; it's classic systems engine
     author: {
       name: "Samriddhi",
       role: "Co-Founder & CCO",
-      avatar: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=200&q=80",
+      avatar: "/Aryan.jpg",
     },
     date: "August 28, 2026",
     readTime: "6 min read",
-    image: "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&w=1200&q=80",
+    image: "/catalyst-crew-logo.png",
     tags: ["OpenSource", "Community", "Career"],
     content: `
 ### The Fear of the Red 'Changes Requested' Badge
@@ -129,11 +129,11 @@ The developers who thrive today are the ones who learn in public, embrace feedba
     author: {
       name: "Ashwin",
       role: "Co-Founder & CTO",
-      avatar: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=200&q=80",
+      avatar: "/Riddhima.jpg",
     },
     date: "September 02, 2026",
     readTime: "10 min read",
-    image: "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?auto=format&fit=crop&w=1200&q=80",
+    image: "/poster1x1.png",
     tags: ["Rust", "Systems", "Linux", "Roadmap"],
     content: `
 ### Why Systems Programming is Experiencing a Renaissance
@@ -171,11 +171,11 @@ The only way to master systems engineering is to build things that break under l
     author: {
       name: "Arpit",
       role: "Founder & CEO",
-      avatar: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=200&q=80",
+      avatar: "/Aviral.jpg",
     },
     date: "August 20, 2026",
     readTime: "7 min read",
-    image: "https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&w=1200&q=80",
+    image: "/hero_showcase.webp",
     tags: ["Projects", "Portfolio", "Ideas", "Engineering"],
     content: `
 ### Stop Building Weather Apps

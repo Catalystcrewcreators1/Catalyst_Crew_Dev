@@ -9,11 +9,11 @@ const words = text.split(" ");
 
 // Images for the peek effect
 const peekImages: Record<string, string> = {
-  "builders,": "https://images.unsplash.com/photo-1555066931-4365d14bab8c?q=80&w=1000&auto=format&fit=crop",
-  "innovators,": "https://images.unsplash.com/photo-1519389950473-47ba0277781c?q=80&w=1000&auto=format&fit=crop",
-  "creators": "https://images.unsplash.com/photo-1522071820081-009f0129c71c?q=80&w=1000&auto=format&fit=crop",
-  "high-agency,": "https://images.unsplash.com/photo-1504384308090-c894fdcc538d?q=80&w=1000&auto=format&fit=crop",
-  "shipping": "https://images.unsplash.com/photo-1618401471353-b98afee0b2eb?q=80&w=1000&auto=format&fit=crop"
+  "builders,": "/Ashwin.png",
+  "innovators,": "/Aryan.jpg",
+  "creators": "/poster1x1.png",
+  "high-agency,": "/Vansh.png",
+  "shipping": "/hero_showcase.webp"
 };
 
 const Word = ({ 
