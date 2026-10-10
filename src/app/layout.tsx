@@ -48,7 +48,7 @@ export const metadata: Metadata = {
       "A community for developers, builders, innovators and creators who don't just consume technology — they build with it.",
     images: [
       {
-        url: "https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&w=1200&q=80",
+        url: "/icon.png", // TODO: Replace with a dedicated 1200x630 og-image.jpg
         width: 1200,
         height: 630,
         alt: "Catalyst Crew Developer Community",
