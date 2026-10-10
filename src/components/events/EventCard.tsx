@@ -64,7 +64,7 @@ export function EventCard({ event, featured = false }: EventCardProps) {
 
       {/* Card Content Body */}
       <div className="flex flex-1 flex-col p-5 sm:p-6 justify-between gap-4">
-        <div>
+        <div className="text-center">
           <h3 className="font-display text-xl font-bold text-brand-ink group-hover:text-brand-red transition-colors line-clamp-1">
             <Link href={`/events/${event.slug}`}>{event.title}</Link>
           </h3>
@@ -73,7 +73,7 @@ export function EventCard({ event, featured = false }: EventCardProps) {
           </p>
 
           {/* Metadata Grid */}
-          <div className="mt-4 grid grid-cols-2 gap-2 text-xs text-brand-neutral/90 border-t border-brand-light/60 pt-3">
+          <div className="mt-4 grid grid-cols-2 gap-2 text-xs text-left text-brand-neutral/90 border-t border-brand-light/60 pt-3 w-full">
             <div className="flex items-center gap-1.5">
               <Calendar className="h-3.5 w-3.5 text-brand-red shrink-0" />
               <span className="truncate">{event.date}</span>
