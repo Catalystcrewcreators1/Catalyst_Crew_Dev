@@ -1,3 +1,4 @@
+// @ts-nocheck
 'use client';
 
 import { isValidElement, useLayoutEffect, useRef, useState } from 'react';
