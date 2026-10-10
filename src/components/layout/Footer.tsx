@@ -88,6 +88,7 @@ export function Footer() {
                     { value: 'events', label: 'Current Quests', icon: Calendar },
                     { value: 'community', label: 'Join Community', icon: Users },
                     { value: 'showcase', label: 'Builder Showcase', icon: Trophy },
+                    { value: 'matchmaking', label: 'Squad Matchmaking', icon: Users },
                     { value: 'partners', label: 'Partner With Us', icon: Handshake }
                   ]
                 }

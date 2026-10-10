@@ -48,6 +48,7 @@ export function Navbar() {
     { name: "Events", href: "/events" },
     { name: "Community", href: "/community" },
     { name: "Showcase", href: "/showcase" },
+    { name: "Matchmaking", href: "/matchmaking" },
   ];
 
   const moreLinks = [
