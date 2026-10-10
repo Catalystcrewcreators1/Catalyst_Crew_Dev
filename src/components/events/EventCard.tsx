@@ -27,6 +27,7 @@ export function EventCard({ event, featured = false }: EventCardProps) {
           src={event.image}
           alt={event.title}
           fill
+          sizes="(max-width: 768px) 100vw, 33vw"
           className="object-cover transition-transform duration-500 group-hover:scale-105"
         />
         {event.slug !== "catalyst-hack-2026" && (
@@ -65,9 +66,9 @@ export function EventCard({ event, featured = false }: EventCardProps) {
       {/* Card Content Body */}
       <div className="flex flex-1 flex-col p-5 sm:p-6 justify-between gap-4">
         <div className="text-center">
-          <h3 className="font-display text-xl font-bold text-brand-ink group-hover:text-brand-red transition-colors line-clamp-1">
+          <h2 className="font-display text-xl font-bold text-brand-ink group-hover:text-brand-red transition-colors line-clamp-1">
             <Link href={`/events/${event.slug}`}>{event.title}</Link>
-          </h3>
+          </h2>
           <p className="mt-2 text-sm text-brand-neutral line-clamp-2 leading-relaxed">
             {event.description}
           </p>

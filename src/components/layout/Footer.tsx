@@ -32,12 +32,13 @@ export function Footer() {
                   src="/catalyst-crew-logo.png"
                   alt="Catalyst Crew Dev Community"
                   fill
+                  sizes="192px"
                   className="object-contain object-left"
                 />
               </div>
             </Link>
 
-            <p className="text-sm leading-relaxed text-brand-cream/60 max-w-sm font-sans">
+            <p className="text-sm leading-relaxed text-brand-cream/80 max-w-sm font-sans">
               A high-agency developer community for builders, innovators, and creators who don&apos;t just consume technology — they build with it.
             </p>
 
@@ -206,7 +207,7 @@ export function Footer() {
             <span className="text-brand-cream/40">•</span>
             <span>Collaborate</span>
             <span className="text-brand-cream/40">•</span>
-            <span className="text-brand-red">Innovate</span>
+            <span className="text-brand-peach">Innovate</span>
           </p>
         </div>
       </Container>

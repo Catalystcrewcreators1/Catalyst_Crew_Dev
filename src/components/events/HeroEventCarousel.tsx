@@ -120,7 +120,7 @@ export function HeroEventCarousel({ events }: HeroEventCarouselProps) {
                   src={currentEvent.image}
                   alt={currentEvent.title}
                   fill
-                  sizes="(max-width: 768px) 100vw, 100vw"
+                  sizes="(max-width: 768px) 100vw, 50vw"
                   className="object-cover object-[center_25%] transition-transform duration-300 group-hover:scale-105"
                   priority
                 />

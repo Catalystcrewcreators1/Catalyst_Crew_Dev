@@ -83,6 +83,7 @@ export function Navbar() {
                 alt="Catalyst Crew Dev Community"
                 fill
                 priority
+                sizes="(max-width: 768px) 150px, 180px"
                 className="object-contain object-left"
               />
             </div>

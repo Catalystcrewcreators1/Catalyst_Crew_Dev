@@ -59,7 +59,7 @@ export function PartnerLogoCloud() {
       url: "#",
       logo: (
         <div className="relative h-16 w-32 transition-all duration-300">
-          <Image src="/Aws.jpeg" alt="AWS" fill className="object-contain object-left" />
+          <Image src="/Aws.jpeg" alt="AWS" fill sizes="128px" className="object-contain object-left" />
         </div>
       ),
     },
@@ -70,7 +70,7 @@ export function PartnerLogoCloud() {
       url: "#",
       logo: (
         <div className="relative h-16 w-32 transition-all duration-300">
-          <Image src="/AWS_Student_Builder_groups.jpeg" alt="AWS Student Builder" fill className="object-contain object-left" />
+          <Image src="/AWS_Student_Builder_groups.jpeg" alt="AWS Student Builder" fill sizes="128px" className="object-contain object-left" />
         </div>
       ),
     },
@@ -81,7 +81,7 @@ export function PartnerLogoCloud() {
       url: "#",
       logo: (
         <div className="relative h-16 w-32 transition-all duration-300">
-          <Image src="/Posterwa.jpeg" alt="Posterwa" fill className="object-contain object-left" />
+          <Image src="/Posterwa.jpeg" alt="Posterwa" fill sizes="128px" className="object-contain object-left" />
         </div>
       ),
     },
@@ -92,7 +92,7 @@ export function PartnerLogoCloud() {
       url: "#",
       logo: (
         <div className="relative h-16 w-32 transition-all duration-300">
-          <Image src="/Tribex%20Esports.jpeg" alt="Tribex Esports" fill className="object-contain object-left" />
+          <Image src="/Tribex%20Esports.jpeg" alt="Tribex Esports" fill sizes="128px" className="object-contain object-left" />
         </div>
       ),
     },
@@ -103,7 +103,7 @@ export function PartnerLogoCloud() {
       url: "#",
       logo: (
         <div className="relative h-16 w-32 transition-all duration-300">
-          <Image src="/Sulax_Solar.png" alt="Sulax Solar" fill className="object-contain object-left" />
+          <Image src="/Sulax_Solar.png" alt="Sulax Solar" fill sizes="128px" className="object-contain object-left" />
         </div>
       ),
     },
