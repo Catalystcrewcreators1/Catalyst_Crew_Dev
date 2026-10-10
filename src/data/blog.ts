@@ -64,7 +64,7 @@ When you remove the pressure to present like a Silicon Valley pitchman, somethin
     },
     date: "September 08, 2026",
     readTime: "8 min read",
-    image: "/hero_showcase.webp",
+    image: "/catalyst-hack-banner.jpg",
     tags: ["AI", "Agents", "TypeScript", "Architecture"],
     content: `
 ### From Chatbot to Stateful Orchestration
@@ -175,7 +175,7 @@ The only way to master systems engineering is to build things that break under l
     },
     date: "August 20, 2026",
     readTime: "7 min read",
-    image: "/hero_showcase.webp",
+    image: "/catalyst-hack-banner.jpg",
     tags: ["Projects", "Portfolio", "Ideas", "Engineering"],
     content: `
 ### Stop Building Weather Apps

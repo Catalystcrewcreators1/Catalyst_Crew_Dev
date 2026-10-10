@@ -13,7 +13,7 @@ const peekImages: Record<string, string> = {
   "innovators,": "/Aryan.jpg",
   "creators": "/poster1x1.png",
   "high-agency,": "/Vansh.png",
-  "shipping": "/hero_showcase.webp"
+  "shipping": "/catalyst-hack-banner.jpg"
 };
 
 const Word = ({ 
