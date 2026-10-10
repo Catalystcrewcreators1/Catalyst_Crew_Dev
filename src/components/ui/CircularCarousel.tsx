@@ -362,24 +362,14 @@ const CircularCarousel: React.FC<CircularCarouselProps> = ({
   useEffect(() => {
     let cancelled = false;
     setReady(false);
-    const sources = sourcesKey.split('|').slice(0, 12);
-    const load = src =>
-      new Promise(resolve => {
-        const image = new Image();
-        image.decoding = 'async';
-        image.onload = () => (image.decode ? image.decode().then(resolve, resolve) : resolve());
-        image.onerror = resolve;
-        image.src = src;
-      });
-    const timeout = new Promise(resolve => setTimeout(resolve, 2400));
-    Promise.race([Promise.all(sources.map(load)), timeout]).then(() => {
+    setTimeout(() => {
       if (cancelled) return;
       const state = stateRef.current;
       state.introDone = false;
       state.intro = null;
       setReady(true);
       wakeRef.current();
-    });
+    }, 100);
     return () => {
       cancelled = true;
     };

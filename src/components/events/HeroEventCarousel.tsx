@@ -172,11 +172,11 @@ export function HeroEventCarousel({ events }: HeroEventCarouselProps) {
 
               {/* Title & Tagline */}
               <div>
-                <h3 className="font-display text-xl sm:text-2xl font-bold text-brand-ink tracking-tight line-clamp-1">
+                <h2 className="font-display text-xl sm:text-2xl font-bold text-brand-ink tracking-tight line-clamp-1">
                   <Link href={`/events/${currentEvent.slug}`}>
                     {currentEvent.title}
                   </Link>
-                </h3>
+                </h2>
                 <p className="mt-1 text-xs sm:text-sm text-brand-ink/75 line-clamp-2 leading-relaxed font-sans">
                   {currentEvent.tagline}
                 </p>
