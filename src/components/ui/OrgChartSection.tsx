@@ -12,7 +12,8 @@ export function OrgChartSection() {
     src: member.avatar,
     alt: member.name,
     title: member.name,
-    subtitle: member.role
+    subtitle: member.role,
+    objectPosition: member.objectPosition
   }));
 
   return (
@@ -45,12 +46,12 @@ export function OrgChartSection() {
         </motion.div>
 
         {/* ─── TEAM CAROUSEL ─── */}
-        <div style={{ width: '100%', height: '560px', position: 'relative' }}>
+        <div style={{ width: '100%', height: '650px', position: 'relative' }}>
           <CircularCarousel
             items={carouselItems}
             preset="cylinder"
             intro="rise"
-            cardWidth={220}
+            cardWidth={300}
             aspectRatio={0.75}
             speed={14}
             captions
