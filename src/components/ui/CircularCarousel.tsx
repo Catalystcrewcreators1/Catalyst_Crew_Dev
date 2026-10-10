@@ -10,61 +10,61 @@ import './CircularCarousel.css';
 
 const DEFAULT_ITEMS = [
   {
-    src: photo('photo-1506744038136-46273834b3fb'),
+    src: '/Ashwin.png',
     alt: 'Mist drifting through a mountain valley',
     title: 'Valley',
     subtitle: 'Landscape'
   },
   {
-    src: photo('photo-1524504388940-b1c1722653e1'),
+    src: '/Aryan.jpg',
     alt: 'A woman with long hair in soft studio light',
     title: 'Portrait',
     subtitle: 'Studio'
   },
   {
-    src: photo('photo-1486406146926-c627a92ad1ab'),
+    src: '/Vansh.png',
     alt: 'Glass towers seen from street level',
     title: 'Towers',
     subtitle: 'Architecture'
   },
   {
-    src: photo('photo-1502680390469-be75c86b636f'),
+    src: '/Riddhima.jpg',
     alt: 'A surfer carving inside a breaking wave',
     title: 'Swell',
     subtitle: 'Ocean'
   },
   {
-    src: photo('photo-1487958449943-2429e8be8625'),
+    src: '/Aviral.jpg',
     alt: 'An angular white building against the sky',
     title: 'Facade',
     subtitle: 'Architecture'
   },
   {
-    src: photo('photo-1509631179647-0177331693ae'),
+    src: '/Manikant.jpg',
     alt: 'A model in striped trousers leaning on a wall',
     title: 'Pose',
     subtitle: 'Editorial'
   },
   {
-    src: photo('photo-1519681393784-d120267933ba'),
+    src: '/Ashwin.png',
     alt: 'The Milky Way above snowy peaks',
     title: 'Night',
     subtitle: 'Sky'
   },
   {
-    src: photo('photo-1485968579580-b6d095142e6e'),
+    src: '/Aryan.jpg',
     alt: 'A woman in a long coat on a city street',
     title: 'Street',
     subtitle: 'Editorial'
   },
   {
-    src: photo('photo-1493246507139-91e8fad9978e'),
+    src: '/Vansh.png',
     alt: 'Mountains mirrored in a still lake',
     title: 'Mirror',
     subtitle: 'Landscape'
   },
   {
-    src: photo('photo-1511818966892-d7d671e672a2'),
+    src: '/Riddhima.jpg',
     alt: 'A glass skyscraper under a cloudy sky',
     title: 'Glass',
     subtitle: 'Architecture'
