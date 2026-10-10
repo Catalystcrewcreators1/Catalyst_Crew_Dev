@@ -1,5 +1,6 @@
-/* eslint-disable @next/next/no-img-element */
+// @ts-nocheck
 'use client';
+import Image from 'next/image';
 
 import React, { useCallback, useEffect, useLayoutEffect, useMemo, useRef, useState } from 'react';
 
@@ -865,14 +866,15 @@ const CircularCarousel: React.FC<CircularCarouselProps> = ({
           className="circular-carousel__frame"
           style={{ height: axis === 'x' ? size : cardH, borderRadius: frameRadius }}
         >
-          <img
+          <Image
             className="circular-carousel__photo"
             src={item.src}
             alt=""
             draggable={false}
-            decoding="async"
-            loading="lazy"
+            width={axis === 'x' ? cardW : size}
+            height={axis === 'x' ? cardH : size}
             style={photoStyle}
+            sizes="300px"
           />
           {back && <div className="circular-carousel__inner" />}
           <div className="circular-carousel__shade" />

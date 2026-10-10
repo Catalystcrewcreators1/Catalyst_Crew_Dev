@@ -26,8 +26,8 @@ const DEFAULT_ITEMS = [
 const PAD = 6;
 const MARK = 16;
 
-const renderIcon = Icon => (isValidElement(Icon) ? Icon : (typeof Icon === 'function' || typeof Icon === 'object') ? <Icon size={16} strokeWidth={1.8} /> : null);
-const toSet = open => new Set(Array.isArray(open) ? open : open >= 0 ? [open] : []);
+const renderIcon = (Icon: any) => (isValidElement(Icon) ? Icon : (typeof Icon === 'function' || typeof Icon === 'object') ? <Icon size={16} strokeWidth={1.8} /> : null);
+const toSet = (open: any) => new Set(Array.isArray(open) ? open : open >= 0 ? [open] : []);
 
 export default function BranchedMenu({
   items = DEFAULT_ITEMS,
