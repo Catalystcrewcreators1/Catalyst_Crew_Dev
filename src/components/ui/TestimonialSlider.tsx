@@ -154,10 +154,12 @@ export const TestimonialSlider = () => {
                 
                 <div className="flex items-center gap-4 mt-auto relative z-10 pt-4">
                   <div className="relative h-12 w-12 rounded-full overflow-hidden shrink-0 border border-white/20">
-                    <img 
+                    <Image 
                       src={testimonial.image} 
                       alt={testimonial.author}
-                      className="w-full h-full object-cover"
+                      fill
+                      sizes="48px"
+                      className="object-cover"
                       draggable={false}
                     />
                   </div>

@@ -75,7 +75,7 @@ export default function CommunityPage() {
 
           <div className="mt-8 flex flex-col sm:flex-row items-center justify-center gap-4">
             <Button
-              href="https://chat.whatsapp.com/catalyst-crew-placeholder"
+              href="https://chat.whatsapp.com/" // TODO: Replace with real Catalyst Crew WhatsApp link
               isExternal
               variant="primary"
               size="lg"

@@ -1,6 +1,7 @@
+/* eslint-disable @next/next/no-img-element */
 'use client';
 
-import { useCallback, useEffect, useLayoutEffect, useMemo, useRef, useState } from 'react';
+import React, { useCallback, useEffect, useLayoutEffect, useMemo, useRef, useState } from 'react';
 
 import './CircularCarousel.css';
 
@@ -174,7 +175,39 @@ const usePrefersReducedMotion = () => {
   return reduced;
 };
 
-const CircularCarousel = ({
+export interface CircularCarouselProps {
+  items?: { src: string; alt?: string; title?: string; subtitle?: string }[];
+  preset?: string;
+  intro?: string;
+  cardWidth?: number;
+  aspectRatio?: number;
+  gap?: number;
+  curve?: number;
+  tilt?: number;
+  perspective?: number;
+  autoplay?: string | boolean;
+  speed?: number;
+  interval?: number;
+  direction?: 'left' | 'right';
+  draggable?: boolean;
+  momentum?: number;
+  snap?: boolean;
+  pauseOnHover?: boolean;
+  focusOnClick?: boolean;
+  parallax?: number;
+  stretch?: number;
+  depthFade?: number;
+  fadeColor?: string;
+  innerShade?: number;
+  cornerRadius?: number;
+  captions?: boolean;
+  onChange?: (index: number) => void;
+  onItemClick?: (item: any, index: number) => void;
+  className?: string;
+  style?: React.CSSProperties;
+}
+
+const CircularCarousel: React.FC<CircularCarouselProps> = ({
   items = DEFAULT_ITEMS,
   preset = 'cylinder',
   intro = 'rise',
@@ -801,7 +834,7 @@ const CircularCarousel = ({
   const current = list[active] || list[0];
   const label = current ? current.title || current.alt || `Image ${active + 1}` : '';
 
-  const renderTile = (item, tile, back) => {
+  const renderTile = (item: any, tile: any, back: boolean) => {
     const strip = back ? tile.total - 1 - tile.index : tile.index;
     const first = strip === 0;
     const last = strip === tile.total - 1;

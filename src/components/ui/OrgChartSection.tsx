@@ -46,7 +46,6 @@ export function OrgChartSection() {
 
         {/* ─── TEAM CAROUSEL ─── */}
         <div style={{ width: '100%', height: '560px', position: 'relative' }}>
-          {/* @ts-ignore */}
           <CircularCarousel
             items={carouselItems}
             preset="cylinder"
