@@ -27,13 +27,13 @@ export default function InteractiveGlobe() {
         height: width * 2,
         phi: 0,
         theta: 0.3,
-        dark: 0, // 0 is light theme, 1 is dark theme
+        dark: 1,
         diffuse: 1.2,
         mapSamples: 16000,
         mapBrightness: 6,
         baseColor: [1, 1, 1],
         markerColor: [1, 0.25, 0.25], // Brand red
-        glowColor: [1, 1, 1],
+        glowColor: [0.2, 0.2, 0.2],
         markers: [
           // Longitude, Latitude
           { location: [37.7595, -122.4367], size: 0.05 }, // SF
