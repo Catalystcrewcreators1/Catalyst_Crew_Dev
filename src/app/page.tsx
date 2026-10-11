@@ -37,6 +37,19 @@ import {
   MessageCircle,
   ExternalLink,
 } from "lucide-react";
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Catalyst Crew — Developer Community | Learn • Build • Collaborate • Innovate",
+  description:
+    "Catalyst Crew is a premier developer community for builders, learners and innovators. Discover events, hackathons, projects, challenges and career opportunities.",
+  verification: {
+    google: "poM4equanfrMyuILmSr_zgh1W1UNStb0in-pL105sGw",
+  },
+  other: {
+    "google-site-verification": "poM4equanfrMyuILmSr_zgh1W1UNStb0in-pL105sGw",
+  },
+};
 
 export default function HomePage() {
   const featuredEvents = eventsData.slice(0, 3);

@@ -115,6 +115,10 @@ export default function RootLayout({
   return (
     <html lang="en" className={`${bricolage.variable} ${dmSans.variable}`}>
       <head>
+        <meta
+          name="google-site-verification"
+          content="poM4equanfrMyuILmSr_zgh1W1UNStb0in-pL105sGw"
+        />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
