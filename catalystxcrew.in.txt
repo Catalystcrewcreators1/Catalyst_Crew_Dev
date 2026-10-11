@@ -17,6 +17,7 @@ _dmarc                         3600 IN TXT   "v=DMARC1; p=none"
 _vercel                        14400 IN TXT   "vc-domain-verify=truthlens.catalystxcrew.in,f553928841d39d3102e8"
                                14400 IN TXT   "vc-domain-verify=kshitiraksha.catalystxcrew.in,3be608421f3a7fe8642f"
 arena                          14400 IN CNAME dbdedb7669153d47.vercel-dns-017.com.
+kfqavpnc654g                   3600  IN CNAME gv-epkjtifm27b5pt.dv.googlehosted.com.
 kshitiraksha                   14400 IN CNAME 88ff6726c4917d17.vercel-dns-017.com.
 reach-a._domainkey             300 IN CNAME reach-a.dkim.reach.hostinger.com.
 reach-b._domainkey             300 IN CNAME reach-b.dkim.reach.hostinger.com.
