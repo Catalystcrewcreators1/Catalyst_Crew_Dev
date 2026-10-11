@@ -37,15 +37,13 @@ const nextConfig = {
           {
             key: 'Cross-Origin-Resource-Policy',
             value: 'same-origin'
-          },
-          {
-            key: 'Cross-Origin-Embedder-Policy',
-            value: 'require-corp'
           }
         ]
       }
     ];
   },
+  poweredByHeader: false,
+  compress: true,
   images: {
     remotePatterns: [
       {

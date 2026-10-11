@@ -1,0 +1,24 @@
+; Zone file for catalystxcrew.in
+; Generated on 2026-10-11 08:03:27 UTC
+
+$ORIGIN catalystxcrew.in
+$TTL 3600
+
+@                              3600 IN SOA   ns1.dns-parking.com. dns.hostinger.com. 2026092215 10000 2400 604800 600
+@                              14400 IN A     216.198.79.1
+@                              14400 IN MX    10 mx.zoho.in
+                               14400 IN MX    20 mx2.zoho.in
+                               14400 IN MX    50 mx3.zoho.in
+@                              86400 IN NS    ns1.dns-parking.com.
+                               86400 IN NS    ns2.dns-parking.com.
+@                              3600 IN TXT   "v=spf1 include:zoho.in include:_spf.reach.hostinger.com ~all"
+_dmarc                         3600 IN TXT   "v=DMARC1; p=none"
+_vercel                        14400 IN TXT   "vc-domain-verify=truthlens.catalystxcrew.in,f553928841d39d3102e8"
+                               14400 IN TXT   "vc-domain-verify=kshitiraksha.catalystxcrew.in,3be608421f3a7fe8642f"
+arena                          14400 IN CNAME dbdedb7669153d47.vercel-dns-017.com.
+kshitiraksha                   14400 IN CNAME 88ff6726c4917d17.vercel-dns-017.com.
+reach-a._domainkey             300 IN CNAME reach-a.dkim.reach.hostinger.com.
+reach-b._domainkey             300 IN CNAME reach-b.dkim.reach.hostinger.com.
+truthlens                      14400 IN CNAME 119e4f93a10887dd.vercel-dns-017.com.
+www                            14400 IN CNAME cname.vercel-dns.com.
+zmail._domainkey               14400 IN TXT   "v=DKIM1; k=rsa; p=MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQDHt1VtAiYVsATcBH3Tv46tCBQUBzggijM+s+BW9qUcLX0/q5ZS7ZocpHfJXZ/mv2Cq8DzKAmw2j+AGQEFnxmo0aLFmzVr5FeBdu7sASrWKvjcln+U8vnPly+EF8A77WV+pNIknTT83kINAR9n8U7e3DUL0xQSmHXWMRvFVwH1nqwIDAQAB"

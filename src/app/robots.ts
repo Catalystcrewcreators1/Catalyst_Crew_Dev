@@ -6,6 +6,7 @@ export default function robots(): MetadataRoute.Robots {
       userAgent: "*",
       allow: "/",
     },
-    sitemap: "https://catalystxcrew.in/sitemap.xml",
+    sitemap: "https://www.catalystxcrew.in/sitemap.xml",
+    host: "https://www.catalystxcrew.in",
   };
 }

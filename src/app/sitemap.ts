@@ -4,13 +4,14 @@ import { blogPostsData } from "@/data/blog";
 import { projectsData } from "@/data/projects";
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const baseUrl = "https://catalystxcrew.in";
+  const baseUrl = "https://www.catalystxcrew.in";
 
   const staticRoutes = [
     "",
     "/about",
     "/events",
     "/community",
+    "/matchmaking",
     "/showcase",
     "/showcase/submit",
     "/partners",
@@ -27,7 +28,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     url: `${baseUrl}${route}`,
     lastModified: new Date(),
     changeFrequency: "weekly" as const,
-    priority: route === "" ? 1.0 : 0.8,
+    priority: route === "" ? 1.0 : route === "/events" || route === "/showcase" ? 0.9 : 0.8,
   }));
 
   const eventRoutes = eventsData.map((event) => ({

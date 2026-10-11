@@ -37,18 +37,21 @@ export const metadata: Metadata = {
   ],
   authors: [{ name: "Catalyst Crew Team" }],
   creator: "Catalyst Crew",
-  metadataBase: new URL("https://catalystxcrew.in"),
+  metadataBase: new URL("https://www.catalystxcrew.in"),
+  alternates: {
+    canonical: "https://www.catalystxcrew.in",
+  },
   openGraph: {
     type: "website",
     locale: "en_US",
-    url: "https://catalystxcrew.in",
+    url: "https://www.catalystxcrew.in",
     siteName: "Catalyst Crew",
     title: "Catalyst Crew — Developer Community | Learn • Build • Collaborate • Innovate",
     description:
       "A community for developers, builders, innovators and creators who don't just consume technology — they build with it.",
     images: [
       {
-        url: "/icon.png", // TODO: Replace with a dedicated 1200x630 og-image.jpg
+        url: "/catalyst-hack-banner.jpg",
         width: 1200,
         height: 630,
         alt: "Catalyst Crew Developer Community",
@@ -59,12 +62,46 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Catalyst Crew — Developer Community",
     description: "Learn • Build • Collaborate • Innovate. A builder-first community for developers.",
+    images: ["/catalyst-hack-banner.jpg"],
     creator: "@catalystxcrew",
   },
   robots: {
     index: true,
     follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-video-preview": -1,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+    },
   },
+};
+
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": "https://www.catalystxcrew.in/#organization",
+      name: "Catalyst Crew",
+      url: "https://www.catalystxcrew.in",
+      logo: "https://www.catalystxcrew.in/catalyst-crew-logo.png",
+      sameAs: [
+        "https://github.com/Catalystcrewcreators1",
+        "https://twitter.com/catalystxcrew",
+        "https://linkedin.com/company/catalystxcrew",
+      ],
+      description: "Premier developer community for builders, learners and innovators.",
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://www.catalystxcrew.in/#website",
+      url: "https://www.catalystxcrew.in",
+      name: "Catalyst Crew",
+      publisher: { "@id": "https://www.catalystxcrew.in/#organization" },
+    },
+  ],
 };
 
 export default function RootLayout({
@@ -74,6 +111,12 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" className={`${bricolage.variable} ${dmSans.variable}`}>
+      <head>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        />
+      </head>
       <body className="min-h-screen flex flex-col bg-brand-cream text-brand-ink antialiased">
         <SplashScreen />
         <Navbar />
